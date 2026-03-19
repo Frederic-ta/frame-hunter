@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>KatKat Photography RPG</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+:root{--bg:#0a0a0f;--bg2:#12121a;--glass:rgba(255,255,255,0.05);--glass-border:rgba(255,255,255,0.1);--accent:#7c3aed;--accent2:#3b82f6;--gold:#f59e0b;--gold2:#fbbf24;--green:#22c55e;--red:#ef4444;--text:#e2e8f0;--text2:#94a3b8;--radius:16px}
+html,body{height:100%;overflow:hidden}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);touch-action:manipulation;user-select:none;position:relative}
+#app{height:100%;display:flex;flex-direction:column;max-width:430px;margin:0 auto;position:relative;overflow:hidden}
+.screen{display:none;flex:1;flex-direction:column;overflow:hidden;position:relative}
+.screen.active{display:flex}
+.scroll-area{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:16px;padding-bottom:80px}
+
+/* Top Bar */
+.top-bar{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;background:rgba(18,18,26,0.9);backdrop-filter:blur(20px);border-bottom:1px solid var(--glass-border);z-index:10}
+.top-bar .avatar{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;font-size:18px;cursor:pointer}
+.top-bar .xp-mini{flex:1;margin:0 12px}
+.top-bar .xp-mini .level-text{font-size:11px;color:var(--text2);margin-bottom:2px;display:flex;justify-content:space-between}
+.top-bar .xp-mini .xp-bar-outer{height:6px;background:rgba(255,255,255,0.1);border-radius:3px;overflow:hidden}
+.top-bar .xp-mini .xp-bar-inner{height:100%;background:linear-gradient(90deg,var(--gold),var(--gold2));border-radius:3px;transition:width 0.5s ease}
+.top-bar .title-badge{font-size:11px;color:var(--gold);font-weight:600;max-width:100px;text-align:right;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
+/* Bottom Nav */
+.bottom-nav{display:flex;background:rgba(18,18,26,0.95);backdrop-filter:blur(20px);border-top:1px solid var(--glass-border);z-index:10}
+.bottom-nav button{flex:1;padding:12px 0;background:none;border:none;color:var(--text2);font-size:22px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:2px;transition:color 0.2s}
+.bottom-nav button span{font-size:10px}
+.bottom-nav button.active{color:var(--accent)}
+
+/* Glass Card */
+.glass{background:var(--glass);backdrop-filter:blur(12px);border:1px solid var(--glass-border);border-radius:var(--radius);padding:20px;margin-bottom:16px}
+.glass h2{font-size:18px;font-weight:700;margin-bottom:12px}
+.glass h3{font-size:15px;font-weight:600;margin-bottom:8px;color:var(--accent)}
+.glass p{font-size:14px;line-height:1.7;color:var(--text2);margin-bottom:10px}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 24px;border-radius:12px;border:none;font-family:'Inter';font-weight:600;font-size:15px;cursor:pointer;transition:all 0.2s;width:100%}
+.btn-primary{background:linear-gradient(135deg,var(--accent),var(--accent2));color:white}
+.btn-primary:active{transform:scale(0.97);opacity:0.9}
+.btn-gold{background:linear-gradient(135deg,var(--gold),#d97706);color:#000}
+.btn-secondary{background:var(--glass);border:1px solid var(--glass-border);color:var(--text)}
+.btn-danger{background:linear-gradient(135deg,var(--red),#dc2626);color:white}
+.btn-sm{padding:10px 16px;font-size:13px}
+.back-btn{background:none;border:none;color:var(--text2);font-size:14px;cursor:pointer;padding:8px 0;display:flex;align-items:center;gap:4px;margin-bottom:12px}
+
+/* World Map */
+.world-map{display:flex;flex-direction:column;align-items:center;gap:20px;padding:20px 0}
+.world-node{width:100%;max-width:320px;padding:20px;border-radius:20px;background:var(--glass);border:2px solid var(--glass-border);cursor:pointer;transition:all 0.3s;position:relative;display:flex;align-items:center;gap:16px}
+.world-node.current{border-color:var(--accent);box-shadow:0 0 30px rgba(124,58,237,0.3)}
+.world-node.locked{opacity:0.4;cursor:default;filter:grayscale(1)}
+.world-node .world-icon{font-size:40px;flex-shrink:0}
+.world-node .world-info h3{font-size:16px;font-weight:700;margin-bottom:4px}
+.world-node .world-info p{font-size:12px;color:var(--text2);margin:0}
+.world-path{width:2px;height:20px;background:linear-gradient(to bottom,var(--glass-border),transparent)}
+.world-node.locked .lock-badge{position:absolute;top:8px;right:8px;font-size:16px}
+.world-progress{font-size:11px;color:var(--gold);margin-top:4px}
+
+/* Chapter List */
+.chapter-item{display:flex;align-items:center;gap:14px;padding:16px;border-radius:14px;background:var(--glass);border:1px solid var(--glass-border);margin-bottom:10px;cursor:pointer;transition:all 0.2s}
+.chapter-item:active{transform:scale(0.98)}
+.chapter-item .ch-icon{width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.chapter-item.completed .ch-icon{background:linear-gradient(135deg,var(--green),#16a34a)}
+.chapter-item.boss .ch-icon{background:linear-gradient(135deg,var(--red),#dc2626)}
+.chapter-item .ch-info{flex:1}
+.chapter-item .ch-info h4{font-size:14px;font-weight:600;margin-bottom:2px}
+.chapter-item .ch-info p{font-size:12px;color:var(--text2);margin:0}
+.chapter-item .ch-status{font-size:18px}
+
+/* Quiz */
+.quiz-container{display:flex;flex-direction:column;gap:12px}
+.quiz-question{font-size:16px;font-weight:600;margin-bottom:16px;line-height:1.5}
+.quiz-option{padding:16px;border-radius:14px;background:var(--glass);border:2px solid var(--glass-border);cursor:pointer;font-size:14px;transition:all 0.2s;text-align:left}
+.quiz-option:active{transform:scale(0.98)}
+.quiz-option.correct{border-color:var(--green);background:rgba(34,197,94,0.15);animation:flashGreen 0.5s}
+.quiz-option.wrong{border-color:var(--red);background:rgba(239,68,68,0.15);animation:flashRed 0.5s}
+.quiz-progress{display:flex;gap:6px;margin-bottom:16px}
+.quiz-dot{width:100%;height:4px;border-radius:2px;background:rgba(255,255,255,0.1)}
+.quiz-dot.done{background:var(--green)}
+.quiz-dot.wrong-dot{background:var(--red)}
+.quiz-dot.current{background:var(--accent)}
+
+/* Boss */
+.boss-hp-bar{height:12px;background:rgba(255,255,255,0.1);border-radius:6px;overflow:hidden;margin:8px 0}
+.boss-hp-inner{height:100%;background:linear-gradient(90deg,var(--red),#f97316);border-radius:6px;transition:width 0.5s}
+.boss-timer{font-size:28px;font-weight:800;color:var(--gold);text-align:center}
+.boss-lives{display:flex;gap:6px;justify-content:center;font-size:22px;margin:8px 0}
+
+/* Simulator */
+.sim-preview{width:100%;aspect-ratio:4/3;border-radius:16px;overflow:hidden;position:relative;background:#1a1a2e;margin-bottom:16px}
+.sim-scene{width:100%;height:100%;position:relative}
+.sim-sky{position:absolute;top:0;left:0;right:0;height:55%;background:linear-gradient(180deg,#1e3a5f,#e8956e)}
+.sim-ground{position:absolute;bottom:0;left:0;right:0;height:45%;background:linear-gradient(180deg,#2d5016,#1a3a0a)}
+.sim-mountain{position:absolute;bottom:45%;left:10%;width:0;height:0;border-left:80px solid transparent;border-right:80px solid transparent;border-bottom:100px solid #2a3a4a}
+.sim-mountain2{position:absolute;bottom:45%;right:5%;width:0;height:0;border-left:60px solid transparent;border-right:60px solid transparent;border-bottom:80px solid #1e2e3e}
+.sim-subject{position:absolute;bottom:35%;left:50%;transform:translateX(-50%);width:50px;height:80px;display:flex;flex-direction:column;align-items:center;z-index:2}
+.sim-subject .head{width:20px;height:20px;border-radius:50%;background:#d4a574}
+.sim-subject .body-part{width:16px;height:35px;background:#4a90d9;border-radius:4px;margin-top:2px}
+.sim-subject .legs{display:flex;gap:4px;margin-top:1px}
+.sim-subject .leg{width:6px;height:20px;background:#2d5a8a;border-radius:2px}
+.sim-bg-blur{position:absolute;top:0;left:0;right:0;bottom:0;backdrop-filter:blur(0px);transition:backdrop-filter 0.3s;pointer-events:none;z-index:1}
+.sim-subject-area{position:absolute;bottom:30%;left:35%;right:35%;top:20%;z-index:1}
+.sim-brightness{position:absolute;top:0;left:0;right:0;bottom:0;background:black;opacity:0;transition:opacity 0.3s;pointer-events:none;z-index:3}
+.sim-noise{position:absolute;top:0;left:0;right:0;bottom:0;opacity:0;pointer-events:none;z-index:4;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.5'/%3E%3C/svg%3E")}
+.sim-motion{position:absolute;top:0;left:0;right:0;bottom:0;opacity:0;pointer-events:none;z-index:4;background:linear-gradient(90deg,transparent 0%,rgba(255,255,255,0.03) 20%,transparent 40%,rgba(255,255,255,0.03) 60%,transparent 80%,rgba(255,255,255,0.03) 100%);background-size:20px 100%}
+.sim-slider-group{margin-bottom:14px}
+.sim-slider-group label{display:flex;justify-content:space-between;font-size:13px;font-weight:600;margin-bottom:6px}
+.sim-slider-group label span{color:var(--gold)}
+input[type="range"]{width:100%;height:6px;-webkit-appearance:none;background:rgba(255,255,255,0.15);border-radius:3px;outline:none}
+input[type="range"]::-webkit-slider-thumb{-webkit-appearance:none;width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2));cursor:pointer;border:2px solid white}
+.exposure-meter{height:8px;background:rgba(255,255,255,0.1);border-radius:4px;position:relative;margin:12px 0}
+.exposure-meter .marker{position:absolute;top:-4px;width:16px;height:16px;border-radius:50%;background:white;transform:translateX(-50%);transition:left 0.3s,background 0.3s}
+.exposure-meter .center-mark{position:absolute;top:-2px;left:50%;width:2px;height:12px;background:var(--green);transform:translateX(-50%)}
+.exposure-meter .labels{display:flex;justify-content:space-between;font-size:10px;color:var(--text2);margin-top:6px}
+
+/* Profile */
+.profile-avatar{width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;font-size:40px;margin:0 auto 16px}
+.profile-title{text-align:center;font-size:16px;color:var(--gold);font-weight:700;margin-bottom:4px}
+.profile-level{text-align:center;font-size:13px;color:var(--text2);margin-bottom:16px}
+.stat-row{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--glass-border)}
+.stat-row:last-child{border:none}
+.stat-row .stat-label{color:var(--text2);font-size:13px}
+.stat-row .stat-value{font-weight:700;font-size:14px}
+
+/* XP Popup */
+.xp-popup{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);font-size:28px;font-weight:800;color:var(--gold);pointer-events:none;z-index:100;animation:xpFloat 1.2s ease forwards;text-shadow:0 0 20px rgba(245,158,11,0.5)}
+@keyframes xpFloat{0%{opacity:0;transform:translate(-50%,-50%) scale(0.5)}20%{opacity:1;transform:translate(-50%,-60%) scale(1.2)}40%{transform:translate(-50%,-70%) scale(1)}100%{opacity:0;transform:translate(-50%,-120%) scale(0.8)}}
+
+/* Level Up */
+.levelup-overlay{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.8);display:flex;align-items:center;justify-content:center;z-index:200;animation:fadeIn 0.3s}
+.levelup-card{text-align:center;padding:40px;animation:scaleIn 0.5s ease}
+.levelup-card .lu-icon{font-size:64px;margin-bottom:16px;animation:pulse 1s infinite}
+.levelup-card .lu-title{font-size:24px;font-weight:800;color:var(--gold);margin-bottom:8px}
+.levelup-card .lu-sub{font-size:14px;color:var(--text2);margin-bottom:24px}
+
+/* Typewriter */
+.typewriter{overflow:hidden;white-space:pre-wrap}
+
+/* Victory */
+.victory-particles{position:fixed;top:0;left:0;right:0;bottom:0;pointer-events:none;z-index:150}
+.particle{position:absolute;width:8px;height:8px;border-radius:50%;animation:particleFall 2s ease forwards}
+@keyframes particleFall{0%{transform:translateY(-20px) rotate(0);opacity:1}100%{transform:translateY(100vh) rotate(720deg);opacity:0}}
+
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes scaleIn{from{transform:scale(0.5);opacity:0}to{transform:scale(1);opacity:1}}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
+@keyframes flashGreen{0%{box-shadow:0 0 20px rgba(34,197,94,0.5)}100%{box-shadow:none}}
+@keyframes flashRed{0%{box-shadow:0 0 20px rgba(239,68,68,0.5)}100%{box-shadow:none}}
+@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
+</style>
+</head>
+<body>
+<div id="app">
+<!-- Top Bar -->
+<div class="top-bar" id="topBar">
+<div class="avatar" onclick="showScreen('profile')">📷</div>
+<div class="xp-mini">
+<div class="level-text"><span id="topLevel">Niv. 1</span><span id="topXP">0 XP</span></div>
+<div class="xp-bar-outer"><div class="xp-bar-inner" id="topXPBar" style="width:0%"></div></div>
+</div>
+<div class="title-badge" id="topTitle">📱 Touriste</div>
+</div>
+
+<!-- Map Screen -->
+<div class="screen active" id="screen-map">
+<div class="scroll-area">
+<h2 style="text-align:center;margin-bottom:4px;font-size:20px">🗺 Carte du Monde</h2>
+<p style="text-align:center;color:var(--text2);font-size:12px;margin-bottom:20px">Ton voyage photographique commence ici</p>
+<div class="world-map" id="worldMap"></div>
+</div>
+</div>
+
+<!-- Chapters Screen -->
+<div class="screen" id="screen-chapters">
+<div class="scroll-area">
+<button class="back-btn" onclick="showScreen('map')">← Carte</button>
+<div id="chapterHeader"></div>
+<div id="chapterList"></div>
+</div>
+</div>
+
+<!-- Fiche Screen -->
+<div class="screen" id="screen-fiche">
+<div class="scroll-area">
+<button class="back-btn" onclick="showScreen('chapters')">← Chapitres</button>
+<div id="ficheContent"></div>
+<button class="btn btn-primary" id="startQuizBtn" onclick="startQuiz()" style="margin-top:16px">📝 Passer au Quiz</button>
+</div>
+</div>
+
+<!-- Quiz Screen -->
+<div class="screen" id="screen-quiz">
+<div class="scroll-area">
+<div id="quizArea"></div>
+</div>
+</div>
+
+<!-- Boss Screen -->
+<div class="screen" id="screen-boss">
+<div class="scroll-area">
+<div id="bossArea"></div>
+</div>
+</div>
+
+<!-- Simulator Screen -->
+<div class="screen" id="screen-simulator">
+<div class="scroll-area">
+<button class="back-btn" onclick="showScreen('map')">← Retour</button>
+<h2 style="margin-bottom:4px">⚙️ Simulateur d'Exposition</h2>
+<p style="font-size:12px;color:var(--text2);margin-bottom:16px">Joue avec le triangle d'exposition</p>
+<div class="sim-preview" id="simPreview">
+<div class="sim-scene">
+<div class="sim-sky"></div>
+<div class="sim-mountain"></div>
+<div class="sim-mountain2"></div>
+<div class="sim-ground"></div>
+<div class="sim-subject"><div class="head"></div><div class="body-part"></div><div class="legs"><div class="leg"></div><div class="leg"></div></div></div>
+<div class="sim-bg-blur" id="simBgBlur"></div>
+<div class="sim-brightness" id="simBrightness"></div>
+<div class="sim-noise" id="simNoise"></div>
+<div class="sim-motion" id="simMotion"></div>
+</div>
+</div>
+<div class="glass">
+<div class="sim-slider-group">
+<label>🔘 Ouverture <span id="apertureVal">f/5.6</span></label>
+<input type="range" id="apertureSlider" min="0" max="8" step="1" value="4" oninput="updateSim()">
+</div>
+<div class="sim-slider-group">
+<label>⏱ Vitesse <span id="shutterVal">1/125s</span></label>
+<input type="range" id="shutterSlider" min="0" max="12" step="1" value="7" oninput="updateSim()">
+</div>
+<div class="sim-slider-group">
+<label>📶 ISO <span id="isoVal">100</span></label>
+<input type="range" id="isoSlider" min="0" max="7" step="1" value="0" oninput="updateSim()">
+</div>
+<div class="exposure-meter">
+<div class="center-mark"></div>
+<div class="marker" id="exposureMarker"></div>
+<div class="labels"><span>-3</span><span>-2</span><span>-1</span><span>0</span><span>+1</span><span>+2</span><span>+3</span></div>
+</div>
+</div>
+<div class="glass" id="simChallenge">
+<h3>🎯 Défi Exposition</h3>
+<p id="challengeText" style="font-size:13px"></p>
+<button class="btn btn-gold btn-sm" onclick="newChallenge()">Nouveau défi</button>
+<button class="btn btn-secondary btn-sm" onclick="checkChallenge()" style="margin-top:8px">Vérifier</button>
+<p id="challengeResult" style="margin-top:8px;font-size:13px;font-weight:600"></p>
+</div>
+</div>
+</div>
+
+<!-- Profile Screen -->
+<div class="screen" id="screen-profile">
+<div class="scroll-area">
+<button class="back-btn" onclick="showScreen('map')">← Retour</button>
+<div class="profile-avatar">📸</div>
+<div class="profile-title" id="profileTitle">📱 Touriste au smartphone</div>
+<div class="profile-level" id="profileLevel">Niveau 1</div>
+<div class="glass">
+<div style="margin-bottom:12px">
+<div style="display:flex;justify-content:space-between;font-size:12px;color:var(--text2);margin-bottom:4px"><span>XP</span><span id="profileXPText">0 / 50</span></div>
+<div class="xp-bar-outer" style="height:10px"><div class="xp-bar-inner" id="profileXPBar" style="width:0%"></div></div>
+</div>
+</div>
+<div class="glass">
+<h3>📊 Statistiques</h3>
+<div class="stat-row"><span class="stat-label">Questions répondues</span><span class="stat-value" id="statTotal">0</span></div>
+<div class="stat-row"><span class="stat-label">Bonnes réponses</span><span class="stat-value" id="statCorrect">0</span></div>
+<div class="stat-row"><span class="stat-label">Précision</span><span class="stat-value" id="statAccuracy">0%</span></div>
+<div class="stat-row"><span class="stat-label">Boss vaincus</span><span class="stat-value" id="statBosses">0</span></div>
+<div class="stat-row"><span class="stat-label">Chapitres complétés</span><span class="stat-value" id="statChapters">0</span></div>
+</div>
+<button class="btn btn-danger btn-sm" onclick="if(confirm('Effacer toute la progression ?')){localStorage.clear();location.reload()}">🗑 Réinitialiser</button>
+</div>
+</div>
+
+<!-- Bottom Nav -->
+<div class="bottom-nav">
+<button id="nav-map" class="active" onclick="showScreen('map')">🗺<span>Carte</span></button>
+<button id="nav-simulator" onclick="showScreen('simulator')">🎮<span>Simulateur</span></button>
+<button id="nav-profile" onclick="showScreen('profile')">👤<span>Profil</span></button>
+</div>
+</div>
+
+<script>
+// === GAME DATA ===
+const TITLES = {1:'📱 Touriste au smartphone',10:'📷 Apprenti déclencheur',20:'🎞 Chasseur de lumière',30:'🖼 Compositeur d\'images',40:'⚙️ Technicien de l\'ombre',50:'👑 Maître Photographe'};
+const APERTURES = ['f/1.4','f/2','f/2.8','f/4','f/5.6','f/8','f/11','f/16','f/22'];
+const SHUTTERS = ['30s','15s','8s','4s','2s','1s','1/2s','1/4s','1/8s','1/15s','1/30s','1/60s','1/125s','1/250s','1/500s','1/1000s','1/2000s','1/4000s'];
+const ISOS = [100,200,400,800,1600,3200,6400,12800];
+// Adjusted slider ranges: aperture 0-8, shutter 0-12 (maps to index 5..17 → 1s..1/4000s for usable range)
+const SHUTTER_MAP = [5,6,7,8,9,10,11,12,13,14,15,16,17]; // indices into SHUTTERS
+
+const WORLDS = [
+  {id:1,name:'Le Royaume de la Lumière',icon:'🌅',desc:'Maîtrise la lumière et l\'exposition',unlockLevel:1},
+  {id:2,name:'Le Pays de la Composition',icon:'🏛',desc:'Apprends à composer tes images',unlockLevel:10},
+  {id:3,name:'La Forêt des Couleurs',icon:'🌈',desc:'Comprends la couleur et le contraste',unlockLevel:20},
+  {id:4,name:'Les Montagnes du Portrait',icon:'🗻',desc:'L\'art du portrait photographique',unlockLevel:30},
+  {id:5,name:'Le Temple du Maître',icon:'⛩',desc:'Post-traitement et style personnel',unlockLevel:40}
+];
+
+const CHAPTERS = {
+  1: [
+    {id:'1.1',title:'Qu\'est-ce que la lumière ?',icon:'💡',type:'lesson'},
+    {id:'1.2',title:'Le Triangle d\'Exposition',icon:'🔺',type:'lesson'},
+    {id:'1.3',title:'L\'Ouverture en détail',icon:'🔘',type:'lesson'},
+    {id:'1.4',title:'La Vitesse d\'obturation',icon:'⏱',type:'lesson'},
+    {id:'1.5',title:'L\'ISO en détail',icon:'📶',type:'lesson'},
+    {id:'boss1',title:'Le Gardien de la Lumière',icon:'⚔️',type:'boss'}
+  ]
+};
+
+const FICHES = {
+'1.1': `<h2>💡 Qu'est-ce que la lumière ?</h2>
+<div class="glass"><h3>📖 L'essence de la photographie</h3>
+<p>Le mot <strong>photographie</strong> vient du grec : <em>photo</em> (lumière) + <em>graphie</em> (écrire). Photographier, c'est littéralement <strong>écrire avec la lumière</strong>. Sans lumière, pas d'image !</p>
+<p>🌞 <strong>Lumière naturelle</strong> : le soleil, la lune, le feu. Elle change constamment d'intensité, de direction et de couleur au fil de la journée.</p>
+<p>💡 <strong>Lumière artificielle</strong> : lampes, flash, néons, LED. Tu la contrôles, mais elle a souvent une couleur particulière.</p></div>
+
+<div class="glass"><h3>🧭 La direction de la lumière</h3>
+<p>➡️ <strong>Frontale</strong> : la lumière vient de face. Image plate, peu d'ombres. Pratique pour l'exposition mais manque de relief.</p>
+<p>↗️ <strong>Latérale</strong> : la lumière vient du côté. Crée du volume, des textures et du drame. Idéale pour les portraits !</p>
+<p>⬅️ <strong>Contre-jour</strong> : la lumière vient de derrière le sujet. Crée des silhouettes, des halos lumineux. Effet dramatique !</p>
+<p>⬇️ <strong>Du dessus</strong> : lumière de midi. Ombres dures sous le nez et les yeux. Généralement à éviter pour les portraits.</p></div>
+
+<div class="glass"><h3>✨ Qualité de la lumière</h3>
+<p>☀️ <strong>Lumière dure</strong> : soleil direct, spot. Ombres nettes et bien définies, forts contrastes. Dramatique mais difficile à gérer.</p>
+<p>☁️ <strong>Lumière douce</strong> : nuages, ombre, réflecteur. Ombres diffuses, transitions graduelles. Flatteuse, idéale pour les portraits.</p></div>
+
+<div class="glass"><h3>🌅 Les heures magiques</h3>
+<p>🥇 <strong>Golden hour</strong> : 1h après le lever du soleil / 1h avant le coucher. Lumière chaude, dorée, rasante. Le MEILLEUR moment pour photographier !</p>
+<p>🔵 <strong>Blue hour</strong> : juste avant le lever / juste après le coucher. Lumière bleue, douce, magique. Parfaite pour les paysages urbains.</p></div>
+
+<div class="glass"><h3>🌡 La température de couleur</h3>
+<p>La lumière a une couleur mesurée en Kelvin (K) :</p>
+<p>🕯 <strong>~2000K</strong> — Bougie : très chaud, orangé</p>
+<p>💡 <strong>~3000K</strong> — Ampoule : chaud, jaune</p>
+<p>☀️ <strong>~5500K</strong> — Soleil de midi : neutre, blanc</p>
+<p>☁️ <strong>~7000K</strong> — Ciel couvert : froid, bleuté</p>
+<p>🏔 <strong>~10000K</strong> — Ciel bleu : très froid, bleu</p>
+<p>Ton appareil peut corriger ça avec la <strong>balance des blancs</strong> !</p></div>`,
+
+'1.2': `<h2>🔺 Le Triangle d'Exposition</h2>
+<div class="glass"><h3>⚖️ Les 3 paramètres</h3>
+<p>Trois réglages contrôlent la quantité de lumière qui arrive au capteur :</p>
+<p>🔘 <strong>Ouverture (f/)</strong> — La taille du trou dans l'objectif</p>
+<p>⏱ <strong>Vitesse d'obturation</strong> — Le temps d'exposition</p>
+<p>📶 <strong>ISO</strong> — La sensibilité du capteur</p>
+<p>Ces trois paramètres forment le <strong>Triangle d'Exposition</strong>. Ils sont interdépendants : si tu changes l'un, tu dois compenser avec un autre pour garder la même exposition.</p></div>
+
+<div class="glass"><h3>🔘 L'Ouverture (f/)</h3>
+<p><strong>f/1.8</strong> = grand trou → beaucoup de lumière entre, fond flou (bokeh) 🎯</p>
+<p><strong>f/16</strong> = petit trou → peu de lumière, tout est net 🏔</p>
+<p>⚠️ Contre-intuitif : petit nombre = GRANDE ouverture !</p></div>
+
+<div class="glass"><h3>⏱ La Vitesse d'obturation</h3>
+<p><strong>1/1000s</strong> = ultra rapide → fige le mouvement ⚡</p>
+<p><strong>1s</strong> = lent → flou de mouvement 🌊</p>
+<p>Règle pratique : vitesse minimum = 1/focale (ex: 50mm → min 1/50s à main levée)</p></div>
+
+<div class="glass"><h3>📶 L'ISO</h3>
+<p><strong>ISO 100</strong> = peu sensible → image propre, nette ✨</p>
+<p><strong>ISO 6400</strong> = très sensible → bruit/grain visible 📊</p>
+<p>Règle : toujours utiliser l'ISO le plus bas possible !</p></div>
+
+<div class="glass"><h3>📐 Le principe de réciprocité</h3>
+<p>Si tu changes un paramètre d'<strong>1 stop</strong> (= doubler ou diviser la lumière par 2), tu compenses avec un autre paramètre d'1 stop dans l'autre sens.</p>
+<p>Exemple : Tu passes de f/5.6 à f/8 (1 stop de moins de lumière) → Tu passes de 1/125s à 1/60s (1 stop de plus) = même exposition ! ⚖️</p></div>
+
+<div class="glass"><p style="text-align:center;font-size:13px">💡 Astuce : essaie le <strong>Simulateur d'Exposition</strong> dans la barre du bas pour voir ces concepts en action !</p></div>`,
+
+'1.3': `<h2>🔘 L'Ouverture en détail</h2>
+<div class="glass"><h3>📐 Comprendre le nombre f/</h3>
+<p>Le nombre f/ est un rapport : <strong>focale ÷ diamètre de l'ouverture</strong>. C'est pour ça que plus le nombre est petit, plus l'ouverture est grande !</p>
+<p>Un objectif 50mm à f/2 a une ouverture de 25mm de diamètre. À f/8, elle ne fait plus que ~6mm.</p></div>
+
+<div class="glass"><h3>📊 L'échelle standard</h3>
+<p>f/1.4 → f/2 → f/2.8 → f/4 → f/5.6 → f/8 → f/11 → f/16 → f/22</p>
+<p>Chaque valeur = <strong>1 stop</strong> = 2× plus ou 2× moins de lumière que la précédente.</p>
+<p>f/1.4 laisse entrer <strong>256× plus de lumière</strong> que f/22 ! 🤯</p></div>
+
+<div class="glass"><h3>🎯 Profondeur de champ</h3>
+<p>🖼 <strong>f/1.8</strong> → Sujet net, fond magnifiquement flou. Parfait pour les <strong>portraits</strong> !</p>
+<p>🏔 <strong>f/11</strong> → Tout est net de l'avant-plan à l'infini. Parfait pour les <strong>paysages</strong> !</p>
+<p>Le flou d'arrière-plan s'appelle le <strong>bokeh</strong>. Sa qualité dépend de l'ouverture, la distance au sujet et la focale.</p></div>
+
+<div class="glass"><h3>🏆 Le Sweet Spot</h3>
+<p>Chaque objectif a un <strong>"sweet spot"</strong> où il est le plus net, généralement entre <strong>f/5.6 et f/8</strong>.</p>
+<p>⚠️ Au-delà de f/16, la <strong>diffraction</strong> réduit la netteté. Le trou est si petit que la lumière "rebondit" sur les bords !</p></div>`,
+
+'1.4': `<h2>⏱ La Vitesse d'obturation en détail</h2>
+<div class="glass"><h3>📏 L'échelle des vitesses</h3>
+<p>De <strong>1/8000s</strong> (ultra rapide) à <strong>30 secondes</strong> (pose longue), plus le mode <strong>Bulb</strong> (tant que tu appuies).</p>
+<p>Chaque doublement du temps = 1 stop de plus de lumière.</p></div>
+
+<div class="glass"><h3>⚡ Figer l'action</h3>
+<p>🏃 Sport : <strong>1/500 – 1/2000s</strong></p>
+<p>🐦 Oiseaux en vol : <strong>1/1000s+</strong></p>
+<p>💧 Goutte d'eau : <strong>1/2000s+</strong></p>
+<p>🏎 Voiture de course : <strong>1/1000 – 1/4000s</strong></p></div>
+
+<div class="glass"><h3>🌊 Flou créatif</h3>
+<p>🌊 Cascade soyeuse : <strong>1/4s – 2s</strong></p>
+<p>🏎 Filé (panning) : <strong>1/30 – 1/60s</strong></p>
+<p>✨ Light painting : <strong>10 – 30s</strong></p>
+<p>⭐ Étoiles (points) : règle des 500 ÷ focale = temps max</p></div>
+
+<div class="glass"><h3>🤝 Éviter le flou de bougé</h3>
+<p>Règle d'or : vitesse minimum = <strong>1/focale</strong></p>
+<p>📷 50mm → minimum 1/50s à main levée</p>
+<p>📷 200mm → minimum 1/200s à main levée</p>
+<p>🔧 <strong>Stabilisation</strong> (OIS/IBIS) : gagne 2-5 stops. Avec IBIS, un 50mm peut descendre à 1/8s !</p>
+<p>📐 <strong>Trépied</strong> : indispensable sous 1/30s. Pas de compromis !</p></div>`,
+
+'1.5': `<h2>📶 L'ISO en détail</h2>
+<div class="glass"><h3>🔬 ISO natif vs étendu</h3>
+<p>L'<strong>ISO natif</strong> est la plage "naturelle" du capteur (souvent 100-6400 ou 100-12800). Les ISO étendus (50, 25600+) sont simulés et dégradent la qualité.</p></div>
+
+<div class="glass"><h3>📊 Plages utilisables</h3>
+<p>📱 Smartphone : ISO 50-800 (au-delà c'est bof)</p>
+<p>📷 APS-C : ISO 100-<strong>6400</strong> correct</p>
+<p>📷 Full Frame : ISO 100-<strong>12800</strong> correct</p>
+<p>Les capteurs plus grands gèrent mieux les hauts ISO !</p></div>
+
+<div class="glass"><h3>📡 Types de bruit</h3>
+<p>🎨 <strong>Bruit chromatique</strong> : taches de couleur (rouge, vert, bleu) dans les zones sombres. Le plus gênant, mais facile à corriger en post-traitement.</p>
+<p>⚫ <strong>Bruit de luminance</strong> : grain fin, similaire au grain argentique. Moins gênant, parfois même esthétique !</p></div>
+
+<div class="glass"><h3>🤖 Auto-ISO</h3>
+<p>La plupart des appareils ont un mode Auto-ISO intelligent :</p>
+<p>1️⃣ Définis un <strong>plafond</strong> (ex: max 3200)</p>
+<p>2️⃣ Définis une <strong>vitesse minimum</strong> (ex: 1/60s)</p>
+<p>L'appareil monte l'ISO automatiquement si besoin, sans dépasser ta limite.</p></div>
+
+<div class="glass"><h3>🏆 La règle d'or</h3>
+<p style="font-size:16px;font-weight:700;color:var(--gold);text-align:center">"L'ISO, c'est ton dernier recours"</p>
+<p>1️⃣ D'abord, ouvre le diaphragme au maximum</p>
+<p>2️⃣ Ensuite, baisse la vitesse autant que possible</p>
+<p>3️⃣ <strong>Enfin</strong>, monte l'ISO si nécessaire</p></div>`
+};
+
+const QUIZZES = {
+'1.1': [
+  {q:'Que signifie "photographie" étymologiquement ?', opts:['Dessiner la vie','Écrire avec la lumière','Capturer le temps','Peindre la réalité'], ans:1},
+  {q:'Quelle lumière produit des ombres douces ?', opts:['Soleil direct','Flash cobra','Lumière diffuse/nuageuse','Spot LED'], ans:2},
+  {q:'La golden hour, c\'est quand ?', opts:['À midi','À minuit','1h après le lever ou 1h avant le coucher du soleil','Pendant un orage'], ans:2},
+  {q:'Un contre-jour, c\'est quand la lumière vient...', opts:['De face','Du dessus','Du côté','De derrière le sujet'], ans:3},
+  {q:'Une bougie produit une lumière plutôt...', opts:['Froide (~10000K)','Neutre (~5500K)','Chaude (~2000K)','Verte (~4000K)'], ans:2}
+],
+'1.2': [
+  {q:'f/2.8 laisse passer ___ de lumière que f/5.6', opts:['Moins','Pareil','Plus','Ça dépend de l\'ISO'], ans:2},
+  {q:'Pour figer un sprinter, tu utilises une vitesse de...', opts:['1/30s','1/125s','1/1000s ou plus rapide','2 secondes'], ans:2},
+  {q:'Monter les ISO provoque...', opts:['Plus de bokeh','Du bruit/grain dans l\'image','Un flou de mouvement','Une image plus nette'], ans:1},
+  {q:'Si tu fermes l\'ouverture d\'un stop, comment compenser ?', opts:['Baisser les ISO','Doubler le temps d\'exposition','Utiliser un filtre','Changer d\'objectif'], ans:1},
+  {q:'Quel ISO pour une photo en plein soleil ?', opts:['ISO 3200','ISO 800','ISO 100','ISO 6400'], ans:2}
+],
+'1.3': [
+  {q:'Plus le nombre f/ est petit, plus l\'ouverture est...', opts:['Petite','Grande','Ça ne change rien','Variable'], ans:1},
+  {q:'Pour un portrait avec fond flou, tu choisis...', opts:['f/16','f/22','f/1.8','f/11'], ans:2},
+  {q:'Le "sweet spot" d\'un objectif se situe généralement à...', opts:['f/1.4','f/5.6 – f/8','f/22','f/2'], ans:1},
+  {q:'La diffraction apparaît à partir de...', opts:['f/2.8','f/5.6','f/16-f/22','f/1.4'], ans:2},
+  {q:'f/1.4 laisse entrer combien de fois plus de lumière que f/22 ?', opts:['2 fois','16 fois','256 fois','1024 fois'], ans:2}
+],
+'1.4': [
+  {q:'Pour photographier une cascade soyeuse, tu utilises...', opts:['1/2000s','1/4s à 2s','1/500s','1/60s'], ans:1},
+  {q:'La règle pour éviter le flou de bougé à main levée est...', opts:['Toujours utiliser 1/1000s','Vitesse = 1/focale minimum','Toujours utiliser un trépied','Monter les ISO à fond'], ans:1},
+  {q:'La stabilisation (OIS/IBIS) permet de gagner...', opts:['10-20 stops','2-5 stops','0.5 stop','Rien du tout'], ans:1},
+  {q:'Pour du light painting, tu utilises une vitesse de...', opts:['1/500s','1/60s','10-30 secondes','1/4000s'], ans:2},
+  {q:'Un trépied est indispensable en dessous de...', opts:['1/500s','1/125s','1/30s','1/1000s'], ans:2}
+],
+'1.5': [
+  {q:'L\'ISO natif, c\'est...', opts:['Toujours ISO 100','La plage naturelle du capteur','Un réglage automatique','L\'ISO maximum'], ans:1},
+  {q:'Le bruit chromatique se manifeste par...', opts:['Du grain fin','Des taches de couleur','Du flou','Des bandes'], ans:1},
+  {q:'Quelle est la règle d\'or de l\'ISO ?', opts:['Toujours ISO 100','L\'ISO c\'est ton dernier recours','Plus c\'est haut, mieux c\'est','L\'ISO ne change rien'], ans:1},
+  {q:'L\'Auto-ISO intelligent nécessite de définir...', opts:['Rien, c\'est automatique','Un plafond ISO et une vitesse minimum','Juste l\'ouverture','La focale'], ans:1},
+  {q:'Un capteur Full Frame gère mieux les hauts ISO car...', opts:['Il est plus rapide','Il est plus grand','Il est plus cher','Il a plus de pixels'], ans:1}
+]
+};
+
+const BOSS_QUESTIONS = [
+  // Easy (0-2)
+  {q:'Que signifie le mot "photographie" ?',opts:['Peindre la lumière','Écrire avec la lumière','Capturer le moment','Dessiner la vie'],ans:1},
+  {q:'La golden hour donne une lumière...', opts:['Froide et bleue','Chaude et dorée','Neutre et blanche','Verte'], ans:1},
+  {q:'ISO 100 donne une image...', opts:['Très bruitée','Propre et nette','Floue','Sombre forcément'], ans:1},
+  // Medium (3-6)
+  {q:'f/2.8 vs f/8 : lequel a le plus de profondeur de champ ?', opts:['f/2.8','f/8','C\'est pareil','Ça dépend de l\'ISO'], ans:1},
+  {q:'Pour compenser -1 stop d\'ouverture, on peut...', opts:['Diviser l\'ISO par 2','Doubler le temps de pose','Fermer plus','Baisser la vitesse de 2 stops'], ans:1},
+  {q:'Le sweet spot d\'un objectif est généralement à...', opts:['Grande ouverture','f/5.6-f/8','f/22','Ça n\'existe pas'], ans:1},
+  {q:'La stabilisation IBIS compense le...', opts:['Bruit ISO','Flou de bougé','Manque de bokeh','Contre-jour'], ans:1},
+  // Hard (7-9)
+  {q:'Tu veux photographier une cascade soyeuse au soleil. Tu as f/8, 1/4s, ISO 100, mais c\'est surexposé. Que faire ?', opts:['Monter les ISO','Ouvrir à f/4','Fermer à f/16 ou f/22','Passer en mode portrait'], ans:2},
+  {q:'En portrait de nuit sans trépied avec un 85mm, quel réglage ?', opts:['f/1.8, 1/100s, ISO 1600','f/8, 1/15s, ISO 100','f/16, 1s, ISO 100','f/4, 1/30s, ISO 100'], ans:0},
+  {q:'Quel phénomène optique dégrade l\'image à f/22 ?', opts:['L\'aberration chromatique','La diffraction','Le vignettage','Le flare'], ans:1}
+];
+
+// === GAME STATE ===
+let state = JSON.parse(localStorage.getItem('katkat') || 'null') || {
+  xp: 0, level: 1,
+  completedChapters: [],
+  bossDefeated: [],
+  totalQuestions: 0, correctAnswers: 0,
+  simulatorUnlocked: false
+};
+function saveState() { localStorage.setItem('katkat', JSON.stringify(state)); }
+
+let currentWorld = 1;
+let currentChapter = null;
+let quizData = null;
+let quizIndex = 0;
+let quizCorrect = 0;
+let bossLives = 3;
+let bossIndex = 0;
+let bossTimer = null;
+let bossTimeLeft = 20;
+let challengeTarget = null;
+
+// === XP & LEVELS ===
+function xpForLevel(n) { return n * 50; }
+function getLevel(xp) { let lvl=1; let total=0; while(lvl<50){let need=xpForLevel(lvl);if(total+need>xp)break;total+=need;lvl++} return {level:lvl,currentXP:xp-total,needed:xpForLevel(lvl)}; }
+function getTitle(level) { let t='📱 Touriste au smartphone'; for(let l of [50,40,30,20,10,1]){if(level>=l){t=TITLES[l];break;}} return t; }
+
+function addXP(amount) {
+  let before = getLevel(state.xp);
+  state.xp += amount;
+  let after = getLevel(state.xp);
+  state.level = after.level;
+  saveState();
+  showXPPopup(amount);
+  if(after.level > before.level) setTimeout(()=>showLevelUp(after.level),800);
+  updateUI();
+}
+
+function showXPPopup(amount) {
+  let el = document.createElement('div');
+  el.className = 'xp-popup';
+  el.textContent = `+${amount} XP`;
+  document.body.appendChild(el);
+  setTimeout(()=>el.remove(),1500);
+}
+
+function showLevelUp(level) {
+  let title = getTitle(level);
+  let overlay = document.createElement('div');
+  overlay.className = 'levelup-overlay';
+  overlay.innerHTML = `<div class="levelup-card"><div class="lu-icon">⬆️</div><div class="lu-title">Niveau ${level} !</div><div class="lu-sub">${title}</div><button class="btn btn-gold" onclick="this.closest('.levelup-overlay').remove()">Continuer</button></div>`;
+  document.body.appendChild(overlay);
+}
+
+function showVictoryParticles() {
+  let container = document.createElement('div');
+  container.className = 'victory-particles';
+  const colors = ['#f59e0b','#7c3aed','#3b82f6','#22c55e','#ef4444','#ec4899'];
+  for(let i=0;i<30;i++){
+    let p = document.createElement('div');
+    p.className='particle';
+    p.style.cssText=`left:${Math.random()*100}%;top:-10px;background:${colors[i%colors.length]};animation-delay:${Math.random()*1}s;animation-duration:${1.5+Math.random()*1.5}s;width:${4+Math.random()*8}px;height:${4+Math.random()*8}px`;
+    container.appendChild(p);
+  }
+  document.body.appendChild(container);
+  setTimeout(()=>container.remove(),3000);
+}
+
+// === UI UPDATE ===
+function updateUI() {
+  let info = getLevel(state.xp);
+  let title = getTitle(info.level);
+  let pct = (info.currentXP/info.needed*100).toFixed(1);
+  document.getElementById('topLevel').textContent = `Niv. ${info.level}`;
+  document.getElementById('topXP').textContent = `${state.xp} XP`;
+  document.getElementById('topXPBar').style.width = pct+'%';
+  document.getElementById('topTitle').textContent = title.split(' ').slice(0,2).join(' ');
+  // Profile
+  document.getElementById('profileTitle').textContent = title;
+  document.getElementById('profileLevel').textContent = `Niveau ${info.level}`;
+  document.getElementById('profileXPText').textContent = `${info.currentXP} / ${info.needed}`;
+  document.getElementById('profileXPBar').style.width = pct+'%';
+  document.getElementById('statTotal').textContent = state.totalQuestions;
+  document.getElementById('statCorrect').textContent = state.correctAnswers;
+  document.getElementById('statAccuracy').textContent = state.totalQuestions ? Math.round(state.correctAnswers/state.totalQuestions*100)+'%':'0%';
+  document.getElementById('statBosses').textContent = state.bossDefeated.length;
+  document.getElementById('statChapters').textContent = state.completedChapters.length;
+}
+
+// === SCREENS ===
+function showScreen(name) {
+  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+  document.getElementById('screen-'+name).classList.add('active');
+  document.querySelectorAll('.bottom-nav button').forEach(b=>b.classList.remove('active'));
+  let navBtn = document.getElementById('nav-'+name);
+  if(navBtn) navBtn.classList.add('active');
+  if(name==='map') renderWorldMap();
+  if(name==='profile') updateUI();
+  if(name==='simulator') { updateSim(); newChallenge(); }
+  if(bossTimer && name!=='boss'){clearInterval(bossTimer);bossTimer=null;}
+}
+
+// === WORLD MAP ===
+function renderWorldMap() {
+  let info = getLevel(state.xp);
+  let html = '';
+  WORLDS.forEach((w,i) => {
+    let unlocked = info.level >= w.unlockLevel;
+    let isCurrent = unlocked && (i===WORLDS.length-1 || info.level < WORLDS[i+1].unlockLevel);
+    let cls = unlocked ? (isCurrent ? 'current' : '') : 'locked';
+    let progress = '';
+    if(w.id===1){
+      let done = CHAPTERS[1].filter(c=>state.completedChapters.includes(c.id)||state.bossDefeated.includes(c.id)).length;
+      progress = `<div class="world-progress">${done}/${CHAPTERS[1].length} complété</div>`;
+    }
+    html += `<div class="world-node ${cls}" onclick="${unlocked?`openWorld(${w.id})`:''}">
+      <div class="world-icon">${w.icon}</div>
+      <div class="world-info"><h3>Monde ${w.id} — ${w.name}</h3><p>${w.desc}</p>${progress}</div>
+      ${!unlocked?`<div class="lock-badge">🔒</div>`:''}
+    </div>`;
+    if(i<WORLDS.length-1) html += `<div class="world-path"></div>`;
+  });
+  document.getElementById('worldMap').innerHTML = html;
+}
+
+function openWorld(id) {
+  if(id!==1){alert('Ce monde arrive bientôt !');return;}
+  currentWorld = id;
+  showScreen('chapters');
+  renderChapters();
+}
+
+function renderChapters() {
+  let chapters = CHAPTERS[currentWorld];
+  let world = WORLDS[currentWorld-1];
+  document.getElementById('chapterHeader').innerHTML = `<h2>${world.icon} ${world.name}</h2><p style="color:var(--text2);font-size:13px;margin:8px 0 16px">Tu arrives dans un village plongé dans le brouillard. Les habitants ont perdu la capacité de voir les couleurs...</p>`;
+  let html = '';
+  chapters.forEach(ch => {
+    let completed = state.completedChapters.includes(ch.id) || state.bossDefeated.includes(ch.id);
+    let cls = completed ? 'completed' : '';
+    if(ch.type==='boss') cls += ' boss';
+    html += `<div class="chapter-item ${cls}" onclick="openChapter('${ch.id}','${ch.type}')">
+      <div class="ch-icon">${ch.icon}</div>
+      <div class="ch-info"><h4>${ch.title}</h4><p>${ch.type==='boss'?'Combat de boss':'Leçon + Quiz'}</p></div>
+      <div class="ch-status">${completed?'✅':'→'}</div>
+    </div>`;
+  });
+  document.getElementById('chapterList').innerHTML = html;
+}
+
+function openChapter(id, type) {
+  if(type==='boss') { startBoss(); return; }
+  currentChapter = id;
+  if(id==='1.2') { state.simulatorUnlocked=true; saveState(); }
+  showScreen('fiche');
+  document.getElementById('ficheContent').innerHTML = FICHES[id] || '<p>Contenu à venir...</p>';
+  document.getElementById('screen-fiche').querySelector('.scroll-area').scrollTop = 0;
+}
+
+// === QUIZ ===
+function startQuiz() {
+  if(!QUIZZES[currentChapter]) return;
+  quizData = [...QUIZZES[currentChapter]];
+  quizIndex = 0;
+  quizCorrect = 0;
+  showScreen('quiz');
+  renderQuizQuestion();
+}
+
+function renderQuizQuestion() {
+  if(quizIndex >= quizData.length) { showQuizResults(); return; }
+  let q = quizData[quizIndex];
+  let dots = quizData.map((_,i) => `<div class="quiz-dot ${i<quizIndex?'done':''} ${i===quizIndex?'current':''}"></div>`).join('');
+  let opts = q.opts.map((o,i) => `<div class="quiz-option" onclick="answerQuiz(${i})" id="qopt${i}">${o}</div>`).join('');
+  document.getElementById('quizArea').innerHTML = `
+    <button class="back-btn" onclick="showScreen('fiche')">← Retour à la fiche</button>
+    <div class="glass">
+      <div class="quiz-progress">${dots}</div>
+      <div style="font-size:12px;color:var(--text2);margin-bottom:8px">Question ${quizIndex+1}/${quizData.length}</div>
+      <div class="quiz-question">${q.q}</div>
+      <div class="quiz-container">${opts}</div>
+    </div>`;
+}
+
+function answerQuiz(idx) {
+  let q = quizData[quizIndex];
+  state.totalQuestions++;
+  let correct = idx === q.ans;
+  if(correct){state.correctAnswers++;quizCorrect++;}
+  saveState();
+  document.getElementById('qopt'+idx).classList.add(correct?'correct':'wrong');
+  if(!correct) document.getElementById('qopt'+q.ans).classList.add('correct');
+  document.querySelectorAll('.quiz-option').forEach(o=>o.style.pointerEvents='none');
+  if(correct) addXP(10);
+  setTimeout(()=>{quizIndex++;renderQuizQuestion();},1200);
+}
+
+function showQuizResults() {
+  let pct = Math.round(quizCorrect/quizData.length*100);
+  let msg = pct===100?'Parfait ! 🌟':pct>=60?'Bien joué ! 👏':'Continue à apprendre ! 💪';
+  if(!state.completedChapters.includes(currentChapter)){state.completedChapters.push(currentChapter);saveState();}
+  document.getElementById('quizArea').innerHTML = `
+    <div class="glass" style="text-align:center">
+      <div style="font-size:48px;margin-bottom:16px">${pct===100?'🏆':pct>=60?'⭐':'📚'}</div>
+      <h2>${msg}</h2>
+      <p style="font-size:20px;margin:12px 0">${quizCorrect}/${quizData.length} bonnes réponses</p>
+      <p style="color:var(--text2)">${pct}% de précision</p>
+      <button class="btn btn-primary" onclick="showScreen('chapters');renderChapters()" style="margin-top:20px">Continuer</button>
+      <button class="btn btn-secondary" onclick="startQuiz()" style="margin-top:8px">Recommencer</button>
+    </div>`;
+  showVictoryParticles();
+}
+
+// === BOSS ===
+function startBoss() {
+  bossIndex=0;bossLives=3;
+  showScreen('boss');
+  renderBossIntro();
+}
+
+function renderBossIntro() {
+  document.getElementById('bossArea').innerHTML = `
+    <div style="text-align:center;padding:40px 0">
+      <div style="font-size:72px;margin-bottom:16px;animation:pulse 2s infinite">⚔️</div>
+      <h2 style="font-size:22px">Le Gardien de la Lumière</h2>
+      <p style="color:var(--text2);margin:12px 0;font-size:14px;line-height:1.6">"Tu prétends comprendre la lumière, jeune photographe ? Prouve-le ! 10 questions, 20 secondes chacune. 3 erreurs et tu tombes..."</p>
+      <div style="display:flex;gap:8px;justify-content:center;margin:16px 0">
+        <span style="background:var(--glass);padding:6px 14px;border-radius:8px;font-size:12px">❤️ 3 vies</span>
+        <span style="background:var(--glass);padding:6px 14px;border-radius:8px;font-size:12px">⏱ 20s/question</span>
+        <span style="background:var(--glass);padding:6px 14px;border-radius:8px;font-size:12px">🎯 10 questions</span>
+      </div>
+      <button class="btn btn-danger" onclick="startBossFight()" style="margin-top:20px">⚔️ Commencer le combat</button>
+      <button class="btn btn-secondary" onclick="showScreen('chapters')" style="margin-top:8px">← Pas encore prêt</button>
+    </div>`;
+}
+
+function startBossFight() { bossIndex=0;bossLives=3;renderBossQuestion(); }
+
+function renderBossQuestion() {
+  if(bossIndex>=BOSS_QUESTIONS.length){bossVictory();return;}
+  if(bossLives<=0){bossDefeat();return;}
+  let q=BOSS_QUESTIONS[bossIndex];
+  let hp=((BOSS_QUESTIONS.length-bossIndex)/BOSS_QUESTIONS.length*100);
+  let hearts='❤️'.repeat(bossLives)+'🖤'.repeat(3-bossLives);
+  bossTimeLeft=20;
+  let opts=q.opts.map((o,i)=>`<div class="quiz-option" onclick="answerBoss(${i})" id="bopt${i}">${o}</div>`).join('');
+  document.getElementById('bossArea').innerHTML = `
+    <div class="glass">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+        <span style="font-weight:700">⚔️ Gardien de la Lumière</span>
+        <span style="font-size:12px;color:var(--text2)">Q${bossIndex+1}/10</span>
+      </div>
+      <div class="boss-hp-bar"><div class="boss-hp-inner" style="width:${hp}%"></div></div>
+      <div class="boss-lives">${hearts}</div>
+      <div class="boss-timer" id="bossTimerDisplay">${bossTimeLeft}</div>
+    </div>
+    <div class="glass">
+      <div class="quiz-question">${q.q}</div>
+      <div class="quiz-container">${opts}</div>
+    </div>`;
+  if(bossTimer)clearInterval(bossTimer);
+  bossTimer=setInterval(()=>{
+    bossTimeLeft--;
+    let td=document.getElementById('bossTimerDisplay');
+    if(td)td.textContent=bossTimeLeft;
+    if(bossTimeLeft<=5&&td)td.style.color='var(--red)';
+    if(bossTimeLeft<=0){clearInterval(bossTimer);bossLives--;state.totalQuestions++;saveState();bossIndex++;renderBossQuestion();}
+  },1000);
+}
+
+function answerBoss(idx) {
+  clearInterval(bossTimer);
+  let q=BOSS_QUESTIONS[bossIndex];
+  state.totalQuestions++;
+  let correct=idx===q.ans;
+  if(correct){state.correctAnswers++;}else{bossLives--;}
+  saveState();
+  document.getElementById('bopt'+idx).classList.add(correct?'correct':'wrong');
+  if(!correct)document.getElementById('bopt'+q.ans).classList.add('correct');
+  document.querySelectorAll('.quiz-option').forEach(o=>o.style.pointerEvents='none');
+  if(!correct)document.getElementById('bossArea').style.animation='shake 0.3s';
+  setTimeout(()=>{document.getElementById('bossArea').style.animation='';bossIndex++;renderBossQuestion();},1200);
+}
+
+function bossVictory() {
+  if(!state.bossDefeated.includes('boss1')){state.bossDefeated.push('boss1');}
+  saveState();
+  addXP(100);
+  showVictoryParticles();
+  document.getElementById('bossArea').innerHTML = `
+    <div style="text-align:center;padding:40px 0">
+      <div style="font-size:72px;margin-bottom:16px">🏆</div>
+      <h2 style="color:var(--gold);font-size:22px">Victoire !</h2>
+      <p style="color:var(--text2);margin:12px 0">"Impressionnant, jeune photographe. Tu maîtrises la lumière. Voici ton titre..."</p>
+      <div style="background:linear-gradient(135deg,var(--gold),#d97706);color:#000;padding:12px 24px;border-radius:12px;font-weight:700;display:inline-block;margin:16px 0">🌟 Initié de la Lumière</div>
+      <br><button class="btn btn-primary" onclick="showScreen('chapters');renderChapters()" style="margin-top:20px">Continuer l'aventure</button>
+    </div>`;
+}
+
+function bossDefeat() {
+  document.getElementById('bossArea').innerHTML = `
+    <div style="text-align:center;padding:40px 0">
+      <div style="font-size:72px;margin-bottom:16px">💀</div>
+      <h2 style="color:var(--red)">Défaite...</h2>
+      <p style="color:var(--text2);margin:12px 0">"Tu n'es pas encore prêt, jeune photographe. Révise tes fiches et reviens plus fort !"</p>
+      <button class="btn btn-danger" onclick="startBoss()" style="margin-top:20px">🔄 Réessayer</button>
+      <button class="btn btn-secondary" onclick="showScreen('chapters')" style="margin-top:8px">← Réviser les fiches</button>
+    </div>`;
+}
+
+// === SIMULATOR ===
+function updateSim() {
+  let ai=parseInt(document.getElementById('apertureSlider').value);
+  let si=parseInt(document.getElementById('shutterSlider').value);
+  let ii=parseInt(document.getElementById('isoSlider').value);
+  let apertureStr=APERTURES[ai];
+  let shutterIdx=SHUTTER_MAP[si];
+  let shutterStr=SHUTTERS[shutterIdx];
+  let isoVal=ISOS[ii];
+  document.getElementById('apertureVal').textContent=apertureStr;
+  document.getElementById('shutterVal').textContent=shutterStr;
+  document.getElementById('isoVal').textContent=isoVal;
+
+  // EV calculation (relative to "correct" exposure at f/5.6, 1/125s, ISO 100 = EV 0 for our scene)
+  // Aperture stops from f/5.6: index 4 is f/5.6, each step is 1 stop
+  let aStops = ai - 4; // positive = darker (closed more)
+  // Shutter stops from 1/125s: SHUTTER_MAP index 7 maps to SHUTTERS[12] = 1/125s
+  let sStops = si - 7; // positive = faster = darker (less light.. wait: higher index = faster = less light)
+  // Actually: higher shutter index in SHUTTER_MAP = faster speed = less light = darker
+  // So sStops positive = darker
+  // Wait let me reconsider. SHUTTER_MAP[0]=5 → SHUTTERS[5]="1s", SHUTTER_MAP[12]=17 → SHUTTERS[17]="1/4000s"
+  // Higher si = faster shutter = less light. Reference si=7 → SHUTTERS[12]="1/125s"
+  let sStopsVal = si - 7;
+  // ISO: index 0=100 (reference), each step = 1 stop brighter
+  let iStops = -ii; // higher ISO = more light = negative stops (brighter)
+  
+  let totalStops = aStops + sStopsVal + iStops; // positive = underexposed (dark), negative = overexposed (bright)
+  let ev = totalStops; // -3 to +3 range for meter
+  
+  // Brightness overlay (black overlay for under, white-ish reduce for over)
+  let brightnessEl = document.getElementById('simBrightness');
+  if(ev > 0) {
+    brightnessEl.style.background = 'black';
+    brightnessEl.style.opacity = Math.min(ev * 0.2, 0.85);
+  } else if(ev < 0) {
+    brightnessEl.style.background = 'white';
+    brightnessEl.style.opacity = Math.min(-ev * 0.15, 0.7);
+  } else {
+    brightnessEl.style.opacity = 0;
+  }
+
+  // DOF blur (low f/ = more blur on background)
+  let blurAmount = Math.max(0, (4 - ai) * 2); // f/1.4(0)=8px, f/5.6(4)=0px
+  document.getElementById('simBgBlur').style.backdropFilter = `blur(${blurAmount}px)`;
+
+  // Noise at high ISO
+  document.getElementById('simNoise').style.opacity = Math.max(0, (ii - 2) * 0.15);
+
+  // Motion blur at slow shutter
+  let motionEl = document.getElementById('simMotion');
+  if(si <= 3) { motionEl.style.opacity = (4 - si) * 0.2; } else { motionEl.style.opacity = 0; }
+
+  // Exposure meter
+  let marker = document.getElementById('exposureMarker');
+  let evClamped = Math.max(-3, Math.min(3, ev));
+  let pct = 50 - (evClamped / 3 * 50);
+  marker.style.left = pct + '%';
+  let absEv = Math.abs(evClamped);
+  marker.style.background = absEv < 0.5 ? 'var(--green)' : absEv < 1.5 ? 'var(--gold)' : 'var(--red)';
+}
+
+const CHALLENGES = [
+  {text:'📸 Portrait en intérieur : sujet net, fond flou, lumière correcte.', check:(a,s,i)=>a<=2&&Math.abs(a+s-7-(-i))<=1, hint:'Grande ouverture, ISO moyen'},
+  {text:'🏔 Paysage ensoleillé : tout net, exposition correcte.', check:(a,s,i)=>a>=5&&Math.abs(a+(s-7)+(-i))<=1, hint:'Petite ouverture, ISO bas'},
+  {text:'🌊 Cascade soyeuse : pose longue, exposition correcte.', check:(a,s,i)=>s<=3&&Math.abs(a+(s-7)+(-i))<=1, hint:'Vitesse lente, compensez avec l\'ouverture'},
+  {text:'⚡ Sport : figer le mouvement, exposition correcte.', check:(a,s,i)=>s>=9&&Math.abs(a+(s-7)+(-i))<=1, hint:'Vitesse rapide, ouvrez et montez l\'ISO'},
+  {text:'🌙 Photo de nuit sans trépied : image visible, pas trop de bruit.', check:(a,s,i)=>a<=2&&i>=3&&i<=5&&Math.abs(a+(s-7)+(-i))<=1, hint:'Grande ouverture, ISO moyen-haut'}
+];
+
+function newChallenge() {
+  challengeTarget = CHALLENGES[Math.floor(Math.random()*CHALLENGES.length)];
+  document.getElementById('challengeText').textContent = challengeTarget.text;
+  document.getElementById('challengeResult').textContent = '';
+}
+
+function checkChallenge() {
+  if(!challengeTarget) return;
+  let a=parseInt(document.getElementById('apertureSlider').value);
+  let s=parseInt(document.getElementById('shutterSlider').value);
+  let i=parseInt(document.getElementById('isoSlider').value);
+  let ok = challengeTarget.check(a,s,i);
+  let el = document.getElementById('challengeResult');
+  if(ok) {
+    el.style.color='var(--green)';
+    el.textContent='✅ Bravo ! Réglages parfaits !';
+    if(!state.simulatorUnlocked){state.simulatorUnlocked=true;}
+    addXP(20);
+    saveState();
+  } else {
+    el.style.color='var(--gold)';
+    el.textContent='💡 Pas tout à fait... Indice : ' + challengeTarget.hint;
+  }
+}
+
+// === INIT ===
+updateUI();
+renderWorldMap();
+updateSim();
+</script>
+</body>
+</html>
