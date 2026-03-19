@@ -149,6 +149,61 @@ input[type="range"]::-webkit-slider-thumb{-webkit-appearance:none;width:24px;hei
 @keyframes flashGreen{0%{box-shadow:0 0 20px rgba(34,197,94,0.5)}100%{box-shadow:none}}
 @keyframes flashRed{0%{box-shadow:0 0 20px rgba(239,68,68,0.5)}100%{box-shadow:none}}
 @keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
+
+/* === CREATURE CAPTURE === */
+.creature-screen{display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding:20px 16px 80px;overflow-y:auto}
+.creature-transition{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.95);display:flex;align-items:center;justify-content:center;z-index:250;animation:fadeIn 0.5s}
+.creature-transition .ct-inner{text-align:center;animation:scaleIn 0.6s ease}
+.creature-transition .ct-icon{font-size:80px;animation:pulse 1.5s infinite}
+.creature-transition .ct-text{font-size:22px;font-weight:800;color:var(--gold);margin-top:16px}
+.creature-transition .ct-sub{font-size:14px;color:var(--text2);margin-top:8px}
+
+.creature-emoji{font-size:80px;animation:creatureFloat 3s ease-in-out infinite;margin:20px 0}
+@keyframes creatureFloat{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-15px) scale(1.05)}}
+
+.creature-scene-text{font-size:14px;color:var(--text2);line-height:1.7;text-align:center;font-style:italic;margin-bottom:20px;max-width:320px}
+.creature-name{font-size:20px;font-weight:800;color:var(--gold);margin-bottom:4px;text-align:center}
+.creature-condition{font-size:12px;color:var(--accent);margin-bottom:16px;text-align:center}
+
+.capture-preview{width:100%;max-width:340px;aspect-ratio:4/3;border-radius:16px;overflow:hidden;position:relative;background:#1a1a2e;margin-bottom:16px}
+.capture-preview .sim-scene{width:100%;height:100%}
+.capture-preview .creature-in-scene{position:absolute;top:50%;left:50%;transform:translate(-50%,-55%);font-size:50px;z-index:5;filter:drop-shadow(0 0 20px rgba(245,158,11,0.3))}
+
+.capture-sliders{width:100%;max-width:340px}
+.capture-sliders .glass{margin-bottom:12px}
+
+.btn-capture{background:linear-gradient(135deg,#ef4444,#dc2626);color:white;font-size:18px;padding:16px 32px;border-radius:16px;border:none;font-family:'Inter';font-weight:800;cursor:pointer;width:100%;max-width:340px;margin-top:8px;transition:all 0.2s}
+.btn-capture:active{transform:scale(0.95)}
+
+.shutter-flash{position:fixed;top:0;left:0;right:0;bottom:0;background:white;z-index:300;animation:shutterFlash 0.4s ease forwards;pointer-events:none}
+@keyframes shutterFlash{0%{opacity:0.9}30%{opacity:1}100%{opacity:0}}
+
+.capture-result{text-align:center;padding:20px 0;width:100%;max-width:340px}
+.capture-result .cr-emoji{font-size:72px;margin-bottom:12px}
+.capture-result .cr-title{font-size:22px;font-weight:800;margin-bottom:8px}
+.capture-result .cr-stars{font-size:28px;margin:12px 0}
+.capture-result .cr-detail{font-size:13px;color:var(--text2);margin-bottom:4px}
+.capture-result .cr-xp{font-size:18px;font-weight:700;color:var(--gold);margin:12px 0}
+
+.creature-escape{animation:creatureEscape 1.5s ease forwards}
+@keyframes creatureEscape{0%{opacity:1;transform:translate(-50%,-55%) scale(1)}100%{opacity:0;transform:translate(-50%,-100%) scale(0.3)}}
+
+/* === BESTIARY === */
+.bestiary-header{text-align:center;margin-bottom:20px}
+.bestiary-header h2{font-size:20px;margin-bottom:4px}
+.bestiary-counter{font-size:13px;color:var(--gold);font-weight:600}
+
+.bestiary-grid{display:flex;flex-direction:column;gap:12px}
+.bestiary-card{padding:16px;border-radius:16px;background:var(--glass);border:1px solid var(--glass-border);display:flex;gap:14px;align-items:center;cursor:pointer;transition:all 0.2s}
+.bestiary-card:active{transform:scale(0.98)}
+.bestiary-card.captured{border-color:var(--gold);box-shadow:0 0 20px rgba(245,158,11,0.1)}
+.bestiary-card .bc-icon{font-size:40px;flex-shrink:0;width:50px;text-align:center}
+.bestiary-card.unknown .bc-icon{filter:brightness(0);opacity:0.3}
+.bestiary-card .bc-info{flex:1}
+.bestiary-card .bc-info h4{font-size:14px;font-weight:700;margin-bottom:2px}
+.bestiary-card .bc-info p{font-size:12px;color:var(--text2);margin:0}
+.bestiary-card .bc-stars{color:var(--gold);font-size:14px}
+.bestiary-card .bc-retry{font-size:11px;color:var(--accent);margin-top:4px}
 </style>
 </head>
 <body>
@@ -273,7 +328,29 @@ input[type="range"]::-webkit-slider-thumb{-webkit-appearance:none;width:24px;hei
 <div class="stat-row"><span class="stat-label">Boss vaincus</span><span class="stat-value" id="statBosses">0</span></div>
 <div class="stat-row"><span class="stat-label">Chapitres complétés</span><span class="stat-value" id="statChapters">0</span></div>
 </div>
+<div class="glass">
+<h3>📖 Bestiaire</h3>
+<div class="stat-row"><span class="stat-label">Créatures capturées</span><span class="stat-value" id="statCreatures">0/5</span></div>
+</div>
 <button class="btn btn-danger btn-sm" onclick="if(confirm('Effacer toute la progression ?')){localStorage.clear();location.reload()}">🗑 Réinitialiser</button>
+</div>
+</div>
+
+<!-- Creature Capture Screen -->
+<div class="screen" id="screen-creature">
+<div class="scroll-area creature-screen" id="creatureArea"></div>
+</div>
+
+<!-- Bestiary Screen -->
+<div class="screen" id="screen-bestiary">
+<div class="scroll-area">
+<button class="back-btn" onclick="showScreen('map')">← Retour</button>
+<div class="bestiary-header">
+<h2>📖 Bestiaire</h2>
+<p style="color:var(--text2);font-size:12px;margin-bottom:8px">Créatures capturées du Royaume</p>
+<div class="bestiary-counter" id="bestiaryCounter">0/5 capturées</div>
+</div>
+<div class="bestiary-grid" id="bestiaryGrid"></div>
 </div>
 </div>
 
@@ -281,6 +358,7 @@ input[type="range"]::-webkit-slider-thumb{-webkit-appearance:none;width:24px;hei
 <div class="bottom-nav">
 <button id="nav-map" class="active" onclick="showScreen('map')">🗺<span>Carte</span></button>
 <button id="nav-simulator" onclick="showScreen('simulator')">🎮<span>Simulateur</span></button>
+<button id="nav-bestiary" onclick="showScreen('bestiary')">📖<span>Bestiaire</span></button>
 <button id="nav-profile" onclick="showScreen('profile')">👤<span>Profil</span></button>
 </div>
 </div>
@@ -582,6 +660,8 @@ function updateUI() {
   document.getElementById('statAccuracy').textContent = state.totalQuestions ? Math.round(state.correctAnswers/state.totalQuestions*100)+'%':'0%';
   document.getElementById('statBosses').textContent = state.bossDefeated.length;
   document.getElementById('statChapters').textContent = state.completedChapters.length;
+  let sc = document.getElementById('statCreatures');
+  if(sc) sc.textContent = Object.keys(creatureCaptureData).length + '/' + CREATURES.length;
 }
 
 // === SCREENS ===
@@ -594,6 +674,7 @@ function showScreen(name) {
   if(name==='map') renderWorldMap();
   if(name==='profile') updateUI();
   if(name==='simulator') { updateSim(); newChallenge(); }
+  if(name==='bestiary') { renderBestiary(); }
   if(bossTimer && name!=='boss'){clearInterval(bossTimer);bossTimer=null;}
 }
 
@@ -702,10 +783,22 @@ function showQuizResults() {
       <h2>${msg}</h2>
       <p style="font-size:20px;margin:12px 0">${quizCorrect}/${quizData.length} bonnes réponses</p>
       <p style="color:var(--text2)">${pct}% de précision</p>
-      <button class="btn btn-primary" onclick="showScreen('chapters');renderChapters()" style="margin-top:20px">Continuer</button>
+      <button class="btn btn-primary" onclick="afterQuizContinue()" style="margin-top:20px">Continuer</button>
       <button class="btn btn-secondary" onclick="startQuiz()" style="margin-top:8px">Recommencer</button>
     </div>`;
   showVictoryParticles();
+}
+
+function afterQuizContinue() {
+  let creature = getCreatureForChapter(currentChapter);
+  if (creature) {
+    showCreatureTransition(creature, () => {
+      startCreatureEncounter(creature.id, false);
+    });
+  } else {
+    showScreen('chapters');
+    renderChapters();
+  }
 }
 
 // === BOSS ===
@@ -897,6 +990,242 @@ function checkChallenge() {
     el.style.color='var(--gold)';
     el.textContent='💡 Pas tout à fait... Indice : ' + challengeTarget.hint;
   }
+}
+
+// === CREATURE CAPTURE SYSTEM ===
+const CREATURES = [
+  {id:'c1',afterChapter:'1.1',emoji:'🦊',name:'Kitsune Doré',
+   scene:'Un Kitsune apparaît dans la lumière dorée du coucher de soleil. Sa fourrure brille comme de l\'or.',
+   condition:'Golden hour · Sujet immobile · Bonne lumière',
+   idealAperture:2,idealShutter:8,idealISO:1, // indices: f/2.8, 1/125s (SHUTTER_MAP[8]=13→1/125s... let me check)
+   sceneColors:['#1e3a5f','#e8956e','#d4a050','#8B6914']},
+  {id:'c2',afterChapter:'1.2',emoji:'🦅',name:'Griffon des Tempêtes',
+   scene:'Un Griffon surgit des nuages ! Ses ailes battent furieusement dans la lumière diffuse.',
+   condition:'Mouvement rapide · Lumière moyenne (nuageux)',
+   idealAperture:3,idealShutter:10,idealISO:2,
+   sceneColors:['#2a3a4a','#5a6a7a','#3d5a3d','#1a3a0a']},
+  {id:'c3',afterChapter:'1.3',emoji:'🦄',name:'Licorne des Brumes',
+   scene:'Une Licorne se tient dans une clairière, entourée de brume. Tu veux isoler sa silhouette du décor.',
+   condition:'Sujet à isoler · Lumière douce · Bokeh recherché',
+   idealAperture:1,idealShutter:9,idealISO:0,
+   sceneColors:['#2a3a5a','#8a9aaa','#3a5a2a','#1a3a0a']},
+  {id:'c4',afterChapter:'1.4',emoji:'🐲',name:'Wyverne de Feu',
+   scene:'Une Wyverne crache des flammes en traversant le ciel nocturne ! L\'action est intense et rapide.',
+   condition:'Action très rapide · Nuit + flammes · Lumière faible',
+   idealAperture:2,idealShutter:11,idealISO:5,
+   sceneColors:['#0a0a1a','#1a0a0a','#0a1a0a','#0a0a0a']},
+  {id:'c5',afterChapter:'1.5',emoji:'👻',name:'Spectre Ancien',
+   scene:'Un Spectre flotte lentement dans les ténèbres du donjon. La lumière est quasi inexistante.',
+   condition:'Très peu de lumière · Mouvement lent',
+   idealAperture:0,idealShutter:6,idealISO:6,
+   sceneColors:['#050510','#0a0a1a','#0a0a10','#050508']}
+];
+// idealAperture: index in APERTURES (0=f/1.4 ... 8=f/22)
+// idealShutter: index in slider (0-12), maps via SHUTTER_MAP to SHUTTERS
+// idealISO: index in ISOS (0=100 ... 7=12800)
+// Actual ideals: c1=f/2.8,1/125s,ISO200 | c2=f/4,1/1000s,ISO400 | c3=f/1.8→f/2,1/250s,ISO100
+// c4=f/2.8,1/2000s,ISO3200 | c5=f/1.4,1/60s,ISO6400
+// SHUTTER_MAP: [5,6,7,8,9,10,11,12,13,14,15,16,17] → SHUTTERS indices
+// 1/125s = SHUTTERS[12] = SHUTTER_MAP[7]→12? No: SHUTTER_MAP[7]=12→SHUTTERS[12]='1/125s' ✓
+// 1/1000s = SHUTTERS[15] = SHUTTER_MAP[10]→15 ✓
+// 1/250s = SHUTTERS[13] = SHUTTER_MAP[8]→13 ✓  (closest to 1/200s)
+// 1/2000s = SHUTTERS[16] = SHUTTER_MAP[11]→16 ✓
+// 1/60s = SHUTTERS[11] = SHUTTER_MAP[6]→11 ✓
+
+let creatureCaptureData = JSON.parse(localStorage.getItem('katkat_creatures') || '{}');
+function saveCreatures() { localStorage.setItem('katkat_creatures', JSON.stringify(creatureCaptureData)); }
+
+function getCreatureForChapter(chapterId) {
+  return CREATURES.find(c => c.afterChapter === chapterId);
+}
+
+function showCreatureTransition(creature, callback) {
+  let overlay = document.createElement('div');
+  overlay.className = 'creature-transition';
+  overlay.innerHTML = `<div class="ct-inner">
+    <div class="ct-icon">⚡</div>
+    <div class="ct-text">Une créature apparaît !</div>
+    <div class="ct-sub">Prépare ton appareil photo...</div>
+  </div>`;
+  document.body.appendChild(overlay);
+  setTimeout(() => {
+    overlay.style.opacity = '0';
+    overlay.style.transition = 'opacity 0.5s';
+    setTimeout(() => { overlay.remove(); callback(); }, 500);
+  }, 2000);
+}
+
+function startCreatureEncounter(creatureId, fromBestiary) {
+  let creature = CREATURES.find(c => c.id === creatureId);
+  if (!creature) return;
+  showScreen('creature');
+  renderCreatureCapture(creature, fromBestiary);
+}
+
+function renderCreatureCapture(creature, fromBestiary) {
+  let area = document.getElementById('creatureArea');
+  let skyC = creature.sceneColors;
+  area.innerHTML = `
+    <button class="back-btn" onclick="showScreen('${fromBestiary ? 'bestiary' : 'chapters'}')${fromBestiary ? '' : ';renderChapters()'}">← ${fromBestiary ? 'Bestiaire' : 'Chapitres'}</button>
+    <div class="creature-name">${creature.emoji} ${creature.name}</div>
+    <div class="creature-condition">${creature.condition}</div>
+    <div class="creature-scene-text">"${creature.scene}"</div>
+    <div class="capture-preview" id="capturePreview">
+      <div class="sim-scene">
+        <div class="sim-sky" style="background:linear-gradient(180deg,${skyC[0]},${skyC[1]})"></div>
+        <div class="sim-ground" style="background:linear-gradient(180deg,${skyC[2]},${skyC[3]})"></div>
+        <div class="sim-bg-blur" id="capBgBlur"></div>
+        <div class="sim-brightness" id="capBrightness"></div>
+        <div class="sim-noise" id="capNoise"></div>
+        <div class="sim-motion" id="capMotion"></div>
+      </div>
+      <div class="creature-in-scene" id="creatureInScene">${creature.emoji}</div>
+    </div>
+    <div class="capture-sliders">
+      <div class="glass" style="padding:14px">
+        <div class="sim-slider-group" style="margin-bottom:10px">
+          <label>🔘 Ouverture <span id="capApertureVal">f/5.6</span></label>
+          <input type="range" id="capApertureSlider" min="0" max="8" step="1" value="4" oninput="updateCapturePreview()">
+        </div>
+        <div class="sim-slider-group" style="margin-bottom:10px">
+          <label>⏱ Vitesse <span id="capShutterVal">1/125s</span></label>
+          <input type="range" id="capShutterSlider" min="0" max="12" step="1" value="7" oninput="updateCapturePreview()">
+        </div>
+        <div class="sim-slider-group" style="margin-bottom:0">
+          <label>📶 ISO <span id="capISOVal">100</span></label>
+          <input type="range" id="capISOSlider" min="0" max="7" step="1" value="0" oninput="updateCapturePreview()">
+        </div>
+      </div>
+    </div>
+    <button class="btn-capture" onclick="captureCreature('${creature.id}',${fromBestiary?'true':'false'})">📸 Capturer !</button>`;
+  updateCapturePreview();
+}
+
+function updateCapturePreview() {
+  let ai = parseInt(document.getElementById('capApertureSlider')?.value || 4);
+  let si = parseInt(document.getElementById('capShutterSlider')?.value || 7);
+  let ii = parseInt(document.getElementById('capISOSlider')?.value || 0);
+  document.getElementById('capApertureVal').textContent = APERTURES[ai];
+  document.getElementById('capShutterVal').textContent = SHUTTERS[SHUTTER_MAP[si]];
+  document.getElementById('capISOVal').textContent = ISOS[ii];
+  // Same exposure logic as simulator
+  let aStops = ai - 4;
+  let sStops = si - 7;
+  let iStops = -ii;
+  let totalStops = aStops + sStops + iStops;
+  let bEl = document.getElementById('capBrightness');
+  if (bEl) {
+    if (totalStops > 0) { bEl.style.background = 'black'; bEl.style.opacity = Math.min(totalStops * 0.2, 0.85); }
+    else if (totalStops < 0) { bEl.style.background = 'white'; bEl.style.opacity = Math.min(-totalStops * 0.15, 0.7); }
+    else { bEl.style.opacity = 0; }
+  }
+  let blur = document.getElementById('capBgBlur');
+  if (blur) blur.style.backdropFilter = `blur(${Math.max(0, (4 - ai) * 2)}px)`;
+  let noise = document.getElementById('capNoise');
+  if (noise) noise.style.opacity = Math.max(0, (ii - 2) * 0.15);
+  let motion = document.getElementById('capMotion');
+  if (motion) motion.style.opacity = si <= 3 ? (4 - si) * 0.2 : 0;
+}
+
+function scoreParameter(actual, ideal) {
+  let diff = Math.abs(actual - ideal);
+  if (diff === 0) return 3;
+  if (diff === 1) return 2;
+  if (diff === 2) return 1;
+  return 0;
+}
+
+function captureCreature(creatureId, fromBestiary) {
+  let creature = CREATURES.find(c => c.id === creatureId);
+  let ai = parseInt(document.getElementById('capApertureSlider').value);
+  let si = parseInt(document.getElementById('capShutterSlider').value);
+  let ii = parseInt(document.getElementById('capISOSlider').value);
+
+  let aScore = scoreParameter(ai, creature.idealAperture);
+  let sScore = scoreParameter(si, creature.idealShutter);
+  let iScore = scoreParameter(ii, creature.idealISO);
+  let avgScore = (aScore + sScore + iScore) / 3;
+
+  // Shutter flash effect
+  let flash = document.createElement('div');
+  flash.className = 'shutter-flash';
+  document.body.appendChild(flash);
+  setTimeout(() => flash.remove(), 500);
+
+  setTimeout(() => {
+    let area = document.getElementById('creatureArea');
+    if (avgScore < 1) {
+      // Escape!
+      area.innerHTML = `
+        <div class="capture-result">
+          <div class="cr-emoji" style="opacity:0.3">${creature.emoji}</div>
+          <div class="cr-title" style="color:var(--red)">Il s'est échappé !</div>
+          <p style="color:var(--text2);font-size:14px;margin:12px 0">Tes réglages étaient trop éloignés. La créature a disparu dans l'ombre...</p>
+          <div class="cr-detail">Ouverture: ${aScore === 0 ? '❌' : '⭐'.repeat(aScore)} — Vitesse: ${sScore === 0 ? '❌' : '⭐'.repeat(sScore)} — ISO: ${iScore === 0 ? '❌' : '⭐'.repeat(iScore)}</div>
+          <button class="btn btn-primary" onclick="renderCreatureCapture(CREATURES.find(c=>c.id==='${creatureId}'),${fromBestiary})" style="margin-top:20px">🔄 Réessayer</button>
+          <button class="btn btn-secondary" onclick="showScreen('${fromBestiary ? 'bestiary' : 'chapters'}')${fromBestiary ? '' : ';renderChapters()'}" style="margin-top:8px">← Retour</button>
+        </div>`;
+    } else {
+      // Captured!
+      let quality, xpGain, qualityLabel;
+      if (avgScore >= 2.5) { quality = 3; xpGain = 30; qualityLabel = 'Capture Parfaite !'; }
+      else if (avgScore >= 1.5) { quality = 2; xpGain = 20; qualityLabel = 'Bonne Capture !'; }
+      else { quality = 1; xpGain = 10; qualityLabel = 'Capture Floue'; }
+
+      let prev = creatureCaptureData[creatureId];
+      if (!prev || prev.quality < quality) {
+        creatureCaptureData[creatureId] = {
+          quality, stars: Math.round(avgScore),
+          aperture: APERTURES[ai], shutter: SHUTTERS[SHUTTER_MAP[si]], iso: ISOS[ii],
+          aScore, sScore, iScore
+        };
+        saveCreatures();
+      }
+
+      showVictoryParticles();
+      addXP(xpGain);
+
+      area.innerHTML = `
+        <div class="capture-result">
+          <div class="cr-emoji">${creature.emoji}</div>
+          <div class="cr-title" style="color:var(--gold)">${qualityLabel}</div>
+          <div class="cr-stars">${'⭐'.repeat(quality)}${'☆'.repeat(3-quality)}</div>
+          <div class="cr-detail">Ouverture ${APERTURES[ai]}: ${'⭐'.repeat(aScore)}${aScore===0?'❌':''}</div>
+          <div class="cr-detail">Vitesse ${SHUTTERS[SHUTTER_MAP[si]]}: ${'⭐'.repeat(sScore)}${sScore===0?'❌':''}</div>
+          <div class="cr-detail">ISO ${ISOS[ii]}: ${'⭐'.repeat(iScore)}${iScore===0?'❌':''}</div>
+          <div class="cr-xp">+${xpGain} XP</div>
+          <div class="glass" style="margin-top:16px;text-align:left">
+            <div style="display:flex;align-items:center;gap:12px">
+              <span style="font-size:36px">${creature.emoji}</span>
+              <div><h4 style="font-size:14px;font-weight:700">${creature.name}</h4><p style="font-size:12px;color:var(--text2);margin:0">Ajouté au bestiaire !</p></div>
+            </div>
+          </div>
+          <button class="btn btn-primary" onclick="showScreen('${fromBestiary ? 'bestiary' : 'chapters'}')${fromBestiary ? ';renderBestiary()' : ';renderChapters()'}" style="margin-top:16px">Continuer</button>
+          <button class="btn btn-secondary" onclick="renderCreatureCapture(CREATURES.find(c=>c.id==='${creatureId}'),${fromBestiary})" style="margin-top:8px">🔄 Améliorer le score</button>
+        </div>`;
+    }
+  }, 500);
+}
+
+// === BESTIARY ===
+function renderBestiary() {
+  let captured = Object.keys(creatureCaptureData).length;
+  document.getElementById('bestiaryCounter').textContent = `${captured}/${CREATURES.length} capturées`;
+  let html = '';
+  CREATURES.forEach(c => {
+    let data = creatureCaptureData[c.id];
+    let isCaptured = !!data;
+    html += `<div class="bestiary-card ${isCaptured ? 'captured' : 'unknown'}" onclick="startCreatureEncounter('${c.id}',true)">
+      <div class="bc-icon">${c.emoji}</div>
+      <div class="bc-info">
+        <h4>${isCaptured ? c.name : '???'}</h4>
+        <p>${isCaptured ? c.condition : 'Créature inconnue...'}</p>
+        ${isCaptured ? `<div class="bc-stars">${'⭐'.repeat(data.quality)}${'☆'.repeat(3-data.quality)} — ${data.aperture} · ${data.shutter} · ISO ${data.iso}</div>` : ''}
+        <div class="bc-retry">${isCaptured ? '📸 Améliorer le score' : '📸 Rencontrer'}</div>
+      </div>
+    </div>`;
+  });
+  document.getElementById('bestiaryGrid').innerHTML = html;
 }
 
 // === INIT ===
