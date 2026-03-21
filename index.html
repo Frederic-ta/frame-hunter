@@ -406,7 +406,13 @@ const PA = {
     mannequin: ['','#ec4899','#f472b6','#f9a8d4','#fce7f3','#be185d','#831843','#fff','#7c3aed','#a78bfa','#d4a574','#1e1b4b','#c68b59'],
     bokehon: ['','#22c55e','#16a34a','#15803d','#86efac','#f472b6','#ec4899','#fff','#166534','#dcfce7','#fbbf24','#0f172a','#4ade80'],
     emotera: ['','#3b82f6','#60a5fa','#93c5fd','#dbeafe','#d4a574','#c68b59','#fff','#1e3a5f','#fbbf24','#f59e0b','#0f172a','#2563eb'],
-    boss4: ['','#d4a574','#c68b59','#f5deb3','#8b6914','#7c3aed','#a78bfa','#fbbf24','#1e1b4b','#f59e0b','#fff','#4a3728','#ec4899']
+    boss4: ['','#d4a574','#c68b59','#f5deb3','#8b6914','#7c3aed','#a78bfa','#fbbf24','#1e1b4b','#f59e0b','#fff','#4a3728','#ec4899'],
+    styliste: ['','#a855f7','#7c3aed','#6d28d9','#c084fc','#fbbf24','#f59e0b','#fff','#1e1b4b','#e9d5ff','#ddd6fe','#0f172a','#8b5cf6'],
+    conteur: ['','#f97316','#ea580c','#c2410c','#fdba74','#1e3a5f','#3b82f6','#fff','#7c2d12','#fef3c7','#fbbf24','#0f172a','#fb923c'],
+    pixeliste: ['','#06b6d4','#0891b2','#0e7490','#67e8f9','#ec4899','#f472b6','#fff','#164e63','#cffafe','#a5f3fc','#0f172a','#22d3ee'],
+    ambassadeur: ['','#10b981','#059669','#047857','#6ee7b7','#f59e0b','#fbbf24','#fff','#064e3b','#d1fae5','#a7f3d0','#0f172a','#34d399'],
+    zenith: ['','#fbbf24','#f59e0b','#d97706','#fef3c7','#7c3aed','#a855f7','#fff','#92400e','#fff7ed','#fde68a','#1e1b4b','#eab308'],
+    boss5: ['','#fbbf24','#f59e0b','#d97706','#fff7ed','#7c3aed','#a855f7','#fde68a','#1e1b4b','#eab308','#fff','#92400e','#c084fc']
   },
 
   // Draw pixel art from compact string data
@@ -1377,6 +1383,216 @@ PA.sprites.boss4 = {pal:'boss4', size:32, data:
   '00000000000000000000000000000000'
 };
 
+PA.sprites.styliste = {pal:'styliste', size:32, data:
+  '00000000000000000000000000000000'+
+  '00000000000077700000000000000000'+
+  '00000000007777770000000000000000'+
+  '00000000077444477000000000000000'+
+  '00000000744444447000000000000000'+
+  '00000007444554447700000000000000'+
+  '00000007445555444700000000000000'+
+  '00000007444554447700000000000000'+
+  '00000000744444447000000000000000'+
+  '000000000744a4470000000000000000'+
+  '00000000007444700000000000000000'+
+  '00000000000777000000000000000000'+
+  '00000000011111100000000000000000'+
+  '00000000111111110000000000000000'+
+  '00000001111111111000000000000000'+
+  '00000011112222111100000000000000'+
+  '00000111122222211110000000000000'+
+  '00001111222222221111000000000000'+
+  '00000111122222211110000000000000'+
+  '00000011112222111100000000000000'+
+  '00000001111111111000000000000000'+
+  '00000000111111110000000000000000'+
+  '00000000011111100000000000000000'+
+  '00000000001111000000000000000000'+
+  '00000000000110000000000000000000'+
+  '00000000000010000000000000000000'+
+  '00000000000101000000000000000000'+
+  '00000000001000100000000000000000'+
+  '00000000010000010000000000000000'+
+  '00000000000000000000000000000000'+
+  '00000000000000000000000000000000'+
+  '00000000000000000000000000000000'
+};
+
+PA.sprites.conteur = {pal:'conteur', size:32, data:
+  '00000000000000000000000000000000'+
+  '00000000000077700000000000000000'+
+  '00000000007777770000000000000000'+
+  '00000000077333377000000000000000'+
+  '00000000733333337000000000000000'+
+  '00000007333553337700000000000000'+
+  '00000007335555333700000000000000'+
+  '00000007333553337700000000000000'+
+  '00000000733333337000000000000000'+
+  '000000000733a3370000000000000000'+
+  '00000000007333700000000000000000'+
+  '00000000000777000000000000000000'+
+  '00000000011111100000000000000000'+
+  '00000000111111110000000000000000'+
+  '00000001114444111000000000000000'+
+  '00000011144444411100000000000000'+
+  '00000111444444441110000000000000'+
+  '00001111444444441111000000000000'+
+  '00000111444444441110000000000000'+
+  '00000011144444411100000000000000'+
+  '00000001114444111000000000000000'+
+  '00000000111111110000000000000000'+
+  '00000000011111100000000000000000'+
+  '00000000001111000000000000000000'+
+  '00000000000110000000000000000000'+
+  '00000000000010000000000000000000'+
+  '00000000000101000000000000000000'+
+  '00000000001000100000000000000000'+
+  '00000000010000010000000000000000'+
+  '00000000000000000000000000000000'+
+  '00000000000000000000000000000000'+
+  '00000000000000000000000000000000'
+};
+
+PA.sprites.pixeliste = {pal:'pixeliste', size:32, data:
+  '00000000000000000000000000000000'+
+  '00000000000077700000000000000000'+
+  '00000000007777770000000000000000'+
+  '00000000077333377000000000000000'+
+  '00000000733333337000000000000000'+
+  '00000007333553337700000000000000'+
+  '00000007335555333700000000000000'+
+  '00000007333553337700000000000000'+
+  '00000000733333337000000000000000'+
+  '000000000733a3370000000000000000'+
+  '00000000007333700000000000000000'+
+  '00000000555777555000000000000000'+
+  '00000005555555555500000000000000'+
+  '00000055555555555550000000000000'+
+  '00000555554444555555000000000000'+
+  '00005555544444455555500000000000'+
+  '00055555444444445555550000000000'+
+  '00555554444444444555555000000000'+
+  '00055554444444444555550000000000'+
+  '00005555444444455555500000000000'+
+  '00000555544444555555000000000000'+
+  '00000055555555555550000000000000'+
+  '00000005555555555500000000000000'+
+  '00000000555555555000000000000000'+
+  '00000000055555550000000000000000'+
+  '00000000005555500000000000000000'+
+  '00000000000555000000000000000000'+
+  '00000000000050000000000000000000'+
+  '00000000000505000000000000000000'+
+  '00000000005000500000000000000000'+
+  '00000000000000000000000000000000'+
+  '00000000000000000000000000000000'
+};
+
+PA.sprites.ambassadeur = {pal:'ambassadeur', size:32, data:
+  '00000000000000000000000000000000'+
+  '00000000000666600000000000000000'+
+  '00000000006666660000000000000000'+
+  '00000000066333366000000000000000'+
+  '00000000633333336000000000000000'+
+  '00000006333553336600000000000000'+
+  '00000006335555333600000000000000'+
+  '00000006333553336600000000000000'+
+  '00000000633333336000000000000000'+
+  '000000000633a3360000000000000000'+
+  '00000000006333600000000000000000'+
+  '00000000000666000000000000000000'+
+  '00000000011111100000000000000000'+
+  '00000000111111110000000000000000'+
+  '00000001111111111000000000000000'+
+  '00000011115555111100000000000000'+
+  '00000111155555511110000000000000'+
+  '00001111555555551111000000000000'+
+  '00000111155555511110000000000000'+
+  '00000011115555111100000000000000'+
+  '00000001111111111000000000000000'+
+  '00000000111111110000000000000000'+
+  '00000000011111100000000000000000'+
+  '00000000001111000000000000000000'+
+  '00000000000110000000000000000000'+
+  '00000000000010000000000000000000'+
+  '00000000000101000000000000000000'+
+  '00000000001000100000000000000000'+
+  '00000000010000010000000000000000'+
+  '00000000000000000000000000000000'+
+  '00000000000000000000000000000000'+
+  '00000000000000000000000000000000'
+};
+
+PA.sprites.zenith = {pal:'zenith', size:32, data:
+  '00000000000000000000000000000000'+
+  '00000000000555500000000000000000'+
+  '00000000005666650000000000000000'+
+  '00000000056666665000000000000000'+
+  '00000000566111166500000000000000'+
+  '00000005661111116650000000000000'+
+  '00000056611131111665000000000000'+
+  '00000005611131111650000000000000'+
+  '00000000561111116500000000000000'+
+  '000000000051c1500000000000000000'+
+  '00000000000515000000000000000000'+
+  '00000000333555333000000000000000'+
+  '00000003333333333300000000000000'+
+  '00000033333333333330000000000000'+
+  '00000333333333333333000000000000'+
+  '00003333377777733333300000000000'+
+  '00033333777777773333330000000000'+
+  '00333337777777777333333000000000'+
+  '00033337777777777333330000000000'+
+  '00003333777777773333300000000000'+
+  '00000333377777733333000000000000'+
+  '00000033333333333330000000000000'+
+  '00000003333333333300000000000000'+
+  '00000000333333333000000000000000'+
+  '00000000033333330000000000000000'+
+  '00000000003333300000000000000000'+
+  '00000000000333000000000000000000'+
+  '00000000000030000000000000000000'+
+  '00000000000303000000000000000000'+
+  '00000000003000300000000000000000'+
+  '00000000000000000000000000000000'+
+  '00000000000000000000000000000000'
+};
+
+PA.sprites.boss5 = {pal:'boss5', size:32, data:
+  '00000000000888800000000000000000'+
+  '00000000008111180000000000000000'+
+  '00000000081111118000000000000000'+
+  '00000000811111118000000000000000'+
+  '00000008111333118800000000000000'+
+  '00000081113333318800000000000000'+
+  '00000081133343331880000000000000'+
+  '00000008133343318800000000000000'+
+  '00000000813333318000000000000000'+
+  '00000000081c13180000000000000000'+
+  '00000000008131800000000000000000'+
+  '00000000555888555000000000000000'+
+  '00000005555555555500000000000000'+
+  '00000055555555555550000000000000'+
+  '00000555555555555555000000000000'+
+  '00005555566666655555500000000000'+
+  '00055555666666665555550000000000'+
+  '00555556666666666555555000000000'+
+  '00055556666666666555550000000000'+
+  '00005555666666665555500000000000'+
+  '00000555566666655555000000000000'+
+  '00000055555555555550000000000000'+
+  '00000005555555555500000000000000'+
+  '00000000555555555000000000000000'+
+  '00000000055555550000000000000000'+
+  '00000000005555500000000000000000'+
+  '00000000000555000000000000000000'+
+  '00000000000050000000000000000000'+
+  '00000000000505000000000000000000'+
+  '00000000005000500000000000000000'+
+  '00000000000000000000000000000000'+
+  '00000000000000000000000000000000'
+};
+
 // Small icons (16x16)
 PA.sprites.icon_camera = {pal:'kitsune', size:16, data:
   '0000000000000000'+
@@ -1930,6 +2146,14 @@ const CHAPTERS = {
     {id:'4.4',title:'L\'Arrière-plan et le Bokeh',icon:'🌸',type:'lesson'},
     {id:'4.5',title:'Capturer l\'Émotion',icon:'💫',type:'lesson'},
     {id:'boss4',title:'Le Sculpteur d\'Âmes',icon:'⚔️',type:'boss'}
+  ],
+  5: [
+    {id:'5.1',title:'Trouver son Style',icon:'🎭',type:'lesson'},
+    {id:'5.2',title:'Raconter une Histoire',icon:'📖',type:'lesson'},
+    {id:'5.3',title:'Le Post-traitement pour Débutants',icon:'🖥️',type:'lesson'},
+    {id:'5.4',title:'Partager et Progresser',icon:'🚀',type:'lesson'},
+    {id:'5.5',title:'Le Photographe Complet',icon:'👑',type:'lesson'},
+    {id:'boss5',title:'Le Gardien du Temple',icon:'⚔️',type:'boss'}
   ]
 };
 
@@ -2892,7 +3116,262 @@ const FICHES = {
 <p>✔️ Obtenir un vrai sourire (jamais "cheese" !)</p>
 <p>✔️ Utiliser la direction du regard pour raconter une histoire</p>
 <p>✔️ Le portrait environnemental pour montrer l'univers du sujet</p>
-<p>💪 Tu es prêt·e pour le <strong>Sculpteur d'Âmes</strong> ! Il va tester TOUT ce que tu sais sur le portrait. Prépare ton plus beau regard ! 👁️🔥</p></div>`
+<p>💪 Tu es prêt·e pour le <strong>Sculpteur d'Âmes</strong> ! Il va tester TOUT ce que tu sais sur le portrait. Prépare ton plus beau regard ! 👁️🔥</p></div>`,
+
+'5.1': `<h2>🎭 Trouver son Style — Ta Signature Visuelle</h2>
+<div class="glass"><h3>🔄 Rappel</h3>
+<p>Tu as traversé 4 mondes ! Tu maîtrises la <strong>lumière</strong> ☀️, la <strong>composition</strong> 📐, les <strong>couleurs</strong> 🎨 et le <strong>portrait</strong> 👤. Maintenant, on passe au niveau supérieur : <strong>TOI</strong>. Car la technique sans personnalité, c'est comme un instrument de musique sans musicien. 🎸</p></div>
+
+<div class="glass"><h3>🎨 Le style, c'est quoi ?</h3>
+<p>Imagine deux chefs cuisiniers avec les mêmes ingrédients. L'un fait un plat japonais minimaliste, l'autre un tajine marocain explosif. Les deux sont excellents — mais <strong>chacun a sa patte</strong>. 🍣🍲</p>
+<p>En photo, c'est pareil ! Deux photographes dans la même rue produiront des images <strong>complètement différentes</strong>. L'un verra les reflets dans les flaques, l'autre les expressions des passants.</p>
+<p>Ton style, c'est <strong>ce qui attire TON œil</strong>. Et bonne nouvelle : tu n'as pas besoin de le "créer" — il est déjà en toi ! 🌟</p></div>
+
+<div class="glass"><h3>📱 Ton feed Instagram = ton portfolio</h3>
+<p>Regarde les 20 dernières photos que tu as prises (ou likées). Tu vas remarquer des <strong>patterns</strong> :</p>
+<p>🏙️ <strong>Tu aimes la rue ?</strong> → Street photography — l'art de capturer la vie urbaine</p>
+<p>🌿 <strong>Tu aimes la nature ?</strong> → Paysage et macro — les grands espaces et les petits détails</p>
+<p>👤 <strong>Tu aimes les gens ?</strong> → Portrait et reportage — raconter des histoires humaines</p>
+<p>🔺 <strong>Tu aimes les formes ?</strong> → Architecture et abstrait — la géométrie du monde</p>
+<p>🍕 <strong>Tu aimes la bouffe ?</strong> → Food photography — oui, c'est un vrai genre !</p>
+<p>Il n'y a <strong>pas de mauvais choix</strong>. Certains photographes mélangent les genres, d'autres se spécialisent. Les deux approches sont valides !</p></div>
+
+<div class="glass"><h3>🔍 Étudier ceux qui t'inspirent</h3>
+<p>Le moyen le plus rapide de développer ton style ? <strong>Regarder les photos des autres</strong> — en te demandant POURQUOI tu les aimes.</p>
+<p>📸 Va sur Instagram, 500px, ou Flickr</p>
+<p>❤️ Save les photos qui te font "waouh"</p>
+<p>🧐 Analyse-les : c'est la lumière ? Les couleurs ? Le sujet ? L'angle ?</p>
+<p>C'est comme apprendre la musique : tu écoutes tes artistes préférés, puis tu joues à ta sauce. Ce n'est PAS de la copie — c'est de l'<strong>apprentissage</strong>. Même Picasso a commencé par copier les maîtres classiques ! 🎨</p></div>
+
+<div class="glass"><h3>🧪 La règle des 3C : Cohérence, Couleur, Contenu</h3>
+<p>Un style reconnaissable repose sur 3 piliers :</p>
+<p>1️⃣ <strong>Cohérence</strong> → tes photos ont un "air de famille". On reconnaît ta patte.</p>
+<p>2️⃣ <strong>Couleur</strong> → tu as une palette préférée. Chaude ? Froide ? Désaturée ? Noir et blanc ?</p>
+<p>3️⃣ <strong>Contenu</strong> → tu photographies toujours le même type de sujets ou ambiances.</p>
+<p>Tu n'as pas besoin des 3 dès le départ. Commence par <strong>un seul</strong> et les autres suivront naturellement.</p></div>
+
+<div class="glass" style="background:rgba(255,215,0,0.1);border:1px solid var(--gold)"><h3>💡 Mnémotechnique</h3>
+<p><strong>"Les 3C du Style : Cohérence, Couleur, Contenu"</strong> 🎨</p>
+<p>Et retiens : <strong>"Ton style, c'est pas ce que tu photographies — c'est COMMENT tu le regardes."</strong> 👁️</p></div>
+
+<div class="glass" style="background:rgba(100,100,255,0.1);border:1px solid #88f"><h3>🎮 Mini-défi pratique</h3>
+<p>L'exploration de ton style :</p>
+<p>1. 📱 Regarde tes 20 dernières photos et note les <strong>3 thèmes</strong> qui reviennent le plus</p>
+<p>2. 📸 Choisis UN sujet (une tasse, une fleur, un bâtiment) et photographie-le de <strong>5 façons différentes</strong></p>
+<p>3. 🔍 Trouve 3 photographes que tu admires sur Instagram et analyse ce qui te plaît chez eux</p></div>
+
+<div class="glass" style="background:rgba(0,255,150,0.1);border:1px solid #0f6"><h3>✅ Ce que tu maîtrises maintenant !</h3>
+<p>✔️ Tu sais que le style est une signature visuelle personnelle</p>
+<p>✔️ Tu connais les grands genres photographiques</p>
+<p>✔️ Tu sais analyser les photos qui t'inspirent</p>
+<p>✔️ Tu connais les 3C du Style</p>
+<p><strong>🔜 Prochaine étape :</strong> maintenant que tu sais CE que tu veux photographier, on va apprendre à <strong>raconter des histoires</strong> avec tes images ! 📖</p></div>`,
+
+'5.2': `<h2>📖 Raconter une Histoire — La Photo qui Parle</h2>
+<div class="glass"><h3>🔄 Rappel</h3>
+<p>Tu as commencé à trouver <strong>ton style</strong> 🎭 — ce qui attire ton œil. Maintenant, on va transformer tes photos en quelque chose de plus puissant : des <strong>histoires visuelles</strong>. Parce qu'une bonne photo fait dire aux gens : <strong>"Qu'est-ce qui s'est passé ?"</strong> 🤔</p></div>
+
+<div class="glass"><h3>📚 Une photo = un chapitre, pas un roman</h3>
+<p>Imagine un film de 2 heures compressé en une seule image. C'est ça, la photo narrative ! Tu ne peux pas tout dire — alors tu choisis <strong>le moment clé</strong>.</p>
+<p>C'est comme un trailer de film : tu montres juste assez pour <strong>donner envie d'en savoir plus</strong>. Si la photo répond à toutes les questions, elle est moins intéressante que si elle en <strong>pose</strong>. 🎬</p>
+<p>🤔 <strong>Qui est cette personne ?</strong></p>
+<p>🤔 <strong>Qu'est-ce qui vient de se passer ?</strong></p>
+<p>🤔 <strong>Que va-t-il se passer ensuite ?</strong></p>
+<p>Si ta photo provoque au moins une de ces questions → tu as une photo narrative ! ✨</p></div>
+
+<div class="glass"><h3>🧩 Les 4 ingrédients d'une histoire visuelle</h3>
+<p>1️⃣ <strong>Le sujet</strong> → QUI ou QUOI est au centre de l'histoire ?</p>
+<p>2️⃣ <strong>Le contexte</strong> → OÙ et QUAND ? L'environnement raconte autant que le sujet</p>
+<p>3️⃣ <strong>L'action ou l'émotion</strong> → qu'est-ce qui se PASSE ? Un geste, un regard, un mouvement</p>
+<p>4️⃣ <strong>Le détail révélateur</strong> → le petit truc qui change tout : une larme, un jouet cassé, des mains usées</p>
+<p>Tu n'as pas besoin des 4 à chaque fois — mais plus tu en as, plus ton histoire est riche.</p></div>
+
+<div class="glass"><h3>📸 Les techniques narratives</h3>
+<p><strong>Avant / Après</strong> → montre la transformation. Un gâteau entier, puis les miettes. La rue vide, puis pleine.</p>
+<p><strong>Le hors-champ</strong> → montre la réaction, pas l'action. Le visage de quelqu'un qui regarde un feu d'artifice, sans montrer le feu d'artifice ! Le spectateur imagine le reste.</p>
+<p><strong>La série</strong> → 3 à 5 photos qui racontent une séquence. Le matin d'un marché, du montage des stands à la fermeture.</p>
+<p><strong>Le contraste narratif</strong> → juxtapose deux réalités. Un enfant qui joue devant un mur décrépit. La beauté et l'usure.</p></div>
+
+<div class="glass"><h3>🎯 Le projet photo — ta meilleure arme</h3>
+<p>Les meilleurs photographes ne prennent pas des photos au hasard. Ils ont un <strong>projet</strong> : un thème, un fil conducteur.</p>
+<p>Quelques idées pour commencer :</p>
+<p>☕ <strong>"Mon café du matin"</strong> → photographie ton café chaque jour pendant un mois. Lieu, lumière, ambiance différente.</p>
+<p>🚶 <strong>"Le chemin du travail"</strong> → une photo par jour sur ton trajet. Tu verras des choses que tu ignorais !</p>
+<p>🤲 <strong>"Les mains"</strong> → photographie les mains des gens autour de toi. Elles racontent toute une vie.</p>
+<p>Un projet te force à <strong>regarder le monde autrement</strong>. C'est le meilleur exercice qui existe.</p></div>
+
+<div class="glass" style="background:rgba(255,215,0,0.1);border:1px solid var(--gold)"><h3>💡 Mnémotechnique</h3>
+<p><strong>"Bonne photo = bonne question"</strong> ❓ Si ta photo ne pose aucune question au spectateur, elle informe mais ne raconte pas.</p>
+<p><strong>"SCAD"</strong> → Sujet, Contexte, Action, Détail — les 4 ingrédients de l'histoire visuelle.</p></div>
+
+<div class="glass" style="background:rgba(100,100,255,0.1);border:1px solid #88f"><h3>🎮 Mini-défi pratique</h3>
+<p>Deviens conteur visuel :</p>
+<p>1. 📸 Photographie un <strong>objet du quotidien</strong> de façon à raconter une histoire (un bol vide, des clés abandonnées...)</p>
+<p>2. 📸 Fais un <strong>"avant/après"</strong> : le même lieu à 2 moments différents de la journée</p>
+<p>3. 📸 Lance un <strong>mini-projet</strong> de 5 photos sur un thème de ton choix</p></div>
+
+<div class="glass" style="background:rgba(0,255,150,0.1);border:1px solid #0f6"><h3>✅ Ce que tu maîtrises maintenant !</h3>
+<p>✔️ Tu sais qu'une bonne photo raconte une histoire</p>
+<p>✔️ Tu connais les 4 ingrédients narratifs (SCAD)</p>
+<p>✔️ Tu as des techniques : avant/après, hors-champ, série, contraste</p>
+<p>✔️ Tu sais ce qu'est un projet photo et pourquoi c'est puissant</p>
+<p><strong>🔜 Prochaine étape :</strong> tes photos sont prises — maintenant on va les <strong>sublimer</strong> avec le post-traitement ! 🖥️</p></div>`,
+
+'5.3': `<h2>🖥️ Le Post-traitement pour Débutants — La Touche Finale</h2>
+<div class="glass"><h3>🔄 Rappel</h3>
+<p>Tu sais trouver ton <strong>style</strong> 🎭 et <strong>raconter des histoires</strong> 📖. Mais une photo, c'est comme un plat qui sort du four : elle est bonne, mais avec un peu d'<strong>assaisonnement</strong>, elle peut devenir extraordinaire ! 🧂✨</p></div>
+
+<div class="glass"><h3>🍳 La retouche, c'est PAS de la triche</h3>
+<p>Beaucoup de débutants pensent : "Si tu retouches, c'est de la triche." <strong>FAUX !</strong></p>
+<p>Pense à un chef cuisinier. Il a de bons ingrédients (ta photo), mais il <strong>assaisonne</strong> : sel, poivre, herbes. Il ne transforme pas un poulet en poisson — il révèle le meilleur du poulet ! 🍗</p>
+<p>Le post-traitement, c'est pareil : tu <strong>révèles</strong> ce que ton œil a vu, pas ce qu'il n'a pas vu. Même les pros retouchent. Même les photos de National Geographic passent par Lightroom !</p></div>
+
+<div class="glass"><h3>📱 Les outils (gratuits !)</h3>
+<p>Tu n'as pas besoin de Photoshop ! Voici tes meilleurs amis :</p>
+<p>📱 <strong>Snapseed</strong> (Google, gratuit) → le plus puissant sur téléphone. Intuitif, pro, et gratuit. C'est le couteau suisse !</p>
+<p>📱 <strong>Lightroom Mobile</strong> (Adobe, gratuit) → version simplifiée de ce qu'utilisent les pros. Parfait pour débuter.</p>
+<p>💻 <strong>Darktable</strong> (PC/Mac, gratuit et open-source) → l'alternative gratuite à Lightroom sur ordinateur.</p>
+<p>Le choix n'a pas d'importance — ce qui compte, c'est de <strong>comprendre les réglages</strong>.</p></div>
+
+<div class="glass"><h3>🎛️ Les Big 3 — Les seuls réglages dont tu as besoin</h3>
+<p>Oublie les 47 curseurs. Pour 90% de tes retouches, tu n'as besoin que de <strong>3 réglages</strong> :</p>
+<p>1️⃣ <strong>L'exposition / luminosité</strong> → ta photo est trop sombre ? Trop claire ? Corrige ici. C'est le réglage le plus basique et le plus important.</p>
+<p>2️⃣ <strong>Le contraste</strong> → augmente la différence entre les zones claires et sombres. Un peu de contraste rend la photo plus "vivante" et percutante. Mais doucement — trop de contraste = photo agressive. 😤</p>
+<p>3️⃣ <strong>Les couleurs (saturation / vibrance)</strong> → la saturation booste TOUTES les couleurs. La vibrance booste seulement les couleurs <strong>faibles</strong> (plus subtil et plus joli). Préfère la vibrance !</p>
+<p>C'est tout. Vraiment. Avec ces 3 curseurs, tu peux transformer 90% de tes photos.</p></div>
+
+<div class="glass"><h3>⚖️ La règle d'or : Less is More</h3>
+<p>Le piège numéro 1 du débutant en retouche ? <strong>En faire trop.</strong></p>
+<p>🚫 Saturation à fond → peau orange, ciel violet, herbe fluo</p>
+<p>🚫 Contraste à fond → visage avec des ombres noires, plus de détails</p>
+<p>🚫 HDR à fond → photo irréelle et agressive</p>
+<p>La bonne retouche est <strong>invisible</strong>. Quand quelqu'un dit "belle retouche", c'est souvent que tu en as trop fait. Quand on dit "belle photo" → tu as réussi ! 🎯</p>
+<p>💡 <strong>Astuce pro</strong> : fais ta retouche, puis <strong>baisse tous tes réglages de 30%</strong>. Tu verras, c'est presque toujours mieux.</p></div>
+
+<div class="glass"><h3>🎨 Les presets / filtres comme point de départ</h3>
+<p>Les presets (ou filtres), c'est comme les recettes de cuisine : quelqu'un a déjà fait le travail pour toi.</p>
+<p>✅ Utilise-les comme <strong>point de départ</strong>, puis ajuste à ton goût</p>
+<p>✅ Trouve 2-3 presets qui correspondent à ton style et utilise-les régulièrement → cohérence !</p>
+<p>❌ N'applique pas un preset différent à chaque photo → ton feed ressemblera à un sapin de Noël</p></div>
+
+<div class="glass" style="background:rgba(255,215,0,0.1);border:1px solid var(--gold)"><h3>💡 Mnémotechnique</h3>
+<p><strong>"ECCo"</strong> → Exposition, Contraste, Couleurs — les Big 3 de la retouche. C'est tout ce dont tu as besoin !</p>
+<p><strong>"Retouche bien = retouche invisible"</strong> 👻 Si on voit ta retouche, c'est trop.</p></div>
+
+<div class="glass" style="background:rgba(100,100,255,0.1);border:1px solid #88f"><h3>🎮 Mini-défi pratique</h3>
+<p>Tes premiers pas en retouche :</p>
+<p>1. 📱 Télécharge <strong>Snapseed</strong> (gratuit) et ouvre une de tes photos</p>
+<p>2. 🎛️ Modifie UNIQUEMENT les <strong>Big 3</strong> : exposition, contraste, saturation/vibrance</p>
+<p>3. ⚖️ Compare avant/après — la différence devrait être <strong>subtile mais significative</strong></p>
+<p>4. 🔄 Applique la règle des 30% : baisse tes réglages d'un tiers et regarde si c'est mieux</p></div>
+
+<div class="glass" style="background:rgba(0,255,150,0.1);border:1px solid #0f6"><h3>✅ Ce que tu maîtrises maintenant !</h3>
+<p>✔️ Tu sais que la retouche n'est PAS de la triche</p>
+<p>✔️ Tu connais les outils gratuits (Snapseed, Lightroom Mobile)</p>
+<p>✔️ Tu maîtrises les Big 3 : Exposition, Contraste, Couleurs</p>
+<p>✔️ Tu connais la règle "Less is More" et l'astuce des 30%</p>
+<p><strong>🔜 Prochaine étape :</strong> tes photos sont prises ET sublimées — il est temps de les <strong>partager avec le monde</strong> ! 🚀</p></div>`,
+
+'5.4': `<h2>🚀 Partager et Progresser — Montre ton Travail !</h2>
+<div class="glass"><h3>🔄 Rappel</h3>
+<p>Tu sais <strong>trouver ton style</strong> 🎭, <strong>raconter des histoires</strong> 📖 et <strong>retoucher</strong> 🖥️ tes photos. Il manque une pièce essentielle au puzzle : <strong>le partage</strong>. Parce qu'une photo dans un dossier, c'est comme un concert sans public. 🎵🏟️</p></div>
+
+<div class="glass"><h3>🌍 Pourquoi partager ?</h3>
+<p>Imagine un musicien qui joue seul dans sa chambre pendant 10 ans. Il sera bon, mais il progressera <strong>10 fois plus vite</strong> s'il joue devant des gens, reçoit des retours, et écoute d'autres musiciens.</p>
+<p>En photo, c'est pareil :</p>
+<p>👀 <strong>Le regard des autres</strong> → tu ne vois plus tes propres erreurs. Les autres, si.</p>
+<p>💪 <strong>La motivation</strong> → les likes et commentaires, ça donne envie de continuer !</p>
+<p>🧠 <strong>L'analyse</strong> → quand tu choisis quoi poster, tu réfléchis à ce qui est bon ou pas. C'est un exercice en soi !</p></div>
+
+<div class="glass"><h3>📱 Composer pour les réseaux sociaux</h3>
+<p>Quelques astuces pour que tes photos brillent sur Instagram & co :</p>
+<p>📐 <strong>Le format compte</strong> → Instagram aime le carré (1:1) et le 4:5 (portrait). Le paysage (16:9) est coupé dans le feed.</p>
+<p>🎨 <strong>La cohérence du feed</strong> → choisis 2-3 palettes de couleurs et alterne. Ton profil aura un "look".</p>
+<p>✍️ <strong>La légende</strong> → raconte l'histoire derrière la photo. Les gens adorent le "behind the scenes".</p>
+<p>🏷️ <strong>Les hashtags</strong> → utilise des hashtags spécifiques (#streetphotography plutôt que #photo). 10-15 hashtags ciblés > 30 hashtags génériques.</p></div>
+
+<div class="glass"><h3>💬 La critique constructive</h3>
+<p>Recevoir des critiques, c'est comme aller chez le médecin : pas toujours agréable, mais <strong>nécessaire pour progresser</strong>. 🩺</p>
+<p>✅ <strong>Bonne critique</strong> : "La composition est top, mais l'horizon est penché de 2°" → spécifique et actionnable</p>
+<p>❌ <strong>Mauvaise critique</strong> : "Bof" → inutile, ignore-la</p>
+<p>Comment recevoir une critique :</p>
+<p>1. 🧘 <strong>Respire</strong> — ne prends pas les critiques personnellement</p>
+<p>2. 🤔 <strong>Évalue</strong> — est-ce que la personne a raison ? (Souvent, oui)</p>
+<p>3. 📝 <strong>Note</strong> — si 3 personnes te disent la même chose, c'est probablement vrai</p></div>
+
+<div class="glass"><h3>🏋️ Les défis pour progresser</h3>
+<p>Rien ne fait progresser plus vite que la <strong>pratique régulière avec contrainte</strong> :</p>
+<p>📅 <strong>Le projet 365</strong> → une photo par jour pendant un an. Radical, mais transformateur !</p>
+<p>📅 <strong>Le projet 52</strong> → une photo par semaine. Plus réaliste pour commencer.</p>
+<p>🎯 <strong>Les thèmes hebdo</strong> → "cette semaine : le rouge", "cette semaine : les reflets". La contrainte force la créativité !</p>
+<p>👥 <strong>Les communautés photo</strong> → rejoins un club photo local ou un groupe en ligne. L'émulation du groupe est magique.</p></div>
+
+<div class="glass" style="background:rgba(255,215,0,0.1);border:1px solid var(--gold)"><h3>💡 Mnémotechnique</h3>
+<p><strong>"Partager ≠ Se vanter. Partager = Progresser."</strong> 🚀</p>
+<p><strong>"La meilleure photo, c'est la prochaine"</strong> → ne t'accroche pas trop à une seule image. Continue à shooter !</p></div>
+
+<div class="glass" style="background:rgba(100,100,255,0.1);border:1px solid #88f"><h3>🎮 Mini-défi pratique</h3>
+<p>Lance-toi dans le partage :</p>
+<p>1. 📱 Poste ta <strong>meilleure photo de la semaine</strong> sur un réseau social avec une légende qui raconte l'histoire</p>
+<p>2. 💬 Demande un <strong>avis constructif</strong> à un ami photographe (ou un groupe en ligne)</p>
+<p>3. 📅 Lance-toi un <strong>défi 7 jours</strong> : une photo par jour sur un thème (couleurs, ombres, textures...)</p></div>
+
+<div class="glass" style="background:rgba(0,255,150,0.1);border:1px solid #0f6"><h3>✅ Ce que tu maîtrises maintenant !</h3>
+<p>✔️ Tu sais pourquoi partager est essentiel pour progresser</p>
+<p>✔️ Tu connais les astuces pour briller sur les réseaux sociaux</p>
+<p>✔️ Tu sais recevoir et utiliser la critique constructive</p>
+<p>✔️ Tu as des idées de défis pour pratiquer régulièrement</p>
+<p><strong>🔜 Prochaine étape :</strong> la dernière leçon ! On va tout <strong>rassembler</strong> pour faire de toi un·e <strong>photographe complet·e</strong>. 👑</p></div>`,
+
+'5.5': `<h2>👑 Le Photographe Complet — Tu n'es Plus un Débutant !</h2>
+<div class="glass"><h3>🔄 Rappel</h3>
+<p>Tu as trouvé ton <strong>style</strong> 🎭, appris à <strong>raconter des histoires</strong> 📖, maîtrisé le <strong>post-traitement</strong> 🖥️ et découvert comment <strong>partager et progresser</strong> 🚀. Il est temps de <strong>tout assembler</strong>. Cette leçon n'est pas vraiment une leçon — c'est une <strong>célébration</strong>. 🎉</p></div>
+
+<div class="glass" style="background:rgba(255,215,0,0.15);border:2px solid var(--gold)"><h3>🏆 Regarde tout ce que tu as accompli !</h3>
+<p>Tu as traversé <strong>5 mondes</strong>, capturé <strong>25 créatures</strong>, vaincu <strong>5 boss</strong>... mais surtout, tu as acquis des <strong>compétences réelles</strong> :</p>
+<p>☀️ <strong>Monde 1 — La Lumière</strong> → tu sais lire la lumière, utiliser la golden hour, et maîtriser le triangle d'exposition (ouverture, vitesse, ISO)</p>
+<p>📐 <strong>Monde 2 — La Composition</strong> → tu connais la règle des tiers, les lignes directrices, le cadrage, la symétrie et l'espace négatif</p>
+<p>🎨 <strong>Monde 3 — Les Couleurs</strong> → tu maîtrises le cercle chromatique, les couleurs chaudes/froides, le contraste, la balance des blancs</p>
+<p>👤 <strong>Monde 4 — Le Portrait</strong> → tu sais éclairer un visage, poser ton sujet, gérer le bokeh et capturer l'émotion</p>
+<p>🎭 <strong>Monde 5 — Le Style</strong> → tu as trouvé ta voix, tu racontes des histoires, tu retouches avec goût et tu partages ton travail</p></div>
+
+<div class="glass"><h3>🗺️ Ta feuille de route photographique</h3>
+<p>Tu n'es plus un débutant. Mais la photo est un voyage <strong>infini</strong> — et c'est ça qui est beau ! Voici tes prochaines étapes :</p>
+<p>📸 <strong>Niveau 1 : Pratiquer</strong> → shooter, shooter, shooter. La théorie sans pratique, c'est comme lire un livre de natation sans aller à la piscine. 🏊</p>
+<p>📚 <strong>Niveau 2 : Approfondir</strong> → choisis UN domaine et deviens bon dedans. Street ? Portrait ? Paysage ? Macro ?</p>
+<p>👥 <strong>Niveau 3 : Partager</strong> → rejoins une communauté, participe à des défis, expose ton travail</p>
+<p>🎓 <strong>Niveau 4 : Enseigner</strong> → rien ne consolide mieux tes connaissances que de les expliquer à quelqu'un d'autre !</p></div>
+
+<div class="glass"><h3>🔑 Les 5 vérités du photographe</h3>
+<p>Après 5 mondes d'apprentissage, voici les vérités que tout photographe finit par comprendre :</p>
+<p>1️⃣ <strong>L'appareil ne fait pas la photo</strong> → ton smartphone suffit. L'important, c'est l'œil derrière.</p>
+<p>2️⃣ <strong>Les règles existent pour être cassées</strong> → mais seulement quand tu les connais. Maintenant, c'est le cas !</p>
+<p>3️⃣ <strong>Chaque photo ratée est une leçon</strong> → les pros ratent 95% de leurs photos. Ils ne montrent que les 5%.</p>
+<p>4️⃣ <strong>La lumière est TOUT</strong> → tu peux avoir le meilleur sujet du monde, sans bonne lumière, la photo sera banale.</p>
+<p>5️⃣ <strong>La meilleure photo, c'est la prochaine</strong> → ne regarde pas en arrière. Continue à créer !</p></div>
+
+<div class="glass" style="background:rgba(255,215,0,0.1);border:1px solid var(--gold)"><h3>💡 Mnémotechnique finale</h3>
+<p><strong>"LIGHT" — Les 5 piliers de la photo :</strong></p>
+<p><strong>L</strong>umière → la base de tout</p>
+<p><strong>I</strong>nstinct → ton œil, ton style</p>
+<p><strong>G</strong>éométrie → la composition</p>
+<p><strong>H</strong>istoire → ce que ta photo raconte</p>
+<p><strong>T</strong>ravail → la pratique, encore et toujours</p></div>
+
+<div class="glass" style="background:rgba(100,100,255,0.1);border:1px solid #88f"><h3>🎮 Mini-défi ultime</h3>
+<p>Le défi de graduation :</p>
+<p>1. 📸 Fais une photo qui combine <strong>tout</strong> : bonne lumière, bonne composition, couleurs harmonieuses, émotion</p>
+<p>2. 🖥️ Retouche-la avec les Big 3 (ECCo)</p>
+<p>3. 📱 Partage-la avec une légende qui raconte l'histoire derrière</p>
+<p>Cette photo sera ta <strong>photo de diplôme</strong> ! 🎓</p></div>
+
+<div class="glass" style="background:rgba(0,255,150,0.15);border:2px solid #0f6"><h3>🎉 FÉLICITATIONS, PHOTOGRAPHE !</h3>
+<p>🏆 <strong>Tu as terminé Frame Hunter !</strong></p>
+<p>Tu es entré·e dans ce jeu comme un·e touriste au smartphone, et tu en sors comme un·e <strong>vrai·e photographe</strong>.</p>
+<p>Tu sais lire la lumière ☀️, composer une image 📐, jouer avec les couleurs 🎨, capturer les émotions 💫, et exprimer ta vision unique 🎭.</p>
+<p>N'oublie jamais : <strong>l'appareil photo le plus puissant au monde, c'est celui que tu as sur toi</strong>. Alors sors, regarde le monde, et <strong>raconte-le à ta façon</strong>.</p>
+<p>📸 Bonne chasse, photographe. Le monde attend tes images. 🌍✨</p>
+<p>💪 Maintenant, prouve tes compétences face au <strong>Gardien du Temple</strong> — le boss final qui te testera sur TOUT ce que tu as appris dans les 5 mondes ! ⚔️</p></div>`
 };
 
 const QUIZZES = {
@@ -3035,6 +3514,41 @@ const QUIZZES = {
   {q:'Le portrait environnemental montre...',opts:['Uniquement le visage en gros plan','La personne dans son contexte/univers','Un fond complètement flou','Seulement les mains'],ans:1},
   {q:'Pour un portrait environnemental, tu utilises une ouverture de...',opts:['f/1.4 (tout flou)','f/5.6 à f/8 (décor reconnaissable)','f/22 (tout ultra net)','Ça n\'a pas d\'importance'],ans:1},
   {q:'Quel regard crée la connexion la plus directe avec le spectateur ?',opts:['Regard vers le bas','Regard au loin','Regard vers l\'appareil','Yeux fermés'],ans:2}
+],
+'5.1': [
+  {q:'Le style photographique, c\'est...',opts:['L\'appareil que tu utilises','Ta signature visuelle personnelle','Un filtre Instagram','Une marque d\'objectif'],ans:1},
+  {q:'Les 3C du style sont...',opts:['Couleur, Cadrage, Contraste','Cohérence, Couleur, Contenu','Composition, Capture, Correction','Créativité, Courage, Curiosité'],ans:1},
+  {q:'Le meilleur moyen de trouver ton style, c\'est...',opts:['Copier exactement un photographe célèbre','Analyser ce qui attire TON œil','Acheter un meilleur appareil','Utiliser le même filtre partout'],ans:1},
+  {q:'Ton feed Instagram devrait...',opts:['Avoir un filtre différent par photo','Montrer une certaine cohérence visuelle','N\'avoir que des selfies','Être totalement aléatoire'],ans:1},
+  {q:'Étudier les photographes que tu admires, c\'est...',opts:['De la triche','De l\'apprentissage (tous les artistes le font)','Interdit','Réservé aux pros'],ans:1}
+],
+'5.2': [
+  {q:'Une bonne photo narrative devrait...',opts:['Répondre à toutes les questions','Poser des questions au spectateur','Être parfaitement nette','Avoir beaucoup de couleurs'],ans:1},
+  {q:'SCAD, ce sont les 4 ingrédients de...',opts:['La retouche','L\'exposition','L\'histoire visuelle','La composition'],ans:2},
+  {q:'Le "hors-champ" en photo, c\'est...',opts:['Photographier en dehors d\'un champ','Montrer la réaction plutôt que l\'action','Un type de bokeh','Un cadrage raté'],ans:1},
+  {q:'Un projet photo, c\'est...',opts:['Acheter du matériel','Une série de photos avec un fil conducteur','Un filtre spécial','Un logiciel de retouche'],ans:1},
+  {q:'Le meilleur exercice pour progresser, c\'est...',opts:['Regarder des tutoriels','Acheter un meilleur objectif','Se lancer un défi avec contrainte et photographier régulièrement','Attendre l\'inspiration'],ans:2}
+],
+'5.3': [
+  {q:'Les Big 3 de la retouche sont...',opts:['Flou, Netteté, Zoom','Exposition, Contraste, Couleurs','Filtre, Cadrage, Rotation','HDR, Panorama, Portrait'],ans:1},
+  {q:'La retouche photo, c\'est...',opts:['De la triche','Révéler le meilleur de ta photo','Transformer complètement l\'image','Réservé aux pros'],ans:1},
+  {q:'L\'astuce des 30%, c\'est...',opts:['Ne retoucher que 30% de tes photos','Baisser tes réglages de 30% après ta retouche','Augmenter la saturation de 30%','N\'utiliser que 30% des curseurs'],ans:1},
+  {q:'La vibrance est préférable à la saturation parce qu\'elle...',opts:['Est plus forte','Booste seulement les couleurs faibles (plus subtil)','Est gratuite','Change la lumière'],ans:1},
+  {q:'Quel outil gratuit est le "couteau suisse" de la retouche sur téléphone ?',opts:['Paint','Snapseed','Calculator','Notes'],ans:1}
+],
+'5.4': [
+  {q:'Pourquoi partager ses photos est important ?',opts:['Pour les likes uniquement','Pour progresser grâce au regard des autres','Pour devenir célèbre','Pour vendre ses photos'],ans:1},
+  {q:'Sur Instagram, quel format est optimal dans le feed ?',opts:['16:9 paysage','1:1 carré ou 4:5 portrait','Panoramique','Le plus grand possible'],ans:1},
+  {q:'Face à une critique constructive, tu dois...',opts:['T\'énerver','L\'ignorer complètement','Évaluer si elle est pertinente et en tirer une leçon','Supprimer ta photo'],ans:2},
+  {q:'Le projet 52, c\'est...',opts:['52 photos par jour','Une photo par semaine pendant un an','52 filtres différents','52 likes minimum'],ans:1},
+  {q:'La cohérence du feed, ça veut dire...',opts:['Poster la même photo 10 fois','Avoir un "air de famille" visuel entre tes photos','Ne poster que des selfies','Utiliser le même hashtag'],ans:1}
+],
+'5.5': [
+  {q:'LIGHT, c\'est l\'acronyme de...',opts:['Lumière, ISO, Grain, HDR, Temps','Lumière, Instinct, Géométrie, Histoire, Travail','Lens, Image, Ground, Height, Texture','Luminosité, Intensité, Gamme, Harmonie, Ton'],ans:1},
+  {q:'La vérité numéro 1 du photographe, c\'est...',opts:['Il faut un bon appareil','L\'appareil ne fait pas la photo','Il faut être un artiste né','La retouche fait tout'],ans:1},
+  {q:'Les pros ratent environ ___ de leurs photos',opts:['5%','25%','50%','95%'],ans:3},
+  {q:'Quand peut-on casser les règles de composition ?',opts:['Jamais','Quand on les connaît et qu\'on le fait avec intention','Tout le temps','Seulement en noir et blanc'],ans:1},
+  {q:'La meilleure photo, c\'est...',opts:['Celle avec le plus de likes','Celle prise avec le meilleur appareil','La prochaine','Celle avec le meilleur filtre'],ans:2}
 ]
 };
 
@@ -3088,6 +3602,19 @@ const BOSS4_QUESTIONS = [
   {q:'Un vrai sourire se reconnaît aux...',opts:['Dents visibles','Rides au coin des yeux (les yeux sourient)','Lèvres fermées','Joues rouges'],ans:1},
   {q:'Le portrait environnemental montre...',opts:['Seulement les yeux','La personne dans son univers/contexte','Un fond complètement flou','Un gros plan extrême'],ans:1},
   {q:'Ne dis JAMAIS ___ pour obtenir un sourire naturel',opts:['"Regarde ici"','"Cheese !"','"Bouge pas"','"Ferme les yeux"'],ans:1}
+];
+
+const BOSS5_QUESTIONS = [
+  {q:'Que signifie "photographie" littéralement ?',opts:['Capturer le temps','Peindre la réalité','Écrire avec la lumière','Dessiner la vie'],ans:2},
+  {q:'La règle des tiers divise l\'image en...',opts:['4 cases','6 cases','9 cases','12 cases'],ans:2},
+  {q:'Bleu + orange sont des couleurs...',opts:['Analogues','Primaires','Complémentaires','Tertiaires'],ans:2},
+  {q:'Sur quoi fais-tu TOUJOURS la mise au point en portrait ?',opts:['Le front','Le nez','Les yeux','Les oreilles'],ans:2},
+  {q:'Les 3C du style photographique sont...',opts:['Couleur, Cadrage, Contraste','Cohérence, Couleur, Contenu','Capture, Correction, Création','Composition, Clarté, Courage'],ans:1},
+  {q:'Les Big 3 de la retouche sont...',opts:['Flou, Netteté, Zoom','Exposition, Contraste, Couleurs','HDR, Filtre, Cadrage','Rotation, Recadrage, Resize'],ans:1},
+  {q:'SCAD en narratif photo, c\'est...',opts:['Style, Couleur, Angle, Distance','Sujet, Contexte, Action, Détail','Saturation, Contraste, Aperture, Depth','Symétrie, Cadre, Art, Design'],ans:1},
+  {q:'La golden hour, c\'est...',opts:['Midi pile','1h après le lever ou avant le coucher du soleil','Minuit','Le moment où tu as le plus de likes'],ans:1},
+  {q:'La meilleure retouche est...',opts:['La plus forte','La plus colorée','Invisible','Avec le plus de filtres'],ans:2},
+  {q:'La meilleure photo, c\'est...',opts:['Celle avec le meilleur appareil','Celle avec le plus de likes','La prochaine','Celle en noir et blanc'],ans:2}
 ];
 
 // === GAME STATE ===
@@ -3357,6 +3884,9 @@ function startBoss() {
 }
 
 function getBossConfig() {
+  if(currentBossWorld===5) return {sprite:'boss5',name:'Le Gardien du Temple',id:'boss5',questions:BOSS5_QUESTIONS,
+    intro:'"Ainsi tu as traversé les 5 mondes... Lumière, Composition, Couleur, Portrait, Style — tu prétends tout maîtriser ? Je suis le Gardien du Temple, le BOSS FINAL. Mes 10 questions couvrent TOUT. 20 secondes, 3 erreurs = défaite. Seul·e un·e vrai·e photographe passera !"',
+    victory:'"Extraordinaire... Tu as prouvé ta maîtrise absolue. Lumière, composition, couleur, portrait, style — tout t\'obéit. Le Temple te reconnaît comme Maître Photographe. Va, et montre au monde ta vision !"',title:'Maître Photographe'};
   if(currentBossWorld===4) return {sprite:'boss4',name:'Le Sculpteur d\'Âmes',id:'boss4',questions:BOSS4_QUESTIONS,
     intro:'"Ah, tu crois connaître l\'âme humaine, petit·e portraitiste ? La lumière, la pose, l\'émotion… Voyons si tu sais vraiment capturer l\'essence d\'un regard ! 10 questions, 20 secondes, 3 erreurs = défaite !"',
     victory:'"Magnifique... Tu vois au-delà des visages. Tu captures les âmes. Les montagnes te reconnaissent comme Sculpteur de Lumière."',title:'Sculpteur de Lumière'};
@@ -3658,6 +4188,36 @@ const CREATURES = [
    condition:'Connexion émotionnelle · Sourire authentique · Regard direct',sceneType:'emotera',
    idealAperture:2,idealShutter:8,idealISO:1,
    sceneColors:['#1e3a5f','#3b82f6','#d4a574','#60a5fa'],
+   particles:'sparkle'},
+  {id:'c21',afterChapter:'5.1',sprite:'styliste',name:'Stylvane',
+   scene:'Un Stylvane se tient au centre d\'une galerie d\'art, changeant de couleur et de forme à chaque instant. Il cherche son identité visuelle.',
+   condition:'Style cohérent · Palette harmonieuse · Lumière douce',sceneType:'styliste',
+   idealAperture:3,idealShutter:8,idealISO:1,
+   sceneColors:['#1e1b4b','#4a3a6a','#a855f7','#c084fc'],
+   particles:'sparkle'},
+  {id:'c22',afterChapter:'5.2',sprite:'conteur',name:'Narratus',
+   scene:'Un Narratus flotte au milieu d\'un livre ouvert géant, des scènes de vie tourbillonnant autour de lui. Chaque image raconte une histoire.',
+   condition:'Histoire visuelle · Contexte riche · Moment clé',sceneType:'conteur',
+   idealAperture:4,idealShutter:8,idealISO:1,
+   sceneColors:['#7c2d12','#f97316','#fef3c7','#ea580c'],
+   particles:'sparkle'},
+  {id:'c23',afterChapter:'5.3',sprite:'pixeliste',name:'Pixelium',
+   scene:'Un Pixelium se transforme sous tes yeux — sa moitié gauche est terne et plate, sa moitié droite rayonne de couleurs sublimées par la retouche.',
+   condition:'Retouche subtile · Exposition correcte · Couleurs équilibrées',sceneType:'pixeliste',
+   idealAperture:3,idealShutter:8,idealISO:0,
+   sceneColors:['#164e63','#06b6d4','#cffafe','#0891b2'],
+   particles:'sparkle'},
+  {id:'c24',afterChapter:'5.4',sprite:'ambassadeur',name:'Partagon',
+   scene:'Un Partagon brille au sommet d\'une montagne, projetant ta meilleure photo dans le ciel étoilé pour que le monde entier la voie.',
+   condition:'Bonne composition · Impact visuel · Lumière golden hour',sceneType:'ambassadeur',
+   idealAperture:2,idealShutter:7,idealISO:1,
+   sceneColors:['#064e3b','#10b981','#d1fae5','#059669'],
+   particles:'sparkle'},
+  {id:'c25',afterChapter:'5.5',sprite:'zenith',name:'Zénithon',
+   scene:'Le Zénithon, créature légendaire ultime, plane au-dessus des 5 mondes. Son corps irradie de lumière dorée, composé de fragments de toutes les créatures que tu as rencontrées.',
+   condition:'Maîtrise totale · Golden hour · Composition parfaite · Émotion',sceneType:'zenith',
+   idealAperture:2,idealShutter:8,idealISO:0,
+   sceneColors:['#92400e','#fbbf24','#fef3c7','#f59e0b'],
    particles:'sparkle'}
 ];
 
