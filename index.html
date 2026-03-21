@@ -394,7 +394,13 @@ const PA = {
     licorne: ['','#e2e8f0','#f7fafc','#fff','#d6bcfa','#9f7aea','#805ad5','#f0e6ff','#ffd700','#b794f4','#edf2f7','#c4b5fd','#e9d8fd'],
     wyverne: ['','#c53030','#e53e3e','#fc8181','#feb2b2','#742a2a','#9b2c2c','#f56565','#ff6b00','#ffa500','#ffdd00','#1a0a0a','#2d1f1f'],
     spectre: ['','#2d3748','#4a5568','#718096','#a0aec0','#1a202c','#0d1117','#48bb78','#68d391','#9ae6b4','#c6f6d5','#234e3a','#38a169'],
-    boss: ['','#f6e05e','#ecc94b','#d69e2e','#b7791f','#fff','#fefcbf','#faf089','#c4b5fd','#9f7aea','#e2e8f0','#805ad5','#ffdd00']
+    boss: ['','#f6e05e','#ecc94b','#d69e2e','#b7791f','#fff','#fefcbf','#faf089','#c4b5fd','#9f7aea','#e2e8f0','#805ad5','#ffdd00'],
+    chromagus: ['','#ef4444','#f97316','#eab308','#22c55e','#3b82f6','#8b5cf6','#ec4899','#fff','#1e1b4b','#fbbf24','#0f172a','#f0abfc'],
+    pyrogel: ['','#ef4444','#f97316','#fbbf24','#3b82f6','#60a5fa','#93c5fd','#fff','#1e1b4b','#dc2626','#0ea5e9','#fef3c7','#bae6fd'],
+    ombreclat: ['','#0f172a','#1e293b','#334155','#f8fafc','#e2e8f0','#cbd5e1','#fff','#000','#64748b','#94a3b8','#f1f5f9','#475569'],
+    spectralune: ['','#312e81','#4338ca','#6366f1','#a5b4fc','#fbbf24','#f59e0b','#fff','#818cf8','#c4b5fd','#e0e7ff','#1e1b4b','#eef2ff'],
+    iriselle: ['','#ef4444','#f97316','#eab308','#22c55e','#3b82f6','#8b5cf6','#ec4899','#fff','#fbbf24','#a855f7','#f0abfc','#34d399'],
+    boss3: ['','#8b5cf6','#a78bfa','#c4b5fd','#7c3aed','#ec4899','#f472b6','#fbbf24','#1e1b4b','#f59e0b','#fff','#ddd6fe','#6d28d9']
   },
 
   // Draw pixel art from compact string data
@@ -937,6 +943,223 @@ PA.sprites.boss2 = {pal:'boss2', size:32, data:
   '00000000000000000000000000000000'
 };
 
+// World 3 Creatures
+// Chromagus - Color wheel spirit (rainbow orb creature)
+PA.sprites.chromagus = {pal:'chromagus', size:32, data:
+  '00000000000000000000000000000000'+
+  '00000000000000000000000000000000'+
+  '00000000000088800000000000000000'+
+  '00000000008811188000000000000000'+
+  '00000000081111111800000000000000'+
+  '00000000811111111180000000000000'+
+  '00000008111122211118000000000000'+
+  '00000081111233211118000000000000'+
+  '00000011112334321111000000000000'+
+  '00000011123345432111000000000000'+
+  '00000011234456543211000000000000'+
+  '00000011234567654321000000000000'+
+  '00000011234567654321000000000000'+
+  '00000011234456543211000000000000'+
+  '00000011123345432111000000000000'+
+  '00000011112334321111000000000000'+
+  '00000081111233211118000000000000'+
+  '00000008111122211118000000000000'+
+  '00000000811111111180000000000000'+
+  '00000000081111111800000000000000'+
+  '00000000008811188000000000000000'+
+  '00000000000088800000000000000000'+
+  '00000000000000000000000000000000'+
+  '00000000000000000000000000000000'+
+  '00000000000000000000000000000000'+
+  '00000000000000000000000000000000'+
+  '00000000000000000000000000000000'+
+  '00000000000000000000000000000000'+
+  '00000000000000000000000000000000'+
+  '00000000000000000000000000000000'+
+  '00000000000000000000000000000000'+
+  '00000000000000000000000000000000'
+};
+
+// Pyroglaçon - Fire/ice dual creature
+PA.sprites.pyrogel = {pal:'pyrogel', size:32, data:
+  '00000000000000000000000000000000'+
+  '00000003000000000000040000000000'+
+  '00000033300000000000444000000000'+
+  '00000132300000000004564000000000'+
+  '00001123300000000045664000000000'+
+  '00001122330000000456664000000000'+
+  '00011222330000004566640000000000'+
+  '00112223300000045666400000000000'+
+  '00112233000000456664000000000000'+
+  '01122330000004566640000000000000'+
+  '01123300000045666400000000000000'+
+  '01123000000456664000000000000000'+
+  '01123000004566640000000000000000'+
+  '00112300045666400000000000000000'+
+  '00112330456664000000000000000000'+
+  '00011234566640000000000000000000'+
+  '00001134566400000000000000000000'+
+  '00000113564000000000000000000000'+
+  '00000011540000000000000000000000'+
+  '00000001100000000000000000000000'+
+  '00000000000000000000000000000000'+
+  '00000000000000000000000000000000'+
+  '00000000000000000000000000000000'+
+  '00000000000000000000000000000000'+
+  '00000000000000000000000000000000'+
+  '00000000000000000000000000000000'+
+  '00000000000000000000000000000000'+
+  '00000000000000000000000000000000'+
+  '00000000000000000000000000000000'+
+  '00000000000000000000000000000000'+
+  '00000000000000000000000000000000'+
+  '00000000000000000000000000000000'
+};
+
+// Ombréclat - Contrast creature (half light half dark)
+PA.sprites.ombreclat = {pal:'ombreclat', size:32, data:
+  '00000000000000000000000000000000'+
+  '00000000000000000000000000000000'+
+  '00000000000099900000000000000000'+
+  '00000000009944499000000000000000'+
+  '00000000094444449900000000000000'+
+  '00000000944444444990000000000000'+
+  '00000009444447444499000000000000'+
+  '00000094444477444449900000000000'+
+  '00000944444777444444990000000000'+
+  '00009444447777744444499000000000'+
+  '00009444477777774444499000000000'+
+  '00094444777777777444449900000000'+
+  '00094444777778777444449900000000'+
+  '00094444777788777444449900000000'+
+  '00094444777788777444449900000000'+
+  '00094444777778777444449900000000'+
+  '00094444777777777444449900000000'+
+  '00009444477777774444499000000000'+
+  '00009444447777744444499000000000'+
+  '00000944444777444444990000000000'+
+  '00000094444477444449900000000000'+
+  '00000009444447444499000000000000'+
+  '00000000944444444990000000000000'+
+  '00000000094444449900000000000000'+
+  '00000000009944499000000000000000'+
+  '00000000000099900000000000000000'+
+  '00000000000000000000000000000000'+
+  '00000000000000000000000000000000'+
+  '00000000000000000000000000000000'+
+  '00000000000000000000000000000000'+
+  '00000000000000000000000000000000'+
+  '00000000000000000000000000000000'
+};
+
+// Spectralune - Spectral moon creature
+PA.sprites.spectralune = {pal:'spectralune', size:32, data:
+  '00000000000000000000000000000000'+
+  '00000000000056000000000000000000'+
+  '00000000000566600000000000000000'+
+  '00000000005666660000000000000000'+
+  '00000000056666666000000000000000'+
+  '00000000566633666600000000000000'+
+  '00000005666333366660000000000000'+
+  '00000056663333336666000000000000'+
+  '00000566633333333666600000000000'+
+  '00005666333388333366660000000000'+
+  '00005666333888833366660000000000'+
+  '00056663338888883336666000000000'+
+  '00056663338999883336666000000000'+
+  '00056663338999883336666000000000'+
+  '00056663338888883336666000000000'+
+  '00005666333888833366660000000000'+
+  '00005666333388333366660000000000'+
+  '00000566633333333666600000000000'+
+  '00000056663333336666000000000000'+
+  '00000005666333366660000000000000'+
+  '00000000566633666600000000000000'+
+  '00000000056666666000000000000000'+
+  '00000000005666660000000000000000'+
+  '00000000000566600000000000000000'+
+  '00000000000056000000000000000000'+
+  '00000000000000000000000000000000'+
+  '00000000000000000000000000000000'+
+  '00000000000000000000000000000000'+
+  '00000000000000000000000000000000'+
+  '00000000000000000000000000000000'+
+  '00000000000000000000000000000000'+
+  '00000000000000000000000000000000'
+};
+
+// Iriselle - Rainbow butterfly creature
+PA.sprites.iriselle = {pal:'iriselle', size:32, data:
+  '00000000000000000000000000000000'+
+  '00000000000008800000000000000000'+
+  '00000000000088880000000000000000'+
+  '00000000000888888000000000000000'+
+  '00000110000088880000011000000000'+
+  '00001221000008800000122100000000'+
+  '00012332100008800001233210000000'+
+  '00123443210088880012344321000000'+
+  '01234554321088880123455432100000'+
+  '12345665432188881234566543210000'+
+  '12345776543288882345677654321000'+
+  '12345776543288882345677654321000'+
+  '12345665432188881234566543210000'+
+  '01234554321088880123455432100000'+
+  '00123443210088880012344321000000'+
+  '00012332100008800001233210000000'+
+  '00001221000008800000122100000000'+
+  '00000110000088880000011000000000'+
+  '00000000000888888000000000000000'+
+  '00000000000088880000000000000000'+
+  '00000000000008800000000000000000'+
+  '00000000000000000000000000000000'+
+  '00000000000000000000000000000000'+
+  '00000000000000000000000000000000'+
+  '00000000000000000000000000000000'+
+  '00000000000000000000000000000000'+
+  '00000000000000000000000000000000'+
+  '00000000000000000000000000000000'+
+  '00000000000000000000000000000000'+
+  '00000000000000000000000000000000'+
+  '00000000000000000000000000000000'+
+  '00000000000000000000000000000000'
+};
+
+// Boss 3 - La Sorcière des Teintes
+PA.sprites.boss3 = {pal:'boss3', size:32, data:
+  '00000000000007000000000000000000'+
+  '00000000000077700000000000000000'+
+  '00000000000777770000000000000000'+
+  '00000000007777777000000000000000'+
+  '00000000077777777700000000000000'+
+  '00000000777788777770000000000000'+
+  '00000007777888877777000000000000'+
+  '00000000077888877000000000000000'+
+  '00000000007838870000000000000000'+
+  '00000000007388370000000000000000'+
+  '000000000073cc370000000000000000'+
+  '00000000007333370000000000000000'+
+  '00000009007355370090000000000000'+
+  '00000099003335330099000000000000'+
+  '00000990033333333009900000000000'+
+  '00009900333511533000990000000000'+
+  '00099003335111153300099000000000'+
+  '00990033511111115330009900000000'+
+  '00900335111111111533000900000000'+
+  '00000351111111111153000000000000'+
+  '00003511111111111115300000000000'+
+  '00003511111111111115300000000000'+
+  '00000351111111111153000000000000'+
+  '00000035111111111530000000000000'+
+  '00000003511111115300000000000000'+
+  '00000000355111553000000000000000'+
+  '00000000035111530000000000000000'+
+  '00000000003515300000000000000000'+
+  '00000000003808300000000000000000'+
+  '00000000038000830000000000000000'+
+  '00000000000000000000000000000000'+
+  '00000000000000000000000000000000'
+};
+
 // Small icons (16x16)
 PA.sprites.icon_camera = {pal:'kitsune', size:16, data:
   '0000000000000000'+
@@ -1391,6 +1614,53 @@ function drawScene(canvas, sceneType, w, h) {
       eg.addColorStop(0,'rgba(200,100,100,0.1)');eg.addColorStop(1,'rgba(0,0,0,0)');
       ctx.fillStyle=eg;ctx.fillRect(0,0,canvas.width,canvas.height);
       break;
+
+    case 'chromagus': // Rainbow garden
+      for(let y=0;y<canvas.height;y++){let t=y/canvas.height;ctx.fillStyle=`rgb(${Math.round(30+40*t)},${Math.round(20+50*t)},${Math.round(60+30*t)})`;ctx.fillRect(0,y,canvas.width,1);}
+      ctx.fillStyle='#1a3010';ctx.fillRect(0,85,canvas.width,35);
+      const rainbowColors=['#ef4444','#f97316','#eab308','#22c55e','#3b82f6','#8b5cf6'];
+      for(let i=0;i<6;i++){ctx.fillStyle=rainbowColors[i];ctx.globalAlpha=0.15;ctx.beginPath();ctx.arc(80,50,60-i*8,Math.PI,0);ctx.stroke();ctx.lineWidth=3;ctx.strokeStyle=rainbowColors[i];ctx.beginPath();ctx.arc(80,70,55-i*8,Math.PI,0);ctx.stroke();}
+      ctx.globalAlpha=1;
+      for(let i=0;i<8;i++){ctx.fillStyle=rainbowColors[i%6];ctx.globalAlpha=0.3;ctx.beginPath();ctx.arc(20+i*20,88+Math.sin(i)*5,4+Math.random()*3,0,Math.PI*2);ctx.fill();}
+      ctx.globalAlpha=1;
+      break;
+
+    case 'pyrogel': // Half fire half ice landscape
+      for(let y=0;y<canvas.height;y++){let t=y/canvas.height;let x1=canvas.width/2;
+        ctx.fillStyle=`rgb(${Math.round(80+100*t)},${Math.round(20+30*t)},${Math.round(10)})`;ctx.fillRect(0,y,x1,1);
+        ctx.fillStyle=`rgb(${Math.round(10)},${Math.round(30+40*t)},${Math.round(80+80*t)})`;ctx.fillRect(x1,y,canvas.width-x1,1);}
+      ctx.fillStyle='#3a1a0a';ctx.fillRect(0,90,canvas.width/2,30);
+      ctx.fillStyle='#0a2a3a';ctx.fillRect(canvas.width/2,90,canvas.width/2,30);
+      ctx.fillStyle='rgba(255,100,0,0.1)';ctx.fillRect(0,0,canvas.width/2,canvas.height);
+      ctx.fillStyle='rgba(0,100,255,0.1)';ctx.fillRect(canvas.width/2,0,canvas.width/2,canvas.height);
+      break;
+
+    case 'ombreclat': // Half light half dark split
+      ctx.fillStyle='#f8fafc';ctx.fillRect(0,0,canvas.width/2,canvas.height);
+      ctx.fillStyle='#0f172a';ctx.fillRect(canvas.width/2,0,canvas.width/2,canvas.height);
+      ctx.fillStyle='#e2e8f0';ctx.fillRect(0,85,canvas.width/2,35);
+      ctx.fillStyle='#1e293b';ctx.fillRect(canvas.width/2,85,canvas.width/2,35);
+      let sg=ctx.createLinearGradient(canvas.width/2-20,0,canvas.width/2+20,0);
+      sg.addColorStop(0,'#f8fafc');sg.addColorStop(1,'#0f172a');
+      ctx.fillStyle=sg;ctx.fillRect(canvas.width/2-20,0,40,canvas.height);
+      break;
+
+    case 'spectralune': // Moonlit blue/purple landscape
+      for(let y=0;y<canvas.height;y++){let t=y/canvas.height;ctx.fillStyle=`rgb(${Math.round(15+10*t)},${Math.round(10+20*t)},${Math.round(40+30*t)})`;ctx.fillRect(0,y,canvas.width,1);}
+      ctx.fillStyle='#ddd';ctx.beginPath();ctx.arc(canvas.width*0.7,25,16,0,Math.PI*2);ctx.fill();
+      ctx.fillStyle='rgba(100,100,200,0.05)';ctx.beginPath();ctx.arc(canvas.width*0.7,25,40,0,Math.PI*2);ctx.fill();
+      ctx.fillStyle='#fff';for(let i=0;i<20;i++){ctx.fillRect(Math.random()*canvas.width,Math.random()*60,1,1);}
+      ctx.fillStyle='#0a1030';ctx.fillRect(0,90,canvas.width,30);
+      break;
+
+    case 'iriselle': // Flower meadow with rainbow light
+      for(let y=0;y<canvas.height;y++){let t=y/canvas.height;ctx.fillStyle=`rgb(${Math.round(40+80*t)},${Math.round(60+80*t)},${Math.round(30+40*t)})`;ctx.fillRect(0,y,canvas.width,1);}
+      ctx.fillStyle='#2a5a1a';ctx.fillRect(0,80,canvas.width,40);
+      const fColors=['#ef4444','#f97316','#eab308','#ec4899','#8b5cf6','#3b82f6'];
+      for(let i=0;i<15;i++){ctx.fillStyle=fColors[i%6];ctx.beginPath();ctx.arc(10+i*11,83+Math.sin(i*1.5)*4,3,0,Math.PI*2);ctx.fill();}
+      let rg=ctx.createRadialGradient(80,40,5,80,60,70);rg.addColorStop(0,'rgba(255,200,100,0.15)');rg.addColorStop(1,'rgba(0,0,0,0)');
+      ctx.fillStyle=rg;ctx.fillRect(0,0,canvas.width,canvas.height);
+      break;
   }
 }
 
@@ -1427,6 +1697,14 @@ const CHAPTERS = {
     {id:'2.4',title:'Symétrie et Motifs',icon:'🔄',type:'lesson'},
     {id:'2.5',title:'L\'Œil du Photographe',icon:'👁',type:'lesson'},
     {id:'boss2',title:'Le Maître Géomètre',icon:'⚔️',type:'boss'}
+  ],
+  3: [
+    {id:'3.1',title:'Le Cercle Chromatique',icon:'🎨',type:'lesson'},
+    {id:'3.2',title:'Couleurs Chaudes et Froides',icon:'🔥',type:'lesson'},
+    {id:'3.3',title:'Le Contraste',icon:'⚡',type:'lesson'},
+    {id:'3.4',title:'La Balance des Blancs',icon:'⚖️',type:'lesson'},
+    {id:'3.5',title:'Créer une Ambiance par la Couleur',icon:'🌈',type:'lesson'},
+    {id:'boss3',title:'La Sorcière des Teintes',icon:'⚔️',type:'boss'}
   ]
 };
 
@@ -1891,7 +2169,245 @@ const FICHES = {
 <p>✔️ Minimalisme = enlever plutôt qu'ajouter</p>
 <p>✔️ Les règles sont faites pour être brisées (avec intention !)</p>
 <p>✔️ Ton œil est ton meilleur outil</p>
-<p>💪 Tu es prêt·e pour le <strong>Boss du Monde 2 — Le Maître Géomètre</strong> ! Il va tester TOUTES tes compétences en composition. Tu vas assurer ! 🔥</p></div>`
+<p>💪 Tu es prêt·e pour le <strong>Boss du Monde 2 — Le Maître Géomètre</strong> ! Il va tester TOUTES tes compétences en composition. Tu vas assurer ! 🔥</p></div>`,
+
+'3.1': `<h2>🎨 Le Cercle Chromatique — La Roue Magique</h2>
+<div class="glass"><h3>🔄 Rappel</h3>
+<p>Dans le Monde 2, tu as appris à <strong>composer</strong> tes images — règle des tiers, lignes, cadrage, symétrie, espace négatif. Tu sais organiser une photo. Maintenant, on va lui donner de la <strong>vie</strong> avec la couleur ! 🎨</p></div>
+
+<div class="glass"><h3>🎨 Tu te souviens de la peinture à l'école ?</h3>
+<p>Quand tu étais petit·e, tu mélangeais de la peinture. Rouge + jaune = orange. Bleu + jaune = vert. Bleu + rouge = violet. Tu faisais déjà du <strong>cercle chromatique</strong> sans le savoir ! 🖌️</p>
+<p>Le cercle chromatique, c'est juste une <strong>roue des couleurs</strong> : les 3 couleurs primaires (rouge, jaune, bleu) et toutes les couleurs qu'on obtient en les mélangeant.</p>
+<p>En photo, pas besoin de connaître la théorie par cœur. Il faut juste retenir UNE chose…</p></div>
+
+<div class="glass"><h3>🎯 Les couleurs complémentaires = IMPACT MAXIMUM</h3>
+<p>Les couleurs <strong>complémentaires</strong>, ce sont celles qui sont <strong>opposées sur la roue</strong>. Quand tu les mets côte à côte, elles "vibrent" et créent un contraste maximum !</p>
+<p>🔴🟢 <strong>Rouge + Vert</strong> → Noël, fraises dans l'herbe, coquelicots dans un champ</p>
+<p>🔵🟠 <strong>Bleu + Orange</strong> → Le coucher de soleil sur la mer ! Le combo le plus utilisé au cinéma (regarde les affiches de films 👀)</p>
+<p>🟡🟣 <strong>Jaune + Violet</strong> → Champs de lavande au soleil, iris dans un jardin</p>
+<p>Tu as déjà vu ces combos des milliers de fois sans le savoir. Maintenant, tu vas les <strong>chercher activement</strong> ! 📸</p></div>
+
+<div class="glass"><h3>🤝 Les couleurs analogues = harmonie douce</h3>
+<p>Les couleurs <strong>analogues</strong> sont voisines sur la roue (ex : bleu, bleu-vert, vert). Elles créent une ambiance <strong>douce et harmonieuse</strong>, sans clash.</p>
+<p>🌊 <strong>Bleu + vert</strong> → forêt tropicale, océan peu profond</p>
+<p>🍂 <strong>Rouge + orange + jaune</strong> → feuilles d'automne, coucher de soleil</p>
+<p>🌸 <strong>Rose + violet + bleu</strong> → aube, fleurs de cerisier</p>
+<p>Si les complémentaires crient "REGARDE-MOI !", les analogues murmurent "c'est beau ici…" 😌</p></div>
+
+<div class="glass" style="background:rgba(255,215,0,0.1);border:1px solid var(--gold)"><h3>💡 Mnémotechnique</h3>
+<p><strong>"Opposées = BOOM 💥, Voisines = Ohhh 😌"</strong></p>
+<p>Couleurs opposées sur la roue = impact et énergie. Couleurs voisines = douceur et harmonie.</p></div>
+
+<div class="glass" style="background:rgba(100,100,255,0.1);border:1px solid #88f"><h3>🎮 Mini-défi pratique</h3>
+<p>Regarde autour de toi et cherche :</p>
+<p>1. Un objet <strong>bleu</strong> à côté de quelque chose d'<strong>orange</strong> — tu vois comme ça "vibre" ?</p>
+<p>2. Prends ton téléphone et photographie un duo de <strong>couleurs complémentaires</strong> (même simple : stylo rouge sur cahier vert !)</p>
+<p>3. Maintenant, cherche 3 objets de couleurs <strong>voisines</strong> et photographie-les ensemble</p>
+<p>Bienvenue dans le monde de la couleur ! 🌈</p></div>
+
+<div class="glass" style="background:rgba(0,255,150,0.1);border:1px solid #0f6"><h3>✅ Ce que tu maîtrises maintenant !</h3>
+<p>🎉 Tu connais le secret des couleurs en photo !</p>
+<p>✔️ Le cercle chromatique = la roue des couleurs</p>
+<p>✔️ Complémentaires (opposées) = impact maximum</p>
+<p>✔️ Analogues (voisines) = harmonie douce</p>
+<p>✔️ Bleu + orange = le combo le plus puissant</p>
+<p><strong>🔜 Prochaine étape :</strong> les couleurs chaudes et froides — comment la température des couleurs change l'émotion de tes photos ! 🔥❄️</p></div>`,
+
+'3.2': `<h2>🔥❄️ Couleurs Chaudes et Froides — L'Émotion des Teintes</h2>
+<div class="glass"><h3>🔄 Rappel</h3>
+<p>Tu viens d'apprendre le <strong>cercle chromatique</strong> et les couleurs complémentaires (opposées = impact 💥) vs analogues (voisines = douceur 😌). Maintenant, on va couper cette roue en deux ! 🎨</p></div>
+
+<div class="glass"><h3>🔥 Les couleurs chaudes — énergie et réconfort</h3>
+<p>Ferme les yeux et pense à un <strong>feu de cheminée</strong>. À un <strong>coucher de soleil</strong>. Aux <strong>feuilles d'automne</strong>. Tu sens la chaleur ? 🍂</p>
+<p>Les couleurs chaudes, c'est la moitié de la roue : <strong>rouge, orange, jaune</strong> et tout ce qui s'en approche.</p>
+<p>En photo, elles créent :</p>
+<p>❤️ <strong>Chaleur et réconfort</strong> → ambiance cosy, intimité</p>
+<p>⚡ <strong>Énergie et excitation</strong> → action, passion, urgence</p>
+<p>🤗 <strong>Proximité et invitation</strong> → le spectateur se sent "accueilli"</p>
+<p>C'est pour ça que les restaurants utilisent du rouge et de l'orange — ça donne envie de rester (et de manger 🍕) !</p></div>
+
+<div class="glass"><h3>❄️ Les couleurs froides — calme et distance</h3>
+<p>Maintenant, pense à l'<strong>océan</strong>. À une <strong>nuit étoilée</strong>. À la <strong>neige</strong>. Tu sens le calme ? 🌊</p>
+<p>Les couleurs froides : <strong>bleu, vert, violet</strong> et leurs variations.</p>
+<p>En photo, elles créent :</p>
+<p>😌 <strong>Calme et sérénité</strong> → paysages apaisants, méditation</p>
+<p>😢 <strong>Mélancolie et solitude</strong> → portraits introspectifs, atmosphère nocturne</p>
+<p>🏔 <strong>Distance et immensité</strong> → le spectateur se sent "observateur"</p>
+<p>Les hôpitaux et les réseaux sociaux utilisent du bleu — ça rassure et donne confiance. 🏥</p></div>
+
+<div class="glass"><h3>🎬 Utiliser la température pour raconter une histoire</h3>
+<p>Les réalisateurs de cinéma font ça tout le temps :</p>
+<p>🔥 <strong>Scène d'amour</strong> → lumière chaude, dorée, orangée</p>
+<p>❄️ <strong>Scène de solitude</strong> → lumière froide, bleue, grise</p>
+<p>🔥❄️ <strong>Tension</strong> → mélange chaud/froid dans la même image !</p>
+<p>En photo, c'est pareil. Tu peux choisir le <strong>moment de la journée</strong> (golden hour = chaud, blue hour = froid) ou le <strong>lieu</strong> pour contrôler la température de ton image. 🎥</p></div>
+
+<div class="glass" style="background:rgba(255,215,0,0.1);border:1px solid var(--gold)"><h3>💡 Mnémotechnique</h3>
+<p><strong>"Chaud = Câlin 🤗, Froid = Contemplation 🧊"</strong></p>
+<p>Les couleurs chaudes rapprochent, les couleurs froides créent de la distance.</p></div>
+
+<div class="glass" style="background:rgba(100,100,255,0.1);border:1px solid #88f"><h3>🎮 Mini-défi pratique</h3>
+<p>Prends ton téléphone et fais 2 photos du même sujet :</p>
+<p>1. Une avec un fond <strong>chaud</strong> (mur orangé, bois, lumière dorée)</p>
+<p>2. L'autre avec un fond <strong>froid</strong> (mur bleu, ombre, ciel couvert)</p>
+<p>Regarde les deux côte à côte : le même sujet raconte <strong>deux histoires différentes</strong> rien qu'avec la couleur ! 🤯</p></div>
+
+<div class="glass" style="background:rgba(0,255,150,0.1);border:1px solid #0f6"><h3>✅ Ce que tu maîtrises maintenant !</h3>
+<p>🎉 Tu comprends le pouvoir émotionnel des couleurs !</p>
+<p>✔️ Chaud (rouge, orange, jaune) = énergie, réconfort, proximité</p>
+<p>✔️ Froid (bleu, vert, violet) = calme, mélancolie, distance</p>
+<p>✔️ La température des couleurs raconte une histoire</p>
+<p><strong>🔜 Prochaine étape :</strong> le contraste — quand la lumière et l'ombre, le clair et le sombre deviennent tes alliés ! ⚡</p></div>`,
+
+'3.3': `<h2>⚡ Le Contraste — Le Choc Visuel</h2>
+<div class="glass"><h3>🔄 Rappel</h3>
+<p>Tu sais maintenant que les couleurs chaudes 🔥 rapprochent et que les froides ❄️ éloignent. Tu utilises la température des couleurs pour créer une ambiance. Maintenant, on va parler de ce qui rend une image <strong>punchy</strong> ou <strong>douce</strong> : le contraste ! ⚡</p></div>
+
+<div class="glass"><h3>⚫⚪ Le contraste tonal — clair vs sombre</h3>
+<p>Le contraste, dans sa forme la plus simple, c'est la différence entre le <strong>plus clair</strong> et le <strong>plus sombre</strong> de ta photo.</p>
+<p>Imagine deux photos :</p>
+<p>⚡ <strong>Fort contraste</strong> → noirs profonds + blancs éclatants. C'est comme écouter de la musique FORT : percutant, dramatique, puissant ! 🥁</p>
+<p>☁️ <strong>Faible contraste</strong> → tout est dans les gris/tons moyens. C'est comme un chuchotement : doux, rêveur, mélancolique. 🌫️</p>
+<p>Ni l'un ni l'autre n'est "mieux" — ça dépend de l'<strong>émotion</strong> que tu veux transmettre !</p></div>
+
+<div class="glass"><h3>🌈 Le contraste de couleur — complémentaires au max</h3>
+<p>Tu te souviens des couleurs complémentaires (leçon 3.1) ? Quand tu mets du bleu à côté de l'orange, ça "vibre". C'est du <strong>contraste de couleur</strong> !</p>
+<p>Plus les couleurs sont éloignées sur la roue chromatique, plus le contraste est fort. C'est un outil puissant pour <strong>attirer l'attention</strong> sur ton sujet.</p>
+<p>🧥 Un manteau rouge dans une forêt verte → ton œil va DROIT sur le manteau !</p>
+<p>☂️ Un parapluie jaune sous un ciel gris → impossible de le rater !</p></div>
+
+<div class="glass"><h3>👤 La silhouette — le contraste ULTIME</h3>
+<p>La silhouette, c'est le contraste poussé à l'extrême : un sujet <strong>complètement noir</strong> devant un fond <strong>lumineux</strong>.</p>
+<p>Comment faire une silhouette ? C'est tout simple :</p>
+<p>1️⃣ Place ton sujet <strong>devant</strong> une source de lumière (coucher de soleil, fenêtre…)</p>
+<p>2️⃣ Expose pour le fond lumineux (touche le ciel sur ton téléphone) 📱</p>
+<p>3️⃣ Ton sujet devient une ombre pure — mystérieuse, graphique, puissante !</p>
+<p>Les silhouettes marchent super bien avec des <strong>poses expressives</strong> : bras levés, personnes qui sautent, profils reconnaissables. 🏃‍♂️</p></div>
+
+<div class="glass" style="background:rgba(255,215,0,0.1);border:1px solid var(--gold)"><h3>💡 Mnémotechnique</h3>
+<p><strong>"Fort contraste = ROCK 🎸, Faible contraste = Jazz 🎷"</strong></p>
+<p>Le fort contraste claque et percute. Le faible contraste est subtil et nuancé.</p></div>
+
+<div class="glass" style="background:rgba(100,100,255,0.1);border:1px solid #88f"><h3>🎮 Mini-défi pratique</h3>
+<p>Prends ton téléphone et essaie :</p>
+<p>1. Mets-toi devant une <strong>fenêtre lumineuse</strong> et fais un selfie → tu obtiens une silhouette !</p>
+<p>2. Trouve un objet <strong>coloré vif</strong> (fruit, fleur, jouet) et pose-le sur un fond de <strong>couleur opposée</strong></p>
+<p>3. Prends une photo par temps couvert (faible contraste) et une en plein soleil (fort contraste) — compare l'énergie des deux ! ⚡</p></div>
+
+<div class="glass" style="background:rgba(0,255,150,0.1);border:1px solid #0f6"><h3>✅ Ce que tu maîtrises maintenant !</h3>
+<p>🎉 Tu maîtrises le contraste sous toutes ses formes !</p>
+<p>✔️ Contraste tonal = différence clair/sombre</p>
+<p>✔️ Fort contraste = drama, faible contraste = douceur</p>
+<p>✔️ Contraste de couleur = complémentaires côte à côte</p>
+<p>✔️ Silhouette = contraste ultime</p>
+<p><strong>🔜 Prochaine étape :</strong> la balance des blancs — pourquoi tes photos sont parfois trop oranges ou trop bleues (et comment régler ça !) ⚖️</p></div>`,
+
+'3.4': `<h2>⚖️ La Balance des Blancs — Pourquoi Tout Est Orange ?!</h2>
+<div class="glass"><h3>🔄 Rappel</h3>
+<p>Tu viens de maîtriser le <strong>contraste</strong> — tonal et chromatique, fort et doux, jusqu'à la silhouette ! Maintenant, on va résoudre un mystère que tu as sûrement déjà vécu : pourquoi tes photos d'intérieur sont <strong>toutes oranges</strong> ? 🤔🟠</p></div>
+
+<div class="glass"><h3>🧠 Ton cerveau te ment (gentiment)</h3>
+<p>Tes yeux sont incroyables. Quand tu passes d'une pièce éclairée par des ampoules (lumière orangée) à l'extérieur (lumière bleutée), tu ne remarques rien — tout te semble "normal".</p>
+<p>C'est parce que ton cerveau <strong>corrige automatiquement</strong> les couleurs ! Il fait de la balance des blancs sans que tu le saches. 🧠✨</p>
+<p>Ton appareil photo essaie de faire pareil… mais il se trompe parfois ! C'est là que les photos deviennent trop oranges, trop bleues, ou carrément verdâtres. 😬</p></div>
+
+<div class="glass"><h3>🌡️ La température de la lumière</h3>
+<p>Tu te souviens de la leçon 1.1 ? La lumière a une <strong>couleur</strong> ! Voici un rappel :</p>
+<p>🕯️ <strong>Bougie</strong> → très chaude, orange foncé</p>
+<p>💡 <strong>Ampoule classique</strong> → chaude, jaunâtre</p>
+<p>☀️ <strong>Soleil de midi</strong> → neutre, blanc</p>
+<p>☁️ <strong>Jour nuageux</strong> → froide, bleutée</p>
+<p>🏔️ <strong>Ombre en montagne</strong> → très froide, bleue</p>
+<p>La balance des blancs, c'est dire à ton appareil : <strong>"la lumière ici est de cette couleur, corrige s'il te plaît !"</strong></p></div>
+
+<div class="glass"><h3>📱 Comment corriger ça (c'est FACILE !)</h3>
+<p>Sur ton téléphone, la balance des blancs est souvent en <strong>automatique (AWB)</strong>. Et honnêtement, en 2024, l'auto marche plutôt bien ! 👍</p>
+<p>Mais si ta photo est clairement trop orange ou trop bleue :</p>
+<p>📱 <strong>Sur iPhone</strong> → Éditer > ajuste la "Chaleur" (warmth)</p>
+<p>📱 <strong>Sur Android</strong> → Mode Pro / Manuel > icône WB > choisis le preset</p>
+<p>Les presets courants :</p>
+<p>☀️ <strong>Soleil</strong> → pour l'extérieur ensoleillé</p>
+<p>☁️ <strong>Nuageux</strong> → réchauffe un peu (corrige le bleu)</p>
+<p>💡 <strong>Tungstène</strong> → refroidit beaucoup (corrige l'orange des ampoules)</p>
+<p>✨ <strong>Fluorescent</strong> → corrige le vert des néons</p></div>
+
+<div class="glass"><h3>🎨 Tricher EXPRÈS avec la balance des blancs</h3>
+<p>Parfois, tu ne veux PAS une balance des blancs "correcte". Tu veux exagérer !</p>
+<p>🔥 <strong>Réchauffer un coucher de soleil</strong> → mets le preset "Nuageux" pour que tout devienne encore plus doré !</p>
+<p>❄️ <strong>Ambiance froide et mystérieuse</strong> → mets le preset "Tungstène" en extérieur pour une teinte bleutée dramatique</p>
+<p>C'est comme un filtre, mais en mieux — parce que TU contrôles l'intensité ! 🎛️</p></div>
+
+<div class="glass" style="background:rgba(255,215,0,0.1);border:1px solid var(--gold)"><h3>💡 Mnémotechnique</h3>
+<p><strong>"Photo orange = ampoule. Photo bleue = ombre."</strong> 🟠🔵</p>
+<p>Si c'est trop orange → ta lumière est chaude (intérieur). Si c'est trop bleu → ta lumière est froide (ombre/nuages).</p>
+<p><strong>"AWB = Auto-Waouh-Bien !"</strong> → en mode auto, ça marche 90% du temps. Corrige le reste à la main !</p></div>
+
+<div class="glass" style="background:rgba(100,100,255,0.1);border:1px solid #88f"><h3>🎮 Mini-défi pratique</h3>
+<p>Prends ton téléphone et essaie :</p>
+<p>1. Prends une photo d'une feuille blanche sous une <strong>ampoule</strong> → elle est orange, non ?</p>
+<p>2. Prends la même feuille <strong>dehors à l'ombre</strong> → elle est bleutée !</p>
+<p>3. Si tu as le mode Pro, change la balance des blancs entre "Tungstène" et "Nuageux" sur la même scène — tu vois le changement radical ! 🤯</p></div>
+
+<div class="glass" style="background:rgba(0,255,150,0.1);border:1px solid #0f6"><h3>✅ Ce que tu maîtrises maintenant !</h3>
+<p>🎉 Tu comprends la balance des blancs !</p>
+<p>✔️ La lumière a une température (chaude → froide)</p>
+<p>✔️ Ton cerveau corrige, ton appareil pas toujours</p>
+<p>✔️ AWB marche bien, mais tu sais corriger manuellement</p>
+<p>✔️ Tu peux tricher exprès pour créer une ambiance</p>
+<p><strong>🔜 Prochaine étape :</strong> créer une ambiance par la couleur — le grand final où tu combines TOUT ! 🌈</p></div>`,
+
+'3.5': `<h2>🌈 Créer une Ambiance par la Couleur — L'Art Final</h2>
+<div class="glass"><h3>🔄 Rappel</h3>
+<p>Tu connais maintenant le <strong>cercle chromatique</strong> 🎨, les couleurs <strong>chaudes et froides</strong> 🔥❄️, le <strong>contraste</strong> ⚡ et la <strong>balance des blancs</strong> ⚖️. Tu as tous les ingrédients — maintenant, on va <strong>cuisiner</strong> ! 👨‍🍳</p></div>
+
+<div class="glass"><h3>🖤 Le pouvoir du monochrome</h3>
+<p>Parfois, la plus belle façon d'utiliser la couleur… c'est de l'<strong>enlever</strong>.</p>
+<p>Le noir et blanc force le spectateur à se concentrer sur :</p>
+<p>💡 <strong>La lumière et les ombres</strong> → le contraste tonal devient roi</p>
+<p>🧱 <strong>Les textures</strong> → la peau, le bois, la pierre… tout ressort plus</p>
+<p>😢 <strong>L'émotion brute</strong> → sans couleur, l'expression du visage compte double</p>
+<p>Astuce : une photo qui ne marche pas en couleur peut devenir <strong>incroyable</strong> en noir et blanc. C'est le plan B magique des photographes ! 🎩✨</p>
+<p>Le noir et blanc marche particulièrement bien pour : les portraits, l'architecture, les scènes de rue, et les photos avec un fort contraste tonal.</p></div>
+
+<div class="glass"><h3>🌅 L'heure dorée vs l'heure bleue — le match retour</h3>
+<p>Tu connais déjà la golden hour (leçon 1.1). Maintenant tu comprends <strong>pourquoi</strong> elle fonctionne si bien !</p>
+<p>🌅 <strong>Golden hour</strong> = couleurs chaudes dominantes → bonheur, nostalgie, romance. Les ombres longues ajoutent du contraste doux. C'est la dream team de la photo ! 💛</p>
+<p>🌃 <strong>Blue hour</strong> = couleurs froides dominantes → mystère, calme, contemplation. Les lumières de la ville deviennent orangées = contraste chaud/froid naturel ! 💙🟠</p>
+<p>Le secret de la blue hour : c'est le SEUL moment où tu as du bleu + du orange <strong>naturellement</strong> dans la même image. Complémentaires gratuites ! 🎁</p></div>
+
+<div class="glass"><h3>🎬 Raconte une histoire avec ta palette</h3>
+<p>Les grands photographes (et réalisateurs) choisissent leur <strong>palette de couleurs</strong> avant même de prendre la photo :</p>
+<p>🌿 <strong>Palette naturelle</strong> (verts, bruns, beiges) → authenticité, nature, slow life</p>
+<p>🏙️ <strong>Palette urbaine</strong> (gris, néons, touches vives) → énergie, modernité, solitude</p>
+<p>🍂 <strong>Palette automnale</strong> (oranges, rouges, bruns) → nostalgie, chaleur, transition</p>
+<p>🌊 <strong>Palette océane</strong> (bleus, turquoises, blancs) → liberté, évasion, fraîcheur</p>
+<p>Quand toutes les couleurs de ta photo "vont ensemble", c'est comme un accord de musique qui sonne juste. 🎵</p></div>
+
+<div class="glass"><h3>🎯 Le point de couleur — l'accent final</h3>
+<p>Tu te souviens de la rupture de motif (leçon 2.4) ? Le même principe existe avec la couleur :</p>
+<p>Un <strong>seul élément coloré</strong> dans une scène neutre ou monochrome attire TOUT le regard ! C'est le <strong>point de couleur</strong>.</p>
+<p>🔴 Un parapluie rouge dans une rue grise → star de la photo</p>
+<p>🟡 Un taxi jaune dans un paysage de béton → impossible à rater</p>
+<p>🌺 Une fleur rose dans un jardin de pierres → délicate et puissante</p></div>
+
+<div class="glass" style="background:rgba(255,215,0,0.1);border:1px solid var(--gold)"><h3>💡 Mnémotechnique</h3>
+<p><strong>"Une couleur seule crie plus fort que mille"</strong> 🔴</p>
+<p>Un seul accent de couleur dans une scène neutre = composition imparable.</p>
+<p><strong>"Blue hour = complémentaires gratuites !"</strong> 💙🟠 — Le moment magique où la nature te donne bleu + orange sans effort.</p></div>
+
+<div class="glass" style="background:rgba(100,100,255,0.1);border:1px solid #88f"><h3>🎮 Mini-défi pratique</h3>
+<p>Prends ton téléphone et fais ces 3 photos :</p>
+<p>1. <strong>Monochrome</strong> : prends un portrait ou un bâtiment et passe-le en noir et blanc. Vois comme le contraste et les textures ressortent !</p>
+<p>2. <strong>Point de couleur</strong> : trouve un objet coloré dans un environnement neutre (ou place-le toi-même !)</p>
+<p>3. <strong>Palette cohérente</strong> : photographie une scène où les couleurs vont naturellement ensemble (un marché, un jardin, un coucher de soleil…)</p></div>
+
+<div class="glass" style="background:rgba(0,255,150,0.1);border:1px solid #0f6"><h3>✅ Ce que tu maîtrises maintenant !</h3>
+<p>🎉 <strong>FÉLICITATIONS !</strong> Tu maîtrises la couleur en photographie !</p>
+<p>✔️ Le noir et blanc = plan B magique et outil artistique</p>
+<p>✔️ Golden hour = chaud, Blue hour = chaud+froid naturel</p>
+<p>✔️ Choisir une palette cohérente pour raconter une histoire</p>
+<p>✔️ Le point de couleur = accent visuel imparable</p>
+<p>💪 Tu es prêt·e pour la <strong>Sorcière des Teintes</strong> ! Elle va tester TOUT ce que tu sais sur la couleur. Prépare ta palette ! 🎨🔥</p></div>`
 };
 
 const QUIZZES = {
@@ -1964,6 +2480,41 @@ const QUIZZES = {
   {q:'Quand peut-on "casser" les règles de composition ?',opts:['Jamais, les règles sont absolues','Quand on ne les connaît pas','Quand on le fait avec intention et en connaissance de cause','Seulement les professionnels'],ans:2},
   {q:'Un oiseau seul dans un grand ciel bleu, c\'est un exemple de...',opts:['Règle des tiers','Ligne directrice','Espace négatif','Symétrie'],ans:2},
   {q:'Le plus grand outil du photographe, c\'est...',opts:['Son appareil photo','Son objectif','Son œil et sa vision','Son trépied'],ans:2}
+],
+'3.1': [
+  {q:'Les couleurs complémentaires sont...',opts:['Côte à côte sur la roue','Opposées sur la roue chromatique','Les 3 couleurs primaires','Les couleurs pastel'],ans:1},
+  {q:'Quel duo de couleurs est le plus utilisé au cinéma ?',opts:['Rouge + vert','Jaune + violet','Bleu + orange','Rose + gris'],ans:2},
+  {q:'Les couleurs analogues créent une ambiance...',opts:['Agressive et percutante','Douce et harmonieuse','Triste et froide','Chaotique'],ans:1},
+  {q:'Rouge + vert, c\'est un exemple de couleurs...',opts:['Analogues','Primaires','Complémentaires','Tertiaires'],ans:2},
+  {q:'Tu veux une photo avec un impact visuel maximum. Tu cherches des couleurs...',opts:['Toutes identiques','Voisines sur la roue','Opposées sur la roue','En noir et blanc'],ans:2}
+],
+'3.2': [
+  {q:'Les couleurs chaudes (rouge, orange, jaune) créent une sensation de...',opts:['Distance et froideur','Énergie et réconfort','Tristesse et solitude','Peur et danger'],ans:1},
+  {q:'Tu veux une photo qui dégage du calme. Tu privilégies des couleurs...',opts:['Chaudes (rouge, orange)','Neutres (gris, beige)','Froides (bleu, vert)','Complémentaires'],ans:2},
+  {q:'Pourquoi les restaurants utilisent du rouge et de l\'orange ?',opts:['C\'est moins cher','Ça donne envie de rester et manger','Ça éclaire mieux','C\'est à la mode'],ans:1},
+  {q:'La golden hour produit des couleurs...',opts:['Froides et bleues','Chaudes et dorées','Neutres et grises','Vertes'],ans:1},
+  {q:'Pour une ambiance mélancolique, tu utilises des couleurs...',opts:['Chaudes et vives','Froides et désaturées','Complémentaires','Rouge vif'],ans:1}
+],
+'3.3': [
+  {q:'Un fort contraste tonal, c\'est...',opts:['Tout est gris moyen','Des noirs profonds + des blancs éclatants','Beaucoup de couleurs','Une photo floue'],ans:1},
+  {q:'Pour faire une silhouette, tu dois...',opts:['Utiliser le flash','Placer ton sujet devant une source de lumière et exposer pour le fond','Baisser les ISO à 50','Utiliser un filtre noir'],ans:1},
+  {q:'Un manteau rouge dans une forêt verte utilise le contraste de...',opts:['Tonal','Texture','Couleur (complémentaires)','Forme'],ans:2},
+  {q:'Un faible contraste crée une ambiance...',opts:['Dramatique et puissante','Douce et rêveuse','Énergique','Effrayante'],ans:1},
+  {q:'La silhouette est un exemple de contraste...',opts:['De couleur','Faible','Tonal poussé à l\'extrême','Analogique'],ans:2}
+],
+'3.4': [
+  {q:'Tes photos d\'intérieur sont orange. C\'est à cause de...',opts:['Un problème de focus','La lumière chaude des ampoules','Un ISO trop élevé','L\'ouverture'],ans:1},
+  {q:'La balance des blancs sert à...',opts:['Rendre le blanc plus blanc','Corriger la dominante de couleur de la lumière','Augmenter le contraste','Réduire le bruit'],ans:1},
+  {q:'Le preset "Tungstène" sert quand tu es...',opts:['En plein soleil','À l\'ombre','Sous des ampoules classiques (lumière chaude)','Sous la pluie'],ans:2},
+  {q:'Tu veux exagérer la chaleur d\'un coucher de soleil. Tu mets le preset...',opts:['Tungstène','Auto','Nuageux','Fluorescent'],ans:2},
+  {q:'AWB signifie...',opts:['Always White Background','Auto White Balance','Adjustable Width Brightness','Automatic Wide Blur'],ans:1}
+],
+'3.5': [
+  {q:'Le noir et blanc est particulièrement efficace pour...',opts:['Les photos de nourriture','Les portraits et l\'architecture avec fort contraste','Les paysages tropicaux','Les photos de fleurs colorées'],ans:1},
+  {q:'La blue hour est spéciale parce qu\'elle offre...',opts:['Plus de lumière que le jour','Du bleu + orange naturellement (complémentaires gratuites)','Des couleurs chaudes uniquement','Une lumière parfaitement neutre'],ans:1},
+  {q:'Un parapluie rouge dans une rue grise, c\'est un exemple de...',opts:['Contraste tonal','Palette analogique','Point de couleur','Balance des blancs'],ans:2},
+  {q:'Pour raconter "nostalgie et automne", tu choisis une palette...',opts:['Bleue et froide','Orange, rouge, brune','Verte et turquoise','Noir et blanc'],ans:1},
+  {q:'Quand une photo ne marche pas en couleur, tu peux essayer...',opts:['De la supprimer','Le noir et blanc','D\'augmenter la saturation à fond','De rajouter un filtre flashy'],ans:1}
 ]
 };
 
@@ -1978,6 +2529,19 @@ const BOSS_QUESTIONS = [
   {q:'Ta photo est floue mais le sujet ne bougeait pas. C\\u0027est probablement...', opts:['Trop d\\u0027ISO','Le flou de bougé — c\\u0027est toi qui as bougé','Mauvaise ouverture','Problème de carte mémoire'], ans:1},
   {q:'Tu veux un paysage où tout est net du premier plan à l\\u0027infini. Tu choisis...', opts:['f/1.8','f/2.8','f/11','f/1.4'], ans:2},
   {q:'Il fait beau dehors. Quel ISO ?', opts:['ISO 3200','ISO 100','ISO 6400','ISO 1600'], ans:1}
+];
+
+const BOSS3_QUESTIONS = [
+  {q:'Les couleurs complémentaires sont...',opts:['Voisines sur la roue','Opposées sur la roue chromatique','Les mêmes couleurs','Les couleurs pastel'],ans:1},
+  {q:'Bleu + orange est un exemple de couleurs...',opts:['Analogues','Primaires','Complémentaires','Tertiaires'],ans:2},
+  {q:'Les couleurs chaudes créent une sensation de...',opts:['Distance et froideur','Énergie et proximité','Mélancolie','Peur'],ans:1},
+  {q:'Pour une ambiance calme et sereine, tu privilégies des couleurs...',opts:['Rouge vif','Froides (bleu, vert)','Jaune intense','Noir pur'],ans:1},
+  {q:'Fort contraste tonal = ...',opts:['Tout gris','Noirs profonds + blancs éclatants','Couleurs pastel','Photo floue'],ans:1},
+  {q:'Pour faire une silhouette, tu places le sujet...',opts:['Dans l\'ombre totale','Devant une source de lumière','Sous un flash','Derrière toi'],ans:1},
+  {q:'Tes photos d\'intérieur sont trop oranges. Le problème est...',opts:['L\'ISO','La balance des blancs (lumière chaude des ampoules)','L\'ouverture','La vitesse'],ans:1},
+  {q:'La blue hour offre naturellement un contraste de couleurs...',opts:['Rouge + vert','Bleu + orange (complémentaires)','Jaune + violet','Noir + blanc'],ans:1},
+  {q:'Un seul objet coloré dans une scène neutre s\'appelle...',opts:['Contraste tonal','Rupture de motif','Point de couleur','Balance des blancs'],ans:2},
+  {q:'Quand une photo ne marche pas en couleur, le plan B magique c\'est...',opts:['La supprimer','La passer en noir et blanc','Augmenter la saturation','Ajouter un filtre'],ans:1}
 ];
 
 const BOSS2_QUESTIONS = [
@@ -2144,7 +2708,7 @@ function renderWorldMap() {
 }
 
 function openWorld(id) {
-  if(id!==1 && id!==2){alert('Ce monde arrive bientôt !');return;}
+  if(id!==1 && id!==2 && id!==3){alert('Ce monde arrive bientôt !');return;}
   currentWorld = id;
   showScreen('chapters');
   renderChapters();
@@ -2155,7 +2719,8 @@ function renderChapters() {
   let world = WORLDS[currentWorld-1];
   const worldIntros = {
     1:'Tu arrives dans un village plongé dans le brouillard. Les habitants ont perdu la capacité de voir les couleurs...',
-    2:'Un monde géométrique s\'ouvre devant toi. Ici, chaque pierre, chaque chemin, chaque reflet cache un secret de composition...'
+    2:'Un monde géométrique s\'ouvre devant toi. Ici, chaque pierre, chaque chemin, chaque reflet cache un secret de composition...',
+    3:'Une forêt enchantée où chaque feuille, chaque fleur raconte une histoire de couleur. La Sorcière des Teintes règne ici...'
   };
   document.getElementById('chapterHeader').innerHTML = `<h2>${world.name}</h2><p style="color:var(--text2);font-size:13px;margin:8px 0 16px">${worldIntros[currentWorld]||''}</p>`;
   let html = '';
@@ -2258,6 +2823,9 @@ function startBoss() {
 }
 
 function getBossConfig() {
+  if(currentBossWorld===3) return {sprite:'boss3',name:'La Sorcière des Teintes',id:'boss3',questions:BOSS3_QUESTIONS,
+    intro:'"Ah, tu crois comprendre les couleurs, petit·e artiste ? La roue chromatique, le chaud et le froid, le contraste… Voyons si tu survis à mon sortilège ! 10 questions, 20 secondes, 3 erreurs = défaite !"',
+    victory:'"Impressionnant... Tu vois les couleurs comme personne. La forêt te reconnaît comme Maître des Teintes."',title:'Maître des Teintes'};
   if(currentBossWorld===2) return {sprite:'boss2',name:'Le Maître Géomètre',id:'boss2',questions:BOSS2_QUESTIONS,
     intro:'"Tu crois maîtriser la composition, jeune artiste ? Les lignes, les cadres, les espaces… tout sera testé ! 10 questions, 20 secondes chacune. 3 erreurs et tu tombes..."',
     victory:'"Remarquable ! Tu as l\'œil d\'un vrai compositeur. Les formes t\'obéissent désormais."',title:'Maître Compositeur'};
@@ -2493,7 +3061,37 @@ const CREATURES = [
    condition:'Espace négatif · Minimalisme · Très peu de lumière',sceneType:'oeil',
    idealAperture:2,idealShutter:7,idealISO:3,
    sceneColors:['#0a0a1a','#1a1a2a','#0a0a10','#050508'],
-   particles:'ghost'}
+   particles:'ghost'},
+  {id:'c11',afterChapter:'3.1',sprite:'chromagus',name:'Chromagus',
+   scene:'Un Chromagus pulse de toutes les couleurs du spectre, sa forme changeant au rythme de la roue chromatique.',
+   condition:'Couleurs complémentaires · Lumière douce · Sujet immobile',sceneType:'chromagus',
+   idealAperture:3,idealShutter:8,idealISO:1,
+   sceneColors:['#2a1a4a','#4a3a6a','#1a3a2a','#0d2010'],
+   particles:'sparkle'},
+  {id:'c12',afterChapter:'3.2',sprite:'pyrogel',name:'Pyroglaçon',
+   scene:'Un Pyroglaçon danse entre feu et glace ! Sa moitié gauche brûle, sa moitié droite gèle.',
+   condition:'Contraste chaud/froid · Mouvement moyen · Lumière mixte',sceneType:'pyrogel',
+   idealAperture:3,idealShutter:9,idealISO:2,
+   sceneColors:['#4a1a0a','#0a1a3a','#2a1a0a','#0a2a3a'],
+   particles:'fire'},
+  {id:'c13',afterChapter:'3.3',sprite:'ombreclat',name:'Ombréclat',
+   scene:'Un Ombréclat se tient à la frontière entre lumière et ombre, moitié brillant, moitié ténèbres.',
+   condition:'Fort contraste · Silhouette partielle · Lumière dure',sceneType:'ombreclat',
+   idealAperture:5,idealShutter:9,idealISO:0,
+   sceneColors:['#f8fafc','#0f172a','#e2e8f0','#1e293b'],
+   particles:'sparkle'},
+  {id:'c14',afterChapter:'3.4',sprite:'spectralune',name:'Spectralune',
+   scene:'Une Spectralune flotte dans la lumière bleutée de la nuit, son corps irradiant des reflets lunaires.',
+   condition:'Blue hour · Lumière froide · Mouvement lent',sceneType:'spectralune',
+   idealAperture:2,idealShutter:6,idealISO:4,
+   sceneColors:['#0a0a2a','#1a1a4a','#0a1030','#050520'],
+   particles:'ghost'},
+  {id:'c15',afterChapter:'3.5',sprite:'iriselle',name:'Iriselle',
+   scene:'Une Iriselle déploie ses ailes arc-en-ciel dans une prairie fleurie. Chaque battement crée une harmonie de couleurs.',
+   condition:'Palette harmonieuse · Golden hour · Point de couleur',sceneType:'iriselle',
+   idealAperture:2,idealShutter:8,idealISO:0,
+   sceneColors:['#3a5a2a','#6a8a4a','#2a4a1a','#1a3a0a'],
+   particles:'sparkle'}
 ];
 
 let creatureCaptureData = JSON.parse(localStorage.getItem('katkat_creatures') || '{}');
