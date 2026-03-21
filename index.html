@@ -400,7 +400,13 @@ const PA = {
     ombreclat: ['','#0f172a','#1e293b','#334155','#f8fafc','#e2e8f0','#cbd5e1','#fff','#000','#64748b','#94a3b8','#f1f5f9','#475569'],
     spectralune: ['','#312e81','#4338ca','#6366f1','#a5b4fc','#fbbf24','#f59e0b','#fff','#818cf8','#c4b5fd','#e0e7ff','#1e1b4b','#eef2ff'],
     iriselle: ['','#ef4444','#f97316','#eab308','#22c55e','#3b82f6','#8b5cf6','#ec4899','#fff','#fbbf24','#a855f7','#f0abfc','#34d399'],
-    boss3: ['','#8b5cf6','#a78bfa','#c4b5fd','#7c3aed','#ec4899','#f472b6','#fbbf24','#1e1b4b','#f59e0b','#fff','#ddd6fe','#6d28d9']
+    boss3: ['','#8b5cf6','#a78bfa','#c4b5fd','#7c3aed','#ec4899','#f472b6','#fbbf24','#1e1b4b','#f59e0b','#fff','#ddd6fe','#6d28d9'],
+    portraitiste: ['','#d4a574','#c68b59','#b8734a','#f5deb3','#8b6914','#4a3728','#e8c8a0','#fff','#1e1b4b','#f59e0b','#fbbf24','#7c3aed'],
+    rembrandt: ['','#f59e0b','#d97706','#b45309','#fbbf24','#d4a574','#8b6914','#fff4b0','#1a1a2e','#2d2d44','#fff','#4a3728','#e8a030'],
+    mannequin: ['','#ec4899','#f472b6','#f9a8d4','#fce7f3','#be185d','#831843','#fff','#7c3aed','#a78bfa','#d4a574','#1e1b4b','#c68b59'],
+    bokehon: ['','#22c55e','#16a34a','#15803d','#86efac','#f472b6','#ec4899','#fff','#166534','#dcfce7','#fbbf24','#0f172a','#4ade80'],
+    emotera: ['','#3b82f6','#60a5fa','#93c5fd','#dbeafe','#d4a574','#c68b59','#fff','#1e3a5f','#fbbf24','#f59e0b','#0f172a','#2563eb'],
+    boss4: ['','#d4a574','#c68b59','#f5deb3','#8b6914','#7c3aed','#a78bfa','#fbbf24','#1e1b4b','#f59e0b','#fff','#4a3728','#ec4899']
   },
 
   // Draw pixel art from compact string data
@@ -1160,6 +1166,217 @@ PA.sprites.boss3 = {pal:'boss3', size:32, data:
   '00000000000000000000000000000000'
 };
 
+// World 4 creatures
+PA.sprites.portraitiste = {pal:'portraitiste', size:32, data:
+  '00000000000000000000000000000000'+
+  '00000000000000000000000000000000'+
+  '00000000000777700000000000000000'+
+  '00000000007777770000000000000000'+
+  '00000000077777777000000000000000'+
+  '00000000777111177700000000000000'+
+  '00000000771111117700000000000000'+
+  '00000000711131117000000000000000'+
+  '00000000711131117000000000000000'+
+  '00000000071111170000000000000000'+
+  '00000000007151700000000000000000'+
+  '00000000000777000000000000000000'+
+  '000000000cc777cc00000000000000c0'+
+  '00000000cccc7cccc000000000000cc0'+
+  '0000000cccc333cccc00000000000cc0'+
+  '000000cccc33333cccc0000000000cc0'+
+  '00000cccc3333333cccc000000000c00'+
+  '0000cccc333333333cccc0000000c000'+
+  '000cccc33333333333cccc00000c0000'+
+  '000ccc3333333333333ccc0000c00000'+
+  '000cc33333333333333cc00000000000'+
+  '000cc33333333333333cc00000000000'+
+  '0000c333333333333c0000000000000'+
+  '00000c3333333333c00000000000000'+
+  '000000c33333333c000000000000000'+
+  '0000000033333300000000000000000'+
+  '0000000003333000000000000000000'+
+  '000000000066600000000000000000'+
+  '00000000006060000000000000000000'+
+  '00000000060006000000000000000000'+
+  '00000000000000000000000000000000'+
+  '00000000000000000000000000000000'
+};
+
+PA.sprites.rembrandt = {pal:'rembrandt', size:32, data:
+  '00000000000000000000000000000000'+
+  '00000000001111100000000000000000'+
+  '00000000011111110000000000000000'+
+  '00000000111222211000000000000000'+
+  '00000001112222221100000000000000'+
+  '00000001122233221100000000000000'+
+  '00000001122233221100000000000000'+
+  '00000000112555211000000000000000'+
+  '00000000011252110000000000000000'+
+  '00000000001555100000000000000000'+
+  '00000000000111000000000000000000'+
+  '00000000088888800000000000000000'+
+  '00000000888888880000000000000000'+
+  '00000008888888888000000000000000'+
+  '00000088888888888800000000000000'+
+  '00000888888888888880000000000000'+
+  '00008888888888888888000000000000'+
+  '00088888888888888888800000000000'+
+  '00888888888888888888880000000000'+
+  '00088888888888888888800000000000'+
+  '00008888888888888888000000000000'+
+  '00000888888888888880000000000000'+
+  '00000088888888888800000000000000'+
+  '00000008888888888000000000000000'+
+  '00000000888888880000000000000000'+
+  '00000000088888800000000000000000'+
+  '00000000008888000000000000000000'+
+  '00000000000880000000000000000000'+
+  '00000000000880000000000000000000'+
+  '00000000008008000000000000000000'+
+  '00000000000000000000000000000000'+
+  '00000000000000000000000000000000'
+};
+
+PA.sprites.mannequin = {pal:'mannequin', size:32, data:
+  '00000000000000000000000000000000'+
+  '00000000000333300000000000000000'+
+  '00000000003333330000000000000000'+
+  '0000000003333a333000000000000000'+
+  '0000000033a3aa3a3300000000000000'+
+  '000000003a3aaaa3a300000000000000'+
+  '00000000333abba333000000000000'+
+  '000000000033ab330000000000000000'+
+  '00000000000333a00000000000000000'+
+  '00000000000111100000000000000000'+
+  '00000000001111110000000000000000'+
+  '00000000011111111000000000000000'+
+  '00000000111111111100000000000000'+
+  '00000001111221111110000000000000'+
+  '00000011112222111111000000000000'+
+  '00000011122222211111000000000000'+
+  '00000001122222211110000000000000'+
+  '00000000112222211100000000000000'+
+  '00000000011222211000000000000000'+
+  '00000000001122210000000000000000'+
+  '00000000000111100000000000000000'+
+  '00000000000111100000000000000000'+
+  '00000000000111100000000000000000'+
+  '00000000000111100000000000000000'+
+  '00000000001111110000000000000000'+
+  '00000000011000011000000000000000'+
+  '00000000110000001100000000000000'+
+  '00000001100000000110000000000000'+
+  '00000011000000000011000000000000'+
+  '00000000000000000000000000000000'+
+  '00000000000000000000000000000000'+
+  '00000000000000000000000000000000'
+};
+
+PA.sprites.bokehon = {pal:'bokehon', size:32, data:
+  '00000000000000000000000000000000'+
+  '00000055500005550000055500000000'+
+  '00000566500056650000566500000000'+
+  '00000556500055650000556500000000'+
+  '00000055000005500000055000000000'+
+  '00000000000000000000000000000000'+
+  '00000000000333300000000000000000'+
+  '00000000003333330000000000000000'+
+  '00000000033344333000000000000000'+
+  '00000000333444433300000000000000'+
+  '00000003334444443330000000000000'+
+  '00000033344411444333000000000000'+
+  '00000333444111144433300000000000'+
+  '00003334441111144433300000000000'+
+  '00003344411111114443300000000000'+
+  '00003344111111111443300000000000'+
+  '00003344111111111443300000000000'+
+  '00003344411111114443300000000000'+
+  '00003334441111144433300000000000'+
+  '00000333444111144433300000000000'+
+  '00000033344411444333000000000000'+
+  '00000003334444443330000000000000'+
+  '00000000333444433300000000000000'+
+  '00000000033344333000000000000000'+
+  '00000000003333330000000000000000'+
+  '00000000000333300000000000000000'+
+  '00000000000000000000000000000000'+
+  '00066600006660000066600000000000'+
+  '00068600006860000068600000000000'+
+  '00066600006660000066600000000000'+
+  '00000000000000000000000000000000'+
+  '00000000000000000000000000000000'
+};
+
+PA.sprites.emotera = {pal:'emotera', size:32, data:
+  '00000000000000000000000000000000'+
+  '00000000000000000000000000000000'+
+  '00000000000777700000000000000000'+
+  '00000000007777770000000000000000'+
+  '00000000077555577000000000000000'+
+  '00000000755555557000000000000000'+
+  '00000007555665557700000000000000'+
+  '00000007556666555700000000000000'+
+  '00000007555665557700000000000000'+
+  '00000000755555557000000000000000'+
+  '000000000755a5570000000000000000'+
+  '00000000007555700000000000000000'+
+  '00000000000777000000000000000000'+
+  '00000000009999900000000000000000'+
+  '00000000099999990000000000000000'+
+  '00000000999999999000000000000000'+
+  '00000009999999999900000000000000'+
+  '0000009999999999999000000000000'+
+  '00000099999999999990000000000000'+
+  '00000009999999999900000000000000'+
+  '00000000999999999000000000000000'+
+  '00000000099999990000000000000000'+
+  '00000000009999900000000000000000'+
+  '00000000000999000000000000000000'+
+  '00000000000090000000000000000000'+
+  '00000000000090000000000000000000'+
+  '00000000000909000000000000000000'+
+  '00000000009000900000000000000000'+
+  '00000000090000090000000000000000'+
+  '00000000000000000000000000000000'+
+  '00000000000000000000000000000000'+
+  '00000000000000000000000000000000'
+};
+
+PA.sprites.boss4 = {pal:'boss4', size:32, data:
+  '00000000000000000000000000000000'+
+  '00000000000777700000000000000000'+
+  '00000000007777770000000000000000'+
+  '00000000077777777000000000000000'+
+  '00000000777111177700000000000000'+
+  '00000007771111117770000000000000'+
+  '00000077711131111777000000000000'+
+  '00000007711131111770000000000000'+
+  '00000000771111117700000000000000'+
+  '000000000071c1700000000000000000'+
+  '00000000000717000000000000000000'+
+  '00000000555777555000000000000000'+
+  '00000005555555555500000000000000'+
+  '00000055555555555550000000000000'+
+  '00000555555555555555000000000000'+
+  '00005555588888855555500000000000'+
+  '00055555888888885555550000000000'+
+  '00555558888888888555555000000000'+
+  '00055558888888888555550000000000'+
+  '00005555888888885555500000000000'+
+  '00000555588888855555000000000000'+
+  '00000055555555555550000000000000'+
+  '00000005555555555500000000000000'+
+  '00000000555555555000000000000000'+
+  '00000000055555550000000000000000'+
+  '00000000005555500000000000000000'+
+  '00000000000555000000000000000000'+
+  '00000000000050000000000000000000'+
+  '00000000000505000000000000000000'+
+  '00000000005000500000000000000000'+
+  '00000000000000000000000000000000'+
+  '00000000000000000000000000000000'
+};
+
 // Small icons (16x16)
 PA.sprites.icon_camera = {pal:'kitsune', size:16, data:
   '0000000000000000'+
@@ -1705,6 +1922,14 @@ const CHAPTERS = {
     {id:'3.4',title:'La Balance des Blancs',icon:'⚖️',type:'lesson'},
     {id:'3.5',title:'Créer une Ambiance par la Couleur',icon:'🌈',type:'lesson'},
     {id:'boss3',title:'La Sorcière des Teintes',icon:'⚔️',type:'boss'}
+  ],
+  4: [
+    {id:'4.1',title:'Les Bases du Portrait',icon:'👤',type:'lesson'},
+    {id:'4.2',title:'La Lumière pour les Visages',icon:'💡',type:'lesson'},
+    {id:'4.3',title:'Poser son Sujet',icon:'🧍',type:'lesson'},
+    {id:'4.4',title:'L\'Arrière-plan et le Bokeh',icon:'🌸',type:'lesson'},
+    {id:'4.5',title:'Capturer l\'Émotion',icon:'💫',type:'lesson'},
+    {id:'boss4',title:'Le Sculpteur d\'Âmes',icon:'⚔️',type:'boss'}
   ]
 };
 
@@ -2407,7 +2632,267 @@ const FICHES = {
 <p>✔️ Golden hour = chaud, Blue hour = chaud+froid naturel</p>
 <p>✔️ Choisir une palette cohérente pour raconter une histoire</p>
 <p>✔️ Le point de couleur = accent visuel imparable</p>
-<p>💪 Tu es prêt·e pour la <strong>Sorcière des Teintes</strong> ! Elle va tester TOUT ce que tu sais sur la couleur. Prépare ta palette ! 🎨🔥</p></div>`
+<p>💪 Tu es prêt·e pour la <strong>Sorcière des Teintes</strong> ! Elle va tester TOUT ce que tu sais sur la couleur. Prépare ta palette ! 🎨🔥</p></div>`,
+
+'4.1': `<h2>👤 Les Bases du Portrait — Ton Premier Face-à-Face</h2>
+<div class="glass"><h3>🔄 Rappel</h3>
+<p>Tu maîtrises la <strong>lumière</strong> ☀️, la <strong>composition</strong> 📐 et la <strong>couleur</strong> 🎨. Maintenant, on passe à l'épreuve ultime : <strong>photographier des humains</strong> ! C'est l'un des genres les plus populaires — et les plus gratifiants. 📸</p></div>
+
+<div class="glass"><h3>📏 La bonne distance</h3>
+<p>Imagine que tu dessines quelqu'un. Tu ne collerait pas ton nez sur la feuille, non ? En photo, c'est pareil :</p>
+<p>📱 <strong>Trop près avec un grand-angle</strong> (téléphone) → le nez paraît ÉNORME et le visage se déforme. C'est le fameux "effet selfie moche" 😅</p>
+<p>🎯 <strong>La bonne distance</strong> → recule de 1,5 à 3 mètres et zoome légèrement (x2 sur téléphone). Le visage est naturel et les proportions sont correctes.</p>
+<p>Pense à un miroir : quand tu te regardes de trop près, tu ne vois que tes pores. Recule un peu, et tu vois ton vrai visage ! 🪞</p></div>
+
+<div class="glass"><h3>📐 L'angle de prise de vue</h3>
+<p>L'angle change TOUT. C'est comme au cinéma — les réalisateurs le savent :</p>
+<p>👁️ <strong>À hauteur des yeux</strong> → neutre, naturel, intime. C'est le plus sûr pour débuter. Tu mets ton appareil au niveau des yeux du sujet.</p>
+<p>⬆️ <strong>Plongée</strong> (du dessus) → rend le sujet plus petit, fragile, vulnérable. OK pour un enfant ou un animal. Attention : en selfie ça donne les yeux de biche mais un cou invisible 😄</p>
+<p>⬇️ <strong>Contre-plongée</strong> (du dessous) → rend le sujet puissant, imposant, héroïque. C'est l'angle des super-héros ! 🦸</p>
+<p>Astuce : pour les enfants, <strong>mets-toi à leur hauteur</strong>. Un genou à terre, et le portrait passe de "banal" à "magique" !</p></div>
+
+<div class="glass"><h3>✂️ Où couper ? La règle des articulations</h3>
+<p>Quand tu cadres un portrait, tu ne montres pas toujours le corps entier. Mais attention à <strong>où tu coupes</strong> !</p>
+<p>❌ <strong>JAMAIS aux articulations</strong> : genoux, coudes, chevilles, poignets, doigts. Ça donne l'impression d'avoir "amputé" la personne. Gênant 😬</p>
+<p>✅ <strong>Coupe entre les articulations</strong> : mi-cuisse, mi-mollet, mi-bras. C'est naturel et confortable à regarder.</p>
+<p>Pense à un dessin : si tu coupes la jambe pile au genou, on dirait qu'il manque un morceau. Si tu coupes à mi-cuisse, le cerveau "complète" naturellement.</p></div>
+
+<div class="glass"><h3>👀 La mise au point sur les yeux</h3>
+<p>Le secret n°1 du portrait : <strong>les yeux doivent être nets</strong>. Toujours. TOUJOURS.</p>
+<p>Pourquoi ? Parce que c'est la première chose qu'on regarde sur un visage. Si les yeux sont flous, le portrait est raté — même si tout le reste est parfait.</p>
+<p>Sur téléphone : tape sur les yeux pour faire la mise au point. Sur appareil photo : utilise la mise au point sur l'œil (Eye-AF) si tu l'as !</p></div>
+
+<div class="glass" style="background:rgba(255,215,0,0.1);border:1px solid var(--gold)"><h3>💡 Mnémotechnique</h3>
+<p><strong>"Recule-Zoome-Yeux"</strong> 🎯 — Les 3 réflexes du portrait :</p>
+<p>1. <strong>Recule</strong> pour éviter la déformation</p>
+<p>2. <strong>Zoome</strong> légèrement (x2)</p>
+<p>3. Fais le point sur les <strong>Yeux</strong></p></div>
+
+<div class="glass" style="background:rgba(100,100,255,0.1);border:1px solid #88f"><h3>🎮 Mini-défi pratique</h3>
+<p>Demande à un ami ou fais un selfie :</p>
+<p>1. 📱 <strong>Photo de près</strong> (à bout de bras) — observe la déformation du nez</p>
+<p>2. 📱 <strong>Photo en reculant + zoom x2</strong> — compare la différence !</p>
+<p>3. 📱 Fais 3 portraits : <strong>plongée, contre-plongée, hauteur des yeux</strong></p>
+<p>Tu verras, la différence est FLAGRANTE ! 🤯</p></div>
+
+<div class="glass" style="background:rgba(0,255,150,0.1);border:1px solid #0f6"><h3>✅ Ce que tu maîtrises maintenant !</h3>
+<p>✔️ La bonne distance pour éviter la déformation</p>
+<p>✔️ Les 3 angles (plongée, contre-plongée, hauteur des yeux)</p>
+<p>✔️ Ne JAMAIS couper aux articulations</p>
+<p>✔️ Toujours faire le point sur les yeux</p>
+<p><strong>🔜 Prochaine étape :</strong> la lumière change tout sur un visage. On va apprendre à l'utiliser comme un pro — et c'est plus simple que tu crois ! 💡</p></div>`,
+
+'4.2': `<h2>💡 La Lumière pour les Visages — L'Éclairagiste en Toi</h2>
+<div class="glass"><h3>🔄 Rappel</h3>
+<p>Tu connais maintenant la bonne <strong>distance</strong> 📏, les <strong>angles</strong> 📐 et les <strong>points de coupe</strong> ✂️ du portrait. Maintenant, on va allumer la lumière ! 💡</p></div>
+
+<div class="glass"><h3>🪟 La fenêtre = ton studio gratuit</h3>
+<p>Tu veux un éclairage de studio pro ? Gratuit ? Voici le secret le mieux gardé de la photographie :</p>
+<p><strong>Une fenêtre.</strong> C'est tout. 🪟</p>
+<p>Sérieusement. Une fenêtre avec lumière naturelle, c'est exactement comme une <strong>softbox</strong> professionnelle à 200€. La lumière est douce, directionnelle, et flatteuse.</p>
+<p>Comment l'utiliser : place ton sujet <strong>à côté</strong> de la fenêtre (pas devant, pas dos à la fenêtre). La lumière arrive de côté, crée du volume et des ombres douces. Magique ! ✨</p>
+<p>Pense à un tableau de la Renaissance — tu sais, ces portraits avec une lumière incroyable ? C'était juste... une fenêtre. 🖼️</p></div>
+
+<div class="glass"><h3>🔺 Le triangle de Rembrandt</h3>
+<p>Tu connais Rembrandt ? Le peintre ? Regarde ses tableaux : il y a toujours un petit <strong>triangle de lumière</strong> sous l'œil du côté à l'ombre. C'est devenu LA référence en portrait !</p>
+<p>Comment le créer :</p>
+<p>1. Place la lumière (fenêtre ou lampe) à <strong>45° sur le côté</strong> et légèrement <strong>au-dessus</strong></p>
+<p>2. Le sujet tourne légèrement la tête <strong>vers la lumière</strong></p>
+<p>3. Cherche le petit triangle lumineux sous l'œil opposé à la source 🔺</p>
+<p>Si tu vois ce triangle → félicitations, tu fais du Rembrandt ! Les photographes pro utilisent ça tout le temps.</p></div>
+
+<div class="glass"><h3>✨ Les catchlights — les étoiles dans les yeux</h3>
+<p>Regarde les yeux dans un bon portrait : tu vois des <strong>petits reflets lumineux</strong> ? Ce sont les <strong>catchlights</strong>.</p>
+<p>C'est ce qui rend les yeux vivants ! Sans catchlights, les yeux sont "morts" et le portrait perd toute sa magie. 😶</p>
+<p>Pour les avoir : assure-toi que la source de lumière <strong>se reflète dans les yeux</strong>. Facile avec une fenêtre — le reflet rectangulaire est magnifique !</p>
+<p>Fun fact : dans les films d'animation, les dessinateurs ajoutent TOUJOURS des catchlights dans les yeux des personnages. Sans eux, le personnage a l'air méchant ou mort 👀</p></div>
+
+<div class="glass"><h3>☀️ Éviter la lumière du midi</h3>
+<p>Tu te souviens de la leçon 1.1 ? Le soleil de midi = ombres moches. Pour les visages, c'est ENCORE PIRE :</p>
+<p>🦝 <strong>Yeux de raton laveur</strong> → des ombres noires sous les yeux</p>
+<p>👃 <strong>Ombre du nez géante</strong> → comme une moustache d'ombre</p>
+<p>😣 <strong>Le sujet plisse les yeux</strong> → pas très photogénique</p>
+<p>Solutions : l'ombre d'un arbre, un porche, un parasol, ou simplement... attendre la golden hour ! 🌅</p></div>
+
+<div class="glass" style="background:rgba(255,215,0,0.1);border:1px solid var(--gold)"><h3>💡 Mnémotechnique</h3>
+<p><strong>"Fenêtre de côté = studio gratuit"</strong> 🪟</p>
+<p>Retiens juste ça : ton sujet à côté d'une fenêtre, face légèrement tournée vers la lumière. C'est 80% du travail !</p>
+<p><strong>"Pas de catchlights = yeux morts"</strong> 👀 — Cherche toujours le reflet dans les yeux.</p></div>
+
+<div class="glass" style="background:rgba(100,100,255,0.1);border:1px solid #88f"><h3>🎮 Mini-défi pratique</h3>
+<p>Trouve une fenêtre et un ami (ou un selfie en timer) :</p>
+<p>1. 🪟 Place le sujet à côté de la fenêtre. Prends une photo. Observe les ombres douces !</p>
+<p>2. 🔺 Essaie de créer le <strong>triangle de Rembrandt</strong> en tournant la tête</p>
+<p>3. 👀 Zoome sur les yeux : tu vois les <strong>catchlights</strong> ?</p></div>
+
+<div class="glass" style="background:rgba(0,255,150,0.1);border:1px solid #0f6"><h3>✅ Ce que tu maîtrises maintenant !</h3>
+<p>✔️ La fenêtre = ton meilleur outil de portrait</p>
+<p>✔️ Le triangle de Rembrandt (45° + au-dessus)</p>
+<p>✔️ Les catchlights rendent les yeux vivants</p>
+<p>✔️ Pourquoi éviter le soleil de midi pour les visages</p>
+<p><strong>🔜 Prochaine étape :</strong> ton sujet est bien éclairé, mais il se tient comme un piquet ? On va apprendre à <strong>poser</strong> les gens naturellement ! 🧍</p></div>`,
+
+'4.3': `<h2>🧍 Poser son Sujet — L'Art de Rendre Beau</h2>
+<div class="glass"><h3>🔄 Rappel</h3>
+<p>Tu sais maintenant <strong>cadrer</strong> 📐 un portrait et utiliser la <strong>lumière</strong> 💡 d'une fenêtre pour créer du volume. Mais ton modèle se tient tout raide comme un soldat ? On va arranger ça ! 🧍‍♂️➡️💃</p></div>
+
+<div class="glass"><h3>↩️ Jamais de face — la règle des 45°</h3>
+<p>Imagine une porte. Vue de face, elle est fine comme une ligne. Vue de côté à 45°, elle a du volume, de la profondeur. Pour le corps humain, c'est pareil !</p>
+<p>❌ <strong>Corps de face, carré à l'appareil</strong> → plat, rigide, photo d'identité 🪪</p>
+<p>✅ <strong>Corps tourné à 45°</strong> → élancé, dynamique, élégant</p>
+<p>C'est pour ça que les mannequins ne sont JAMAIS de face sur les photos de mode. Ils se tournent toujours légèrement ! 👗</p></div>
+
+<div class="glass"><h3>🫳 Le truc du menton</h3>
+<p>LE conseil le plus simple et le plus efficace du portrait. Ça change littéralement tout :</p>
+<p><strong>Demande à ton sujet d'avancer légèrement le menton vers l'avant et un tout petit peu vers le bas.</strong></p>
+<p>Pourquoi ? Ça fait 3 choses magiques :</p>
+<p>1. 🦢 Ça <strong>allonge le cou</strong> (adieu le double menton !)</p>
+<p>2. 👀 Ça <strong>agrandit les yeux</strong> (le regard est plus intense)</p>
+<p>3. 🦴 Ça <strong>définit la mâchoire</strong> (le visage paraît plus sculpté)</p>
+<p>Peter Hurley, un photographe de portrait célèbre, appelle ça le <strong>"jawline move"</strong>. C'est le secret de toutes les photos pro de LinkedIn ! 😄</p></div>
+
+<div class="glass"><h3>✋ Les mains — le cauchemar du débutant</h3>
+<p>Si ton sujet ne sait pas quoi faire de ses mains, ça se verra. Les mains qui pendent mollement le long du corps = malaise garanti 😅</p>
+<p>Solutions simples :</p>
+<p>🤝 <strong>Occuper les mains</strong> → tenir un café, un livre, un sac, toucher ses cheveux, croiser les bras</p>
+<p>👖 <strong>Les poches</strong> → main dans la poche (pouce dehors c'est plus élégant)</p>
+<p>🧣 <strong>Toucher un vêtement</strong> → ajuster un col, tenir un pan de veste</p>
+<p>Règle d'or : si les mains n'ajoutent rien, cache-les. Si elles sont visibles, elles doivent être <strong>détendues et légèrement courbées</strong>.</p></div>
+
+<div class="glass"><h3>😊 Détendre son sujet</h3>
+<p>La meilleure pose du monde ne sert à rien si ton sujet est tendu. Voici comment le détendre :</p>
+<p>💬 <strong>Parle !</strong> Raconte une blague, pose des questions. Les meilleurs portraits sont pris quand le sujet <strong>oublie l'appareil</strong>.</p>
+<p>📸 <strong>Prends beaucoup de photos</strong> → les 10 premières seront toujours les plus rigides. C'est normal !</p>
+<p>🤣 <strong>La technique du "rire sincère"</strong> → dis quelque chose de drôle JUSTE avant de déclencher. Le rire qui suit est naturel et authentique.</p>
+<p>📷 <strong>Photo candide vs posée</strong> → parfois, la meilleure photo est celle prise quand le sujet ne regarde pas. Reste prêt·e !</p></div>
+
+<div class="glass" style="background:rgba(255,215,0,0.1);border:1px solid var(--gold)"><h3>💡 Mnémotechnique</h3>
+<p><strong>"Tourne — Menton — Mains — Parle"</strong> 🎭</p>
+<p>4 étapes pour un portrait réussi :</p>
+<p>1. <strong>Tourne</strong> le corps à 45°</p>
+<p>2. <strong>Menton</strong> en avant et légèrement vers le bas</p>
+<p>3. <strong>Mains</strong> occupées ou cachées</p>
+<p>4. <strong>Parle</strong> pour détendre !</p></div>
+
+<div class="glass" style="background:rgba(100,100,255,0.1);border:1px solid #88f"><h3>🎮 Mini-défi pratique</h3>
+<p>Demande à un ami de poser pour toi (ou fais un selfie en timer) :</p>
+<p>1. 📸 Photo <strong>de face, bras ballants</strong> (le "avant")</p>
+<p>2. 📸 Photo avec <strong>corps à 45°, menton avancé, main dans la poche</strong> (le "après")</p>
+<p>Compare les deux : c'est le jour et la nuit ! 🌗</p></div>
+
+<div class="glass" style="background:rgba(0,255,150,0.1);border:1px solid #0f6"><h3>✅ Ce que tu maîtrises maintenant !</h3>
+<p>✔️ Corps à 45° pour du volume</p>
+<p>✔️ Le truc du menton (avancer + baisser légèrement)</p>
+<p>✔️ Gérer les mains du sujet</p>
+<p>✔️ Détendre son modèle pour un portrait naturel</p>
+<p><strong>🔜 Prochaine étape :</strong> ton sujet est beau, bien éclairé, bien posé. Mais derrière lui, c'est le bazar ? On va parler <strong>arrière-plan et bokeh</strong> ! 🌸</p></div>`,
+
+'4.4': `<h2>🌸 L'Arrière-plan et le Bokeh — L'Art du Flou Magique</h2>
+<div class="glass"><h3>🔄 Rappel</h3>
+<p>Tu sais <strong>cadrer</strong> 📐, <strong>éclairer</strong> 💡 et <strong>poser</strong> 🧍 ton sujet. Maintenant, on va s'occuper de ce qu'il y a <strong>derrière</strong>. Un fond moche peut ruiner le meilleur portrait du monde ! 😱</p></div>
+
+<div class="glass"><h3>🧹 Nettoie ton arrière-plan !</h3>
+<p>C'est la règle n°1 : <strong>regarde derrière ton sujet</strong> avant de déclencher.</p>
+<p>Imagine que tu fais un portrait magnifique, et sur la photo finale… il y a un poteau qui sort de la tête de ton sujet. 🤦 C'est le piège classique !</p>
+<p>❌ À éviter : arbres/poteaux derrière la tête, poubelles, panneaux moches, passants distrayants</p>
+<p>✅ Bons fonds : mur uni, verdure, lumières floues de ville, ciel</p>
+<p>Astuce : <strong>déplace-toi de 2 pas</strong> à gauche ou à droite. Souvent, ça suffit pour changer complètement l'arrière-plan ! 🚶</p></div>
+
+<div class="glass"><h3>✨ Le bokeh — le flou magique</h3>
+<p>Tu te souviens de l'ouverture (leçon 1.3) ? <strong>f/1.8 ou f/2.8</strong> = fond super flou. En portrait, c'est ton arme secrète :</p>
+<p>Le <strong>bokeh</strong> (mot japonais 🇯🇵 qui signifie "flou"), c'est ce magnifique flou crémeux derrière le sujet. Il fait 2 choses :</p>
+<p>1. 🎯 <strong>Isole le sujet</strong> → ton regard va direct sur lui</p>
+<p>2. 🎨 <strong>Transforme le fond</strong> → même un fond moche devient beau en flou !</p>
+<p>Sur téléphone : utilise le <strong>mode Portrait</strong> 📱. Il simule le bokeh et c'est plutôt bien fait !</p></div>
+
+<div class="glass"><h3>📏 Le truc de la distance</h3>
+<p>Voici le secret que 90% des gens ne connaissent pas :</p>
+<p><strong>Plus ton sujet est LOIN du fond, plus le fond sera flou.</strong></p>
+<p>C'est la physique ! Et ça marche même avec un téléphone :</p>
+<p>🧱 Sujet <strong>collé au mur</strong> → fond net, pas de bokeh</p>
+<p>🚶 Sujet à <strong>3 mètres du mur</strong> → fond un peu flou</p>
+<p>🏃 Sujet à <strong>10 mètres du fond</strong> → bokeh magnifique !</p>
+<p>Combine ça avec une grande ouverture (f/1.8) et tu obtiens un bokeh de rêve. C'est comme la recette d'un gâteau : chaque ingrédient ajoute du flou ! 🎂</p></div>
+
+<div class="glass"><h3>🎨 Les couleurs de l'arrière-plan</h3>
+<p>Un bon arrière-plan ne doit pas voler la vedette au sujet. Pense en termes de couleurs (leçon 3.2) :</p>
+<p>🌿 <strong>Vert (nature)</strong> → classique, frais, toujours beau en flou</p>
+<p>🧱 <strong>Tons neutres (mur, béton)</strong> → propre, urbain, pro</p>
+<p>💛 <strong>Lumières chaudes en bokeh</strong> → les lumières de ville la nuit deviennent des cercles dorés magiques !</p>
+<p>⚠️ <strong>Évite les fonds avec des couleurs qui clashent</strong> avec ton sujet (rouge vif derrière une personne en vert fluo = aïe 😅)</p></div>
+
+<div class="glass" style="background:rgba(255,215,0,0.1);border:1px solid var(--gold)"><h3>💡 Mnémotechnique</h3>
+<p><strong>"Éloigne le fond, ouvre le robinet"</strong> 🚿</p>
+<p>Le bokeh, c'est comme un robinet : plus tu ouvres (petite valeur f/), plus ça coule (plus de flou). Et plus le sujet est loin du fond, plus l'effet est fort !</p></div>
+
+<div class="glass" style="background:rgba(100,100,255,0.1);border:1px solid #88f"><h3>🎮 Mini-défi pratique</h3>
+<p>Prends ton téléphone en mode Portrait :</p>
+<p>1. 📸 Photo d'un ami <strong>collé au mur</strong></p>
+<p>2. 📸 Même photo, ami à <strong>3 mètres du mur</strong></p>
+<p>3. 📸 Le soir, fais un portrait avec des <strong>lumières de ville</strong> derrière. Les cercles de bokeh sont magnifiques ! 🌃</p></div>
+
+<div class="glass" style="background:rgba(0,255,150,0.1);border:1px solid #0f6"><h3>✅ Ce que tu maîtrises maintenant !</h3>
+<p>✔️ Toujours checker l'arrière-plan avant de shooter</p>
+<p>✔️ Le bokeh = grande ouverture + sujet loin du fond</p>
+<p>✔️ Le truc de la distance pour maximiser le flou</p>
+<p>✔️ Choisir les bonnes couleurs de fond</p>
+<p><strong>🔜 Prochaine étape :</strong> la dernière leçon ! On va apprendre à capturer l'<strong>émotion</strong> — le graal du portrait. 💫</p></div>`,
+
+'4.5': `<h2>💫 Capturer l'Émotion — Le Graal du Portrait</h2>
+<div class="glass"><h3>🔄 Rappel</h3>
+<p>Tu sais <strong>cadrer</strong> 📐, <strong>éclairer</strong> 💡, <strong>poser</strong> 🧍 et gérer l'<strong>arrière-plan</strong> 🌸. Il te manque l'ingrédient final — le plus important de tous : <strong>l'émotion</strong>. Un portrait techniquement parfait mais sans émotion, c'est comme un plat bien présenté mais sans goût. 🍽️</p></div>
+
+<div class="glass"><h3>🤝 La connexion avec le sujet</h3>
+<p>Le plus grand secret des photographes portraitistes ? Ce n'est pas leur appareil ou leur lumière. C'est leur capacité à <strong>créer un lien</strong> avec la personne.</p>
+<p>Pense à un bon serveur au restaurant : il met les gens à l'aise en quelques secondes. C'est exactement ton rôle de photographe ! 🍽️</p>
+<p>🗣️ <strong>Parle avec ton sujet</strong> — pas de silence gênant derrière l'appareil</p>
+<p>💬 <strong>Pose des questions personnelles</strong> — "Raconte-moi ton meilleur souvenir" → les yeux s'illuminent</p>
+<p>👏 <strong>Encourage</strong> — "Super, magnifique, exactement ça !" (même si c'est pas encore parfait)</p>
+<p>🎵 <strong>Mets de la musique</strong> — ça change complètement l'ambiance !</p></div>
+
+<div class="glass"><h3>😊 Le sourire authentique vs le sourire forcé</h3>
+<p>Tu sais reconnaître un faux sourire ? Tout le monde le peut, intuitivement. La différence :</p>
+<p>😬 <strong>Faux sourire</strong> ("cheese !") → seule la bouche bouge. Les yeux restent "morts". Ça se voit sur la photo !</p>
+<p>😄 <strong>Vrai sourire</strong> (sourire de Duchenne) → la bouche ET les yeux sourient. Des petites rides apparaissent au coin des yeux (les "pattes d'oie").</p>
+<p>Comment obtenir un vrai sourire ? Ne dis JAMAIS "cheese". Plutôt :</p>
+<p>🤣 Raconte une blague juste avant</p>
+<p>🐶 Parle de leur animal de compagnie</p>
+<p>👶 Montre une photo drôle sur ton téléphone</p>
+<p>Le meilleur moment ? Juste APRÈS le rire, quand le sourire redescend naturellement. C'est la fenêtre magique ! 🪟✨</p></div>
+
+<div class="glass"><h3>👀 Les yeux racontent tout</h3>
+<p>Un portrait peut être magique même sans sourire. Le secret : <strong>les yeux</strong>.</p>
+<p>😌 <strong>Regard vers l'appareil</strong> → connexion directe avec le spectateur. Intime et puissant.</p>
+<p>🔭 <strong>Regard au loin</strong> → rêverie, mélancolie, pensée. Plus mystérieux.</p>
+<p>📖 <strong>Regard vers le bas</strong> → introspection, timidité, douceur.</p>
+<p>Chaque direction de regard raconte une histoire différente. Expérimente !</p></div>
+
+<div class="glass"><h3>🌍 Le portrait environnemental</h3>
+<p>Parfois, le meilleur portrait montre la personne <strong>dans son contexte</strong> :</p>
+<p>👨‍🍳 Un chef dans sa cuisine</p>
+<p>🎨 Un artiste dans son atelier</p>
+<p>🌻 Un jardinier dans son jardin</p>
+<p>C'est le <strong>portrait environnemental</strong> : au lieu de tout flouter derrière, tu <strong>montres l'univers</strong> de la personne. Ça raconte une histoire bien plus riche qu'un fond uni.</p>
+<p>Pour ça, utilise une ouverture moyenne (f/5.6 à f/8) pour que le décor soit reconnaissable mais que le sujet reste le héros.</p></div>
+
+<div class="glass" style="background:rgba(255,215,0,0.1);border:1px solid var(--gold)"><h3>💡 Mnémotechnique</h3>
+<p><strong>"Le portrait, c'est 20% technique, 80% connexion humaine"</strong> 🤝</p>
+<p>N'oublie jamais : un portrait un peu flou mais plein d'émotion vaudra TOUJOURS mieux qu'un portrait parfait mais vide.</p>
+<p><strong>"Jamais cheese, toujours vrai"</strong> 😄 — Provoque le rire, ne le commande pas.</p></div>
+
+<div class="glass" style="background:rgba(100,100,255,0.1);border:1px solid #88f"><h3>🎮 Mini-défi pratique</h3>
+<p>Le défi ultime du portrait émotionnel :</p>
+<p>1. 📸 Fais un portrait en disant <strong>"cheese"</strong> — regarde le résultat</p>
+<p>2. 📸 Maintenant, fais rire ton sujet <strong>naturellement</strong> — compare !</p>
+<p>3. 📸 Fais un <strong>portrait environnemental</strong> : photographie quelqu'un dans son lieu préféré</p></div>
+
+<div class="glass" style="background:rgba(0,255,150,0.1);border:1px solid #0f6"><h3>✅ Ce que tu maîtrises maintenant !</h3>
+<p>🎉 <strong>FÉLICITATIONS !</strong> Tu as terminé toutes les leçons du portrait !</p>
+<p>✔️ Créer une connexion avec ton sujet</p>
+<p>✔️ Obtenir un vrai sourire (jamais "cheese" !)</p>
+<p>✔️ Utiliser la direction du regard pour raconter une histoire</p>
+<p>✔️ Le portrait environnemental pour montrer l'univers du sujet</p>
+<p>💪 Tu es prêt·e pour le <strong>Sculpteur d'Âmes</strong> ! Il va tester TOUT ce que tu sais sur le portrait. Prépare ton plus beau regard ! 👁️🔥</p></div>`
 };
 
 const QUIZZES = {
@@ -2515,6 +3000,41 @@ const QUIZZES = {
   {q:'Un parapluie rouge dans une rue grise, c\'est un exemple de...',opts:['Contraste tonal','Palette analogique','Point de couleur','Balance des blancs'],ans:2},
   {q:'Pour raconter "nostalgie et automne", tu choisis une palette...',opts:['Bleue et froide','Orange, rouge, brune','Verte et turquoise','Noir et blanc'],ans:1},
   {q:'Quand une photo ne marche pas en couleur, tu peux essayer...',opts:['De la supprimer','Le noir et blanc','D\'augmenter la saturation à fond','De rajouter un filtre flashy'],ans:1}
+],
+'4.1': [
+  {q:'Pour éviter la déformation du visage en portrait, tu dois...',opts:['Te coller au sujet','Reculer et zoomer légèrement','Utiliser le grand-angle','Monter les ISO'],ans:1},
+  {q:'L\'angle "contre-plongée" (du dessous) donne une impression de...',opts:['Fragilité','Puissance et héroïsme','Tristesse','Naturel'],ans:1},
+  {q:'Où ne faut-il JAMAIS couper en portrait ?',opts:['À mi-cuisse','Au niveau des articulations (genoux, coudes...)','Au milieu du bras','Au-dessus de la tête'],ans:1},
+  {q:'Sur quoi fais-tu TOUJOURS la mise au point en portrait ?',opts:['Le nez','Les oreilles','Les yeux','Les mains'],ans:2},
+  {q:'Pour photographier un enfant, tu te mets...',opts:['Debout au-dessus de lui','À sa hauteur (genou à terre)','Le plus loin possible','En contre-plongée extrême'],ans:1}
+],
+'4.2': [
+  {q:'Le meilleur éclairage gratuit pour un portrait, c\'est...',opts:['Le flash du téléphone','Le soleil de midi','Une fenêtre avec lumière naturelle','Un néon'],ans:2},
+  {q:'Le triangle de Rembrandt, c\'est...',opts:['Une pose du corps','Un triangle de lumière sous l\'œil côté ombre','Un type de bokeh','Un réglage d\'appareil'],ans:1},
+  {q:'Les catchlights, ce sont...',opts:['Des types de flash','Des reflets lumineux dans les yeux','Des ombres sous le nez','Des filtres de couleur'],ans:1},
+  {q:'Le soleil de midi crée sur les visages...',opts:['Une lumière douce et flatteuse','Des ombres dures sous les yeux et le nez','Un joli bokeh','Des catchlights naturels'],ans:1},
+  {q:'Pour créer un éclairage Rembrandt, tu places la lumière à...',opts:['Face au sujet','45° sur le côté et légèrement au-dessus','Derrière le sujet','En dessous du sujet'],ans:1}
+],
+'4.3': [
+  {q:'Pourquoi ne faut-il pas poser de face, carré à l\'appareil ?',opts:['Ça fait une photo floue','Ça donne un look plat et rigide','Ça crée trop de bokeh','Ça change les couleurs'],ans:1},
+  {q:'Le truc du menton, c\'est...',opts:['Lever le menton très haut','Avancer le menton vers l\'avant et légèrement vers le bas','Cacher le menton','Tourner le menton à 90°'],ans:1},
+  {q:'Si ton sujet ne sait pas quoi faire de ses mains, tu lui dis de...',opts:['Les laisser pendre','Les mettre derrière le dos','Les occuper (café, poche, cheveux...)','Les lever en l\'air'],ans:2},
+  {q:'Pour obtenir un vrai sourire naturel, tu...',opts:['Dis "cheese !"','Racontes une blague juste avant','Demandes de sourire plus fort','Fais une grimace'],ans:1},
+  {q:'Le corps du sujet doit être tourné à environ...',opts:['0° (de face)','90° (de profil)','45° (légèrement tourné)','180° (de dos)'],ans:2}
+],
+'4.4': [
+  {q:'Que faut-il vérifier avant de prendre un portrait ?',opts:['La marque de l\'appareil','L\'arrière-plan','La météo du lendemain','Le nombre de photos restantes'],ans:1},
+  {q:'Pour plus de bokeh (flou de fond), tu dois...',opts:['Coller le sujet au mur','Éloigner le sujet du fond + grande ouverture','Monter les ISO','Utiliser le flash'],ans:1},
+  {q:'Le mot "bokeh" vient du japonais et signifie...',opts:['Lumière','Portrait','Flou','Beauté'],ans:2},
+  {q:'Sur téléphone, quel mode simule le bokeh ?',opts:['Mode nuit','Mode panorama','Mode portrait','Mode vidéo'],ans:2},
+  {q:'Les lumières de ville en arrière-plan flou deviennent...',opts:['Des lignes','Des cercles lumineux (bokeh)','Des carrés','Invisibles'],ans:1}
+],
+'4.5': [
+  {q:'Le plus important dans un portrait émotionnel, c\'est...',opts:['L\'appareil photo','La connexion avec le sujet','Le trépied','Le filtre Instagram'],ans:1},
+  {q:'Un vrai sourire (de Duchenne) se reconnaît parce que...',opts:['La bouche est très ouverte','Les yeux sourient aussi (rides au coin des yeux)','Le sujet montre les dents','Le menton est levé'],ans:1},
+  {q:'Le portrait environnemental montre...',opts:['Uniquement le visage en gros plan','La personne dans son contexte/univers','Un fond complètement flou','Seulement les mains'],ans:1},
+  {q:'Pour un portrait environnemental, tu utilises une ouverture de...',opts:['f/1.4 (tout flou)','f/5.6 à f/8 (décor reconnaissable)','f/22 (tout ultra net)','Ça n\'a pas d\'importance'],ans:1},
+  {q:'Quel regard crée la connexion la plus directe avec le spectateur ?',opts:['Regard vers le bas','Regard au loin','Regard vers l\'appareil','Yeux fermés'],ans:2}
 ]
 };
 
@@ -2555,6 +3075,19 @@ const BOSS2_QUESTIONS = [
   {q:'Un oiseau seul dans un grand ciel bleu. Quelle technique ?',opts:['Ligne directrice','Cadre dans le cadre','Espace négatif','Motif'],ans:2},
   {q:'Quand est-il acceptable de centrer un sujet ?',opts:['Jamais, c\'est interdit','Quand on veut un effet de symétrie ou de confrontation','Seulement pour les selfies','Quand on ne connaît pas les règles'],ans:1},
   {q:'Le secret des paysages impressionnants, c\'est souvent...',opts:['Un filtre Instagram','Un zoom puissant','Un premier plan intéressant','Beaucoup de saturation'],ans:2}
+];
+
+const BOSS4_QUESTIONS = [
+  {q:'Pour éviter la déformation du visage, tu dois...',opts:['Te rapprocher','Utiliser le flash','Reculer et zoomer légèrement','Baisser les ISO'],ans:2},
+  {q:'Le triangle de Rembrandt, c\'est...',opts:['Un cadrage en triangle','Un triangle de lumière sous l\'œil côté ombre','Un réglage d\'ouverture','Un type de pose'],ans:1},
+  {q:'Sur quoi fais-tu TOUJOURS la mise au point en portrait ?',opts:['Le front','Les yeux','Le nez','Les épaules'],ans:1},
+  {q:'Le meilleur éclairage gratuit pour le portrait, c\'est...',opts:['Le flash','Le soleil de midi','Une fenêtre (lumière de côté)','Un néon'],ans:2},
+  {q:'Le truc du menton consiste à...',opts:['Lever le menton au max','Avancer le menton et baisser légèrement','Cacher le menton','Tourner la tête à 90°'],ans:1},
+  {q:'Le corps du sujet doit être orienté à environ...',opts:['0° (de face)','45° (légèrement tourné)','90° (de profil)','180° (de dos)'],ans:1},
+  {q:'Pour plus de bokeh, tu dois...',opts:['Coller le sujet au fond','Grande ouverture + sujet loin du fond','Monter les ISO','Utiliser un trépied'],ans:1},
+  {q:'Un vrai sourire se reconnaît aux...',opts:['Dents visibles','Rides au coin des yeux (les yeux sourient)','Lèvres fermées','Joues rouges'],ans:1},
+  {q:'Le portrait environnemental montre...',opts:['Seulement les yeux','La personne dans son univers/contexte','Un fond complètement flou','Un gros plan extrême'],ans:1},
+  {q:'Ne dis JAMAIS ___ pour obtenir un sourire naturel',opts:['"Regarde ici"','"Cheese !"','"Bouge pas"','"Ferme les yeux"'],ans:1}
 ];
 
 // === GAME STATE ===
@@ -2708,7 +3241,7 @@ function renderWorldMap() {
 }
 
 function openWorld(id) {
-  if(id!==1 && id!==2 && id!==3){alert('Ce monde arrive bientôt !');return;}
+  if(id!==1 && id!==2 && id!==3 && id!==4){alert('Ce monde arrive bientôt !');return;}
   currentWorld = id;
   showScreen('chapters');
   renderChapters();
@@ -2720,7 +3253,8 @@ function renderChapters() {
   const worldIntros = {
     1:'Tu arrives dans un village plongé dans le brouillard. Les habitants ont perdu la capacité de voir les couleurs...',
     2:'Un monde géométrique s\'ouvre devant toi. Ici, chaque pierre, chaque chemin, chaque reflet cache un secret de composition...',
-    3:'Une forêt enchantée où chaque feuille, chaque fleur raconte une histoire de couleur. La Sorcière des Teintes règne ici...'
+    3:'Une forêt enchantée où chaque feuille, chaque fleur raconte une histoire de couleur. La Sorcière des Teintes règne ici...',
+    4:'Des montagnes majestueuses où chaque visage cache une histoire. Le Sculpteur d\'Âmes attend au sommet ceux qui osent capturer l\'essence d\'un regard...'
   };
   document.getElementById('chapterHeader').innerHTML = `<h2>${world.name}</h2><p style="color:var(--text2);font-size:13px;margin:8px 0 16px">${worldIntros[currentWorld]||''}</p>`;
   let html = '';
@@ -2823,6 +3357,9 @@ function startBoss() {
 }
 
 function getBossConfig() {
+  if(currentBossWorld===4) return {sprite:'boss4',name:'Le Sculpteur d\'Âmes',id:'boss4',questions:BOSS4_QUESTIONS,
+    intro:'"Ah, tu crois connaître l\'âme humaine, petit·e portraitiste ? La lumière, la pose, l\'émotion… Voyons si tu sais vraiment capturer l\'essence d\'un regard ! 10 questions, 20 secondes, 3 erreurs = défaite !"',
+    victory:'"Magnifique... Tu vois au-delà des visages. Tu captures les âmes. Les montagnes te reconnaissent comme Sculpteur de Lumière."',title:'Sculpteur de Lumière'};
   if(currentBossWorld===3) return {sprite:'boss3',name:'La Sorcière des Teintes',id:'boss3',questions:BOSS3_QUESTIONS,
     intro:'"Ah, tu crois comprendre les couleurs, petit·e artiste ? La roue chromatique, le chaud et le froid, le contraste… Voyons si tu survis à mon sortilège ! 10 questions, 20 secondes, 3 erreurs = défaite !"',
     victory:'"Impressionnant... Tu vois les couleurs comme personne. La forêt te reconnaît comme Maître des Teintes."',title:'Maître des Teintes'};
@@ -3091,6 +3628,36 @@ const CREATURES = [
    condition:'Palette harmonieuse · Golden hour · Point de couleur',sceneType:'iriselle',
    idealAperture:2,idealShutter:8,idealISO:0,
    sceneColors:['#3a5a2a','#6a8a4a','#2a4a1a','#1a3a0a'],
+   particles:'sparkle'},
+  {id:'c16',afterChapter:'4.1',sprite:'portraitiste',name:'Portraitiste Fantôme',
+   scene:'Un Portraitiste Fantôme apparaît, posant devant toi avec un regard perçant. Il attend que tu captures son meilleur angle.',
+   condition:'Bon angle · Distance correcte · Mise au point sur les yeux',sceneType:'portraitiste',
+   idealAperture:2,idealShutter:8,idealISO:1,
+   sceneColors:['#1a1a2e','#2d2d44','#d4a574','#e8c8a0'],
+   particles:'sparkle'},
+  {id:'c17',afterChapter:'4.2',sprite:'rembrandt',name:'Lumin\'Or',
+   scene:'Un Lumin\'Or se tient près d\'une fenêtre magique. Un triangle de lumière dorée illumine son visage. Ses yeux brillent de catchlights.',
+   condition:'Lumière latérale · Triangle de Rembrandt · Catchlights visibles',sceneType:'rembrandt',
+   idealAperture:2,idealShutter:7,idealISO:2,
+   sceneColors:['#1a1a2e','#f59e0b','#d4a574','#fbbf24'],
+   particles:'sparkle'},
+  {id:'c18',afterChapter:'4.3',sprite:'mannequin',name:'Élégantine',
+   scene:'Une Élégantine se tient à 45°, menton en avant, une main posée sur sa hanche. La pose parfaite !',
+   condition:'Pose à 45° · Menton avancé · Mains occupées',sceneType:'mannequin',
+   idealAperture:2,idealShutter:8,idealISO:1,
+   sceneColors:['#1a1a2e','#ec4899','#d4a574','#f472b6'],
+   particles:'sparkle'},
+  {id:'c19',afterChapter:'4.4',sprite:'bokehon',name:'Bokéhon',
+   scene:'Un Bokéhon flotte dans un nuage de cercles lumineux multicolores. Son corps est net, mais tout autour de lui est un flou magique.',
+   condition:'Bokeh maximal · Sujet isolé · Fond éloigné',sceneType:'bokehon',
+   idealAperture:0,idealShutter:9,idealISO:0,
+   sceneColors:['#0a1a0a','#22c55e','#4ade80','#166534'],
+   particles:'sparkle'},
+  {id:'c20',afterChapter:'4.5',sprite:'emotera',name:'Émotéra',
+   scene:'Une Émotéra te regarde droit dans les yeux avec un sourire authentique. Des larmes de joie brillent sur ses joues. L\'émotion pure.',
+   condition:'Connexion émotionnelle · Sourire authentique · Regard direct',sceneType:'emotera',
+   idealAperture:2,idealShutter:8,idealISO:1,
+   sceneColors:['#1e3a5f','#3b82f6','#d4a574','#60a5fa'],
    particles:'sparkle'}
 ];
 
