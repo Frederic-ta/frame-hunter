@@ -384,6 +384,12 @@ const PA = {
   // Color palettes for creatures
   P: {
     kitsune: ['','#c87533','#e8a030','#f5c542','#fff4b0','#8b4513','#d4690e','#ff9933','#332200','#ffdd66','#fff8dc','#663300','#aa5500'],
+    tiers: ['','#2563eb','#3b82f6','#60a5fa','#93c5fd','#1e40af','#1e3a5f','#dbeafe','#f59e0b','#fbbf24','#fff','#0f172a','#7c3aed'],
+    lignes: ['','#059669','#10b981','#34d399','#6ee7b7','#064e3b','#0d3320','#a7f3d0','#f59e0b','#fbbf24','#fff','#022c22','#d97706'],
+    cadre: ['','#b45309','#d97706','#f59e0b','#fbbf24','#78350f','#451a03','#fef3c7','#7c3aed','#a78bfa','#fff','#1c1917','#92400e'],
+    symetrie: ['','#7c3aed','#8b5cf6','#a78bfa','#c4b5fd','#5b21b6','#3b0764','#ede9fe','#06b6d4','#22d3ee','#fff','#1e1b4b','#6d28d9'],
+    oeil: ['','#dc2626','#ef4444','#f87171','#fca5a5','#991b1b','#450a0a','#fee2e2','#f59e0b','#fbbf24','#fff','#1c1917','#b91c1c'],
+    boss2: ['','#0ea5e9','#38bdf8','#7dd3fc','#bae6fd','#0369a1','#0c4a6e','#e0f2fe','#f59e0b','#fbbf24','#fff','#082f49','#0284c7'],
     griffon: ['','#4a5568','#718096','#a0aec0','#e2e8f0','#2d3748','#1a202c','#f6e05e','#63b3ed','#90cdf4','#fff','#2b6cb0','#ecc94b'],
     licorne: ['','#e2e8f0','#f7fafc','#fff','#d6bcfa','#9f7aea','#805ad5','#f0e6ff','#ffd700','#b794f4','#edf2f7','#c4b5fd','#e9d8fd'],
     wyverne: ['','#c53030','#e53e3e','#fc8181','#feb2b2','#742a2a','#9b2c2c','#f56565','#ff6b00','#ffa500','#ffdd00','#1a0a0a','#2d1f1f'],
@@ -709,6 +715,223 @@ PA.sprites.boss = {pal:'boss', size:32, data:
   '00000000031001300000000000000000'+
   '00000000031001300000000000000000'+
   '00000000044004400000000000000000'+
+  '00000000000000000000000000000000'+
+  '00000000000000000000000000000000'+
+  '00000000000000000000000000000000'
+};
+
+// World 2 Creatures
+// Gridelin - rule of thirds spirit (grid pattern creature)
+PA.sprites.tiers = {pal:'tiers', size:32, data:
+  '00000000000000000000000000000000'+
+  '00000000000088000000000000000000'+
+  '00000000000888800000000000000000'+
+  '00000000008233280000000000000000'+
+  '00000000082333328000000000000000'+
+  '00000000823333332800000000000000'+
+  '00000008233333333280000000000000'+
+  '00000082333333333328000000000000'+
+  '00000023333333333332000000000000'+
+  '00000023338333833332000000000000'+
+  '00000023388888888332000000000000'+
+  '00000023338333833332000000000000'+
+  '00000023333333333332000000000000'+
+  '00000023388888888332000000000000'+
+  '00000023338333833332000000000000'+
+  '00000023333333333332000000000000'+
+  '00000082333333333328000000000000'+
+  '00000008233333333280000000000000'+
+  '00000000823333332800000000000000'+
+  '00000000082333328000000000000000'+
+  '00000000008233280000000000000000'+
+  '00000000000828800000000000000000'+
+  '00000000000888000000000000000000'+
+  '00000000000080000000000000000000'+
+  '00000000000000000000000000000000'+
+  '00000000000000000000000000000000'+
+  '00000000000000000000000000000000'+
+  '00000000000000000000000000000000'+
+  '00000000000000000000000000000000'+
+  '00000000000000000000000000000000'+
+  '00000000000000000000000000000000'+
+  '00000000000000000000000000000000'
+};
+
+// Serpentine - leading lines snake creature
+PA.sprites.lignes = {pal:'lignes', size:32, data:
+  '00000000000000000000000000000000'+
+  '00000000000000000000000000000000'+
+  '00000000000000000000033000000000'+
+  '00000000000000000000322300000000'+
+  '00000000000000000003222230000000'+
+  '00000000000000000032228230000000'+
+  '00000000000000000322222300000000'+
+  '00000000000000003222223000000000'+
+  '00000000000000032222230000000000'+
+  '00000000000000322222300000000000'+
+  '00000000000003222223000000000000'+
+  '00000000000032222230000000000000'+
+  '00000000000322222300000000000000'+
+  '00000000003222223000000000000000'+
+  '00000000032222230000000000000000'+
+  '00000000322222300000000000000000'+
+  '00000003222223000000000000000000'+
+  '00000032222230000000000000000000'+
+  '00000322222300000000000000000000'+
+  '00003222223000000000000000000000'+
+  '00032222230000000000000000000000'+
+  '00322222300000000000000000000000'+
+  '03222223000000000000000000000000'+
+  '03222230000000000000000000000000'+
+  '00322300000000000000000000000000'+
+  '00033000000000000000000000000000'+
+  '00000000000000000000000000000000'+
+  '00000000000000000000000000000000'+
+  '00000000000000000000000000000000'+
+  '00000000000000000000000000000000'+
+  '00000000000000000000000000000000'+
+  '00000000000000000000000000000000'
+};
+
+// Arcanadre - framing/plans creature (arch-shaped)
+PA.sprites.cadre = {pal:'cadre', size:32, data:
+  '00000000000000000000000000000000'+
+  '00000001111111111111100000000000'+
+  '00000011222222222221100000000000'+
+  '00000112222222222222110000000000'+
+  '00001122222222222222211000000000'+
+  '00011200000000000000021100000000'+
+  '00112000000000000000002110000000'+
+  '01120000000000000000000211000000'+
+  '01120000000000000000000211000000'+
+  '01120000000880000000000211000000'+
+  '01120000008998000000000211000000'+
+  '01120000008998000000000211000000'+
+  '01120000000880000000000211000000'+
+  '01120000000000000000000211000000'+
+  '01120000000000000000000211000000'+
+  '01120000000000000000000211000000'+
+  '01120000000000000000000211000000'+
+  '01120000000000000000000211000000'+
+  '01120000000000000000000211000000'+
+  '01120000000000000000000211000000'+
+  '01120000000000000000000211000000'+
+  '01122000000000000000002211000000'+
+  '00112200000000000000022110000000'+
+  '00011222222222222222211000000000'+
+  '00001122222222222222110000000000'+
+  '00000112222222222221100000000000'+
+  '00000001111111111111000000000000'+
+  '00000000000000000000000000000000'+
+  '00000000000000000000000000000000'+
+  '00000000000000000000000000000000'+
+  '00000000000000000000000000000000'+
+  '00000000000000000000000000000000'
+};
+
+// Miralis - symmetry/patterns butterfly
+PA.sprites.symetrie = {pal:'symetrie', size:32, data:
+  '00000000000000000000000000000000'+
+  '00000000000003300000000000000000'+
+  '00000000000033330000000000000000'+
+  '00000000000333333000000000000000'+
+  '00000330000033330000033000000000'+
+  '00003223000003300000322300000000'+
+  '00032223300003300003322230000000'+
+  '00322223330003300033322230000000'+
+  '03222223330033330033322223000000'+
+  '32222223330333333033322222300000'+
+  '32228223333333333333322822300000'+
+  '32228823333333333333388222300000'+
+  '32228823333333333333388222300000'+
+  '32228223333333333333322822300000'+
+  '32222223330333333033322222300000'+
+  '03222223330033330033322223000000'+
+  '00322223330003300033322230000000'+
+  '00032223300003300003322230000000'+
+  '00003223000003300000322300000000'+
+  '00000330000033330000033000000000'+
+  '00000000000333333000000000000000'+
+  '00000000000033330000000000000000'+
+  '00000000000003300000000000000000'+
+  '00000000000000000000000000000000'+
+  '00000000000000000000000000000000'+
+  '00000000000000000000000000000000'+
+  '00000000000000000000000000000000'+
+  '00000000000000000000000000000000'+
+  '00000000000000000000000000000000'+
+  '00000000000000000000000000000000'+
+  '00000000000000000000000000000000'+
+  '00000000000000000000000000000000'
+};
+
+// Voidien - negative space / photographer's eye creature
+PA.sprites.oeil = {pal:'oeil', size:32, data:
+  '00000000000000000000000000000000'+
+  '00000000000000000000000000000000'+
+  '00000000000000000000000000000000'+
+  '00000000000000000000000000000000'+
+  '00000000000333333000000000000000'+
+  '00000000033222222330000000000000'+
+  '00000003322222222223300000000000'+
+  '00000032222222222222230000000000'+
+  '00000322222233322222223000000000'+
+  '00003222223388332222222300000000'+
+  '00032222233888832222222230000000'+
+  '00322222338999833222222223000000'+
+  '00322222338999833222222223000000'+
+  '00032222233888832222222230000000'+
+  '00003222223388332222222300000000'+
+  '00000322222233322222223000000000'+
+  '00000032222222222222230000000000'+
+  '00000003322222222223300000000000'+
+  '00000000033222222330000000000000'+
+  '00000000000333333000000000000000'+
+  '00000000000000000000000000000000'+
+  '00000000000000000000000000000000'+
+  '00000000000000000000000000000000'+
+  '00000000000000000000000000000000'+
+  '00000000000000000000000000000000'+
+  '00000000000000000000000000000000'+
+  '00000000000000000000000000000000'+
+  '00000000000000000000000000000000'+
+  '00000000000000000000000000000000'+
+  '00000000000000000000000000000000'+
+  '00000000000000000000000000000000'+
+  '00000000000000000000000000000000'
+};
+
+// Boss 2 - Le Maître Géomètre
+PA.sprites.boss2 = {pal:'boss2', size:32, data:
+  '00000000000000c00000000000000000'+
+  '0000000000000cc0000000000000000'+
+  '000000000000cccc000000000000000'+
+  '00000000000c88c0000000000000000'+
+  '0000000000c8888c000000000000000'+
+  '000000000c888888c00000000000000'+
+  '00000000008888880000000000000000'+
+  '00000000002288220000000000000000'+
+  '00000000022288222000000000000000'+
+  '00000000022288222000000000000000'+
+  '00000000002288220000000000000000'+
+  '000000c0001111110000c00000000000'+
+  '00000cc0011111111000cc0000000000'+
+  '0000cc00111111111100cc0000000000'+
+  '000cc001111aa111110000c000000000'+
+  '00cc0011111aa111111000c000000000'+
+  '0cc00111111111111110000c00000000'+
+  '0c001111111111111111000c00000000'+
+  '00011111111111111111100000000000'+
+  '00011111111111111111100000000000'+
+  '00001111111111111111000000000000'+
+  '00001111111111111111000000000000'+
+  '00000111111111111110000000000000'+
+  '00000011111111111100000000000000'+
+  '00000001111111111000000000000000'+
+  '00000000011111100000000000000000'+
+  '00000000011001100000000000000000'+
+  '00000000011001100000000000000000'+
+  '00000000055005500000000000000000'+
   '00000000000000000000000000000000'+
   '00000000000000000000000000000000'+
   '00000000000000000000000000000000'
@@ -1124,6 +1347,50 @@ function drawScene(canvas, sceneType, w, h) {
       ctx.fillStyle='#10101a';
       ctx.fillRect(0,100,canvas.width,20);
       break;
+    case 'tiers': // Grid garden with geometric hedges
+      for(let y=0;y<canvas.height;y++){let t=y/canvas.height;ctx.fillStyle=`rgb(${Math.round(20+30*t)},${Math.round(40+60*t)},${Math.round(80+40*t)})`;ctx.fillRect(0,y,canvas.width,1);}
+      ctx.strokeStyle='rgba(100,180,255,0.15)';ctx.lineWidth=1;
+      for(let x=canvas.width/3;x<canvas.width;x+=canvas.width/3){ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,canvas.height);ctx.stroke();}
+      for(let y=canvas.height/3;y<canvas.height;y+=canvas.height/3){ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(canvas.width,y);ctx.stroke();}
+      ctx.fillStyle='#1a3010';ctx.fillRect(0,90,canvas.width,30);
+      ctx.fillStyle='rgba(100,180,255,0.05)';ctx.fillRect(0,0,canvas.width,canvas.height);
+      break;
+
+    case 'lignes': // Road vanishing into distance
+      for(let y=0;y<70;y++){let t=y/70;ctx.fillStyle=`rgb(${Math.round(20+60*t)},${Math.round(60+80*t)},${Math.round(30+50*t)})`;ctx.fillRect(0,y,canvas.width,1);}
+      ctx.fillStyle='#2a4a1a';ctx.fillRect(0,70,canvas.width,50);
+      ctx.fillStyle='#4a4a4a';ctx.beginPath();ctx.moveTo(60,canvas.height);ctx.lineTo(canvas.width-60,canvas.height);ctx.lineTo(canvas.width/2+3,70);ctx.lineTo(canvas.width/2-3,70);ctx.fill();
+      ctx.strokeStyle='#ffcc00';ctx.lineWidth=1;ctx.setLineDash([4,4]);ctx.beginPath();ctx.moveTo(canvas.width/2,canvas.height);ctx.lineTo(canvas.width/2,70);ctx.stroke();ctx.setLineDash([]);
+      break;
+
+    case 'cadre': // Archway framing a courtyard
+      ctx.fillStyle='#1a1520';ctx.fillRect(0,0,canvas.width,canvas.height);
+      let cg=ctx.createRadialGradient(canvas.width/2,canvas.height/2,10,canvas.width/2,canvas.height/2,80);
+      cg.addColorStop(0,'rgba(200,150,80,0.2)');cg.addColorStop(1,'rgba(0,0,0,0)');
+      ctx.fillStyle=cg;ctx.fillRect(0,0,canvas.width,canvas.height);
+      ctx.fillStyle='#2a1a10';ctx.fillRect(0,0,35,canvas.height);ctx.fillRect(canvas.width-35,0,35,canvas.height);
+      ctx.beginPath();ctx.ellipse(canvas.width/2,35,canvas.width/2-35,35,0,Math.PI,0);ctx.fillStyle='#2a1a10';ctx.fill();
+      ctx.fillStyle='#3a5a2a';ctx.fillRect(35,90,canvas.width-70,30);
+      break;
+
+    case 'symetrie': // Mirror lake with mountains
+      for(let y=0;y<60;y++){let t=y/60;ctx.fillStyle=`rgb(${Math.round(40+40*t)},${Math.round(20+30*t)},${Math.round(80+40*t)})`;ctx.fillRect(0,y,canvas.width,1);}
+      ctx.fillStyle='#3a2a5a';ctx.beginPath();ctx.moveTo(40,60);ctx.lineTo(80,20);ctx.lineTo(120,60);ctx.fill();
+      ctx.fillStyle='#2a3a6a';ctx.fillRect(0,60,canvas.width,60);
+      ctx.save();ctx.translate(0,120);ctx.scale(1,-1);ctx.globalAlpha=0.4;
+      ctx.fillStyle='#3a2a5a';ctx.beginPath();ctx.moveTo(40,60);ctx.lineTo(80,20);ctx.lineTo(120,60);ctx.fill();
+      ctx.restore();
+      break;
+
+    case 'oeil': // Minimalist white space with single tree
+      ctx.fillStyle='#0a0a1a';ctx.fillRect(0,0,canvas.width,canvas.height);
+      ctx.fillStyle='#1a1a2a';ctx.fillRect(0,90,canvas.width,30);
+      ctx.fillStyle='#2a1a10';ctx.fillRect(canvas.width*0.7,50,3,40);
+      ctx.fillStyle='#1a3a1a';ctx.beginPath();ctx.arc(canvas.width*0.7+1,45,12,0,Math.PI*2);ctx.fill();
+      let eg=ctx.createRadialGradient(canvas.width*0.7,60,5,canvas.width*0.7,60,60);
+      eg.addColorStop(0,'rgba(200,100,100,0.1)');eg.addColorStop(1,'rgba(0,0,0,0)');
+      ctx.fillStyle=eg;ctx.fillRect(0,0,canvas.width,canvas.height);
+      break;
   }
 }
 
@@ -1152,6 +1419,14 @@ const CHAPTERS = {
     {id:'1.4',title:'La Vitesse d\'obturation',icon:'⏱',type:'lesson'},
     {id:'1.5',title:'L\'ISO en détail',icon:'📶',type:'lesson'},
     {id:'boss1',title:'Le Gardien de la Lumière',icon:'⚔️',type:'boss'}
+  ],
+  2: [
+    {id:'2.1',title:'La Règle des Tiers',icon:'📐',type:'lesson'},
+    {id:'2.2',title:'Les Lignes Directrices',icon:'↗️',type:'lesson'},
+    {id:'2.3',title:'Le Cadrage et les Plans',icon:'🖼',type:'lesson'},
+    {id:'2.4',title:'Symétrie et Motifs',icon:'🔄',type:'lesson'},
+    {id:'2.5',title:'L\'Œil du Photographe',icon:'👁',type:'lesson'},
+    {id:'boss2',title:'Le Maître Géomètre',icon:'⚔️',type:'boss'}
   ]
 };
 
@@ -1390,7 +1665,233 @@ const FICHES = {
 <p>✔️ ISO bas = propre, ISO haut = granuleux</p>
 <p>✔️ L'ISO est toujours le dernier recours</p>
 <p>✔️ Tu sais quel ISO utiliser selon la situation</p>
-<p>💪 Tu es prêt·e pour le <strong>Boss du Monde 1</strong> ! Tout ce que tu as appris — la lumière, l'ouverture, la vitesse, l'ISO — va être mis à l'épreuve. Tu vas gérer ! 🔥</p></div>`
+<p>💪 Tu es prêt·e pour le <strong>Boss du Monde 1</strong> ! Tout ce que tu as appris — la lumière, l'ouverture, la vitesse, l'ISO — va être mis à l'épreuve. Tu vas gérer ! 🔥</p></div>`,
+
+'2.1': `<h2>📐 La Règle des Tiers — Place Ton Sujet !</h2>
+<div class="glass"><h3>🔄 Tu te souviens ?</h3>
+<p>Dans le Monde 1, tu as appris à maîtriser la <strong>lumière</strong> — ouverture, vitesse, ISO. Maintenant que tu sais <strong>capter</strong> la lumière, on va apprendre à <strong>organiser</strong> ce qui se trouve dedans. Bienvenue dans le monde de la <strong>composition</strong> ! 🎨</p></div>
+
+<div class="glass"><h3>🎯 Pourquoi les photos centrées sont ennuyeuses</h3>
+<p>Quand on débute, on met toujours le sujet <strong>pile au milieu</strong>. Normal ! Mais regarde les photos qui t'impressionnent sur Instagram ou dans les magazines… le sujet est rarement centré. 🤔</p>
+<p>C'est parce que notre cerveau aime quand une image est un peu <strong>déséquilibrée</strong>. Ça crée du mouvement, de la tension, du dynamisme. Une photo centrée, c'est un peu comme une conversation monotone — correcte mais sans surprise.</p></div>
+
+<div class="glass"><h3>❌⭕❌ Le Tic-Tac-Toe de la Photo</h3>
+<p>Imagine une grille de <strong>morpion (tic-tac-toe)</strong> posée sur ta photo : deux lignes verticales et deux lignes horizontales qui divisent l'image en <strong>9 cases égales</strong>.</p>
+<p>Les 4 points où les lignes se croisent, ce sont les <strong>points forts</strong> de l'image. C'est là que l'œil va naturellement !</p>
+<p>La règle des tiers dit simplement : <strong>place ton sujet principal sur un de ces 4 points</strong>, ou le long d'une des lignes.</p>
+<p>🧑 <strong>Portrait</strong> → les yeux du sujet sur le tiers supérieur</p>
+<p>🌅 <strong>Paysage</strong> → l'horizon sur le tiers supérieur (plus de terre) ou inférieur (plus de ciel)</p>
+<p>🌳 <strong>Sujet isolé</strong> → sur un point d'intersection, pas au centre</p></div>
+
+<div class="glass"><h3>📱 L'astuce magique : la grille de ton téléphone !</h3>
+<p>Bonne nouvelle : ton téléphone peut afficher cette grille directement dans l'appli photo !</p>
+<p>📱 <strong>iPhone</strong> → Réglages > Appareil photo > Grille (ON)</p>
+<p>📱 <strong>Android</strong> → Paramètres de l'appli photo > Grille / Lignes de repère</p>
+<p>Active-la maintenant si ce n'est pas déjà fait. Tu vas immédiatement voir tes photos s'améliorer ! 🚀</p></div>
+
+<div class="glass" style="background:rgba(255,215,0,0.1);border:1px solid var(--gold)"><h3>💡 Mnémotechnique</h3>
+<p><strong>"Tic-Tac-Photo : place ton sujet sur les croix du morpion !"</strong> ❌⭕</p>
+<p>Pense à une partie de morpion à chaque fois que tu cadres une photo. Les croix = les points forts !</p></div>
+
+<div class="glass" style="background:rgba(100,100,255,0.1);border:1px solid #88f"><h3>🎮 Mini-défi pratique</h3>
+<p>Prends ton téléphone et essaie ça <strong>tout de suite</strong> :</p>
+<p>1. Active la grille dans ton appli photo 📱</p>
+<p>2. Choisis un objet devant toi (tasse, plante, stylo…)</p>
+<p>3. Prends une photo avec l'objet <strong>pile au centre</strong></p>
+<p>4. Prends une autre photo avec l'objet sur un <strong>point d'intersection</strong></p>
+<p>5. Compare les deux. Tu vois la différence ? La deuxième est plus vivante ! ✨</p></div>
+
+<div class="glass" style="background:rgba(0,255,150,0.1);border:1px solid #0f6"><h3>✅ Ce que tu maîtrises maintenant !</h3>
+<p>🎉 Tu connais la règle de composition la plus utilisée au monde !</p>
+<p>✔️ La règle des tiers = grille de morpion sur ta photo</p>
+<p>✔️ Place ton sujet sur les points d'intersection</p>
+<p>✔️ Évite de tout centrer systématiquement</p>
+<p>✔️ Tu as activé la grille sur ton téléphone</p>
+<p><strong>🔜 Prochaine étape :</strong> les lignes directrices — comment guider l'œil du spectateur exactement où tu veux ! ↗️</p></div>`,
+
+'2.2': `<h2>↗️ Les Lignes Directrices — Guide le Regard !</h2>
+<div class="glass"><h3>🔄 Tu te souviens ?</h3>
+<p>Tu viens d'apprendre la <strong>règle des tiers</strong> : placer ton sujet sur les points forts de la grille. Mais comment faire pour que l'œil <strong>arrive</strong> jusqu'à ton sujet ? C'est là qu'interviennent les <strong>lignes directrices</strong> ! 🛤️</p></div>
+
+<div class="glass"><h3>🛤️ Les lignes, c'est comme des flèches invisibles</h3>
+<p>Imagine que tu es dans une rue. Ton regard suit naturellement la route, les immeubles, les trottoirs… jusqu'au bout. C'est ça une <strong>ligne directrice</strong> : un élément dans l'image qui <strong>guide l'œil</strong> du spectateur vers un point précis.</p>
+<p>Les lignes sont PARTOUT autour de toi :</p>
+<p>🛤️ <strong>Routes et chemins</strong> → les plus classiques</p>
+<p>🌉 <strong>Ponts et rambardes</strong> → super efficaces</p>
+<p>🏗️ <strong>Escaliers et couloirs</strong> → effet tunnel garanti</p>
+<p>🌊 <strong>Rivières et ruisseaux</strong> → lignes naturelles</p>
+<p>🌿 <strong>Branches d'arbres et clôtures</strong> → lignes organiques</p></div>
+
+<div class="glass"><h3>↗️ La direction change tout !</h3>
+<p>Le type de ligne crée une <strong>émotion différente</strong> :</p>
+<p>↗️ <strong>Diagonales</strong> → dynamisme, énergie, mouvement. C'est la plus puissante ! Pense à une route qui monte. 🔥</p>
+<p>➡️ <strong>Horizontales</strong> → calme, sérénité, stabilité. Pense à l'horizon de la mer. 🌊</p>
+<p>⬆️ <strong>Verticales</strong> → puissance, grandeur, autorité. Pense aux colonnes d'un temple. 🏛️</p>
+<p>🌀 <strong>Courbes</strong> → douceur, grâce, mystère. Pense à une route sinueuse en montagne. 🏔️</p></div>
+
+<div class="glass"><h3>🎯 Le point de fuite — la magie de la profondeur</h3>
+<p>Quand des lignes convergent vers un même point (comme des rails de train qui se rejoignent au loin), ça crée un <strong>point de fuite</strong>. C'est hyper puissant pour donner une impression de <strong>profondeur</strong> dans une photo 2D !</p>
+<p>Astuce pro : place ton sujet principal <strong>au point de fuite</strong> ou juste à côté. L'œil ira droit dessus ! 🎯</p></div>
+
+<div class="glass" style="background:rgba(255,215,0,0.1);border:1px solid var(--gold)"><h3>💡 Mnémotechnique</h3>
+<p><strong>"Les lignes sont des flèches pour les yeux"</strong> 👀➡️🎯</p>
+<p>À chaque fois que tu cadres une photo, cherche les lignes et demande-toi : "vers où pointent les flèches ?"</p></div>
+
+<div class="glass" style="background:rgba(100,100,255,0.1);border:1px solid #88f"><h3>🎮 Mini-défi pratique</h3>
+<p>Prends ton téléphone et fais cet exercice :</p>
+<p>1. Sors dans un couloir, une rue ou un chemin</p>
+<p>2. Mets-toi <strong>au milieu</strong> (attention aux voitures 😅)</p>
+<p>3. Prends une photo en <strong>plongeant vers le point de fuite</strong></p>
+<p>4. Essaie aussi en <strong>diagonale</strong> depuis un coin</p>
+<p>5. Laquelle donne le plus de profondeur ? La plus de dynamisme ? 🤔</p></div>
+
+<div class="glass" style="background:rgba(0,255,150,0.1);border:1px solid #0f6"><h3>✅ Ce que tu maîtrises maintenant !</h3>
+<p>🎉 Tu sais guider le regard du spectateur !</p>
+<p>✔️ Les lignes directrices = flèches pour les yeux</p>
+<p>✔️ Diagonale = dynamisme, horizontale = calme, verticale = puissance</p>
+<p>✔️ Le point de fuite crée de la profondeur</p>
+<p>✔️ Tu sais repérer les lignes dans ton environnement</p>
+<p><strong>🔜 Prochaine étape :</strong> le cadrage et les plans — comment créer des "cadres dans le cadre" et donner de la profondeur ! 🖼</p></div>`,
+
+'2.3': `<h2>🖼 Le Cadrage et les Plans — Crée de la Profondeur !</h2>
+<div class="glass"><h3>🔄 Tu te souviens ?</h3>
+<p>Tu sais maintenant placer ton sujet (règle des tiers 📐) et guider le regard (lignes directrices ↗️). Maintenant, on va apprendre deux techniques qui vont donner un effet <strong>WOW</strong> à tes photos : le <strong>cadre dans le cadre</strong> et les <strong>plans</strong> ! 🖼</p></div>
+
+<div class="glass"><h3>🚪 Le cadre dans le cadre</h3>
+<p>Imagine que tu regardes par une <strong>fenêtre</strong>. La fenêtre crée un cadre autour du paysage, et ça rend la vue plus intéressante, non ? C'est exactement le même principe en photo !</p>
+<p>L'idée : utilise des éléments naturels pour <strong>encadrer ton sujet</strong> :</p>
+<p>🚪 <strong>Portes et fenêtres</strong> → les classiques, toujours efficaces</p>
+<p>🌳 <strong>Branches d'arbres</strong> → cadre naturel au-dessus du sujet</p>
+<p>🏗️ <strong>Arches et tunnels</strong> → effet dramatique garanti</p>
+<p>🤲 <strong>Tes propres mains</strong> → oui, ça marche aussi !</p>
+<p>Le cadre attire l'attention sur le sujet et donne une sensation de <strong>profondeur</strong>, comme si on regardait "à travers" quelque chose.</p></div>
+
+<div class="glass"><h3>📚 Les 3 plans : avant, milieu, arrière</h3>
+<p>Une photo, c'est plat (2D). Mais tu peux donner l'illusion de 3D en utilisant <strong>3 plans</strong> :</p>
+<p>1️⃣ <strong>Premier plan</strong> → ce qui est devant, proche de toi. Des fleurs, des cailloux, une barrière…</p>
+<p>2️⃣ <strong>Plan moyen</strong> → ton sujet principal. Une personne, un bâtiment…</p>
+<p>3️⃣ <strong>Arrière-plan</strong> → le fond. Des montagnes, le ciel, des bâtiments au loin…</p>
+<p>Quand tu as des éléments dans les 3 plans, ton cerveau perçoit de la <strong>profondeur</strong>. La photo devient immersive, comme si tu pouvais "entrer dedans" ! 🌄</p></div>
+
+<div class="glass"><h3>🌸 L'astuce du premier plan</h3>
+<p>Le secret des photos de paysage époustouflantes ? Elles ont presque toujours un <strong>premier plan intéressant</strong> !</p>
+<p>Avant de photographier un paysage, baisse-toi et cherche quelque chose à mettre devant : des fleurs, des rochers, de l'eau, une barrière… Ça change TOUT. 🏔️✨</p></div>
+
+<div class="glass" style="background:rgba(255,215,0,0.1);border:1px solid var(--gold)"><h3>💡 Mnémotechnique</h3>
+<p><strong>"Fenêtre = Photo plus belle"</strong> 🪟📸</p>
+<p>Dès que tu vois une ouverture (porte, fenêtre, arche), pense à cadrer ton sujet dedans !</p>
+<p><strong>"3P : Premier plan, Principal, Paysage"</strong> — les 3 plans commencent par P !</p></div>
+
+<div class="glass" style="background:rgba(100,100,255,0.1);border:1px solid #88f"><h3>🎮 Mini-défi pratique</h3>
+<p>Prends ton téléphone et essaie ça :</p>
+<p>1. Trouve une <strong>porte ouverte ou une fenêtre</strong></p>
+<p>2. Photographie quelqu'un ou quelque chose <strong>à travers</strong> ce cadre</p>
+<p>3. Ensuite, va dehors et prends un paysage avec un <strong>objet au premier plan</strong> (branche, fleur, pierre…)</p>
+<p>4. Compare avec une photo du même paysage <strong>sans premier plan</strong></p>
+<p>La différence est incroyable, non ? 🤯</p></div>
+
+<div class="glass" style="background:rgba(0,255,150,0.1);border:1px solid #0f6"><h3>✅ Ce que tu maîtrises maintenant !</h3>
+<p>🎉 Tu sais créer de la profondeur dans tes photos !</p>
+<p>✔️ Le cadre dans le cadre = utiliser portes, fenêtres, branches</p>
+<p>✔️ Les 3 plans = premier plan + sujet + arrière-plan</p>
+<p>✔️ Un premier plan intéressant rend les paysages magnifiques</p>
+<p><strong>🔜 Prochaine étape :</strong> la symétrie et les motifs — quand la répétition devient magique ! 🔄</p></div>`,
+
+'2.4': `<h2>🔄 Symétrie et Motifs — La Beauté de la Répétition</h2>
+<div class="glass"><h3>🔄 Tu te souviens ?</h3>
+<p>Tu maîtrises maintenant la <strong>règle des tiers</strong>, les <strong>lignes directrices</strong> et le <strong>cadrage avec les plans</strong>. Aujourd'hui, on va explorer deux concepts qui rendent les photos hypnotiques : la <strong>symétrie</strong> et les <strong>motifs</strong> ! ✨</p></div>
+
+<div class="glass"><h3>🪞 La symétrie — l'effet miroir</h3>
+<p>La symétrie, c'est quand une moitié de l'image est le <strong>reflet</strong> de l'autre. C'est l'une des rares fois où centrer ton sujet est une <strong>bonne idée</strong> !</p>
+<p>Où trouver de la symétrie ?</p>
+<p>💧 <strong>Reflets dans l'eau</strong> → lacs, flaques, piscines. Le classique ! Retourne ta photo, personne ne verra la différence 😄</p>
+<p>🏛️ <strong>Architecture</strong> → façades, couloirs, escaliers. Les bâtiments adorent la symétrie</p>
+<p>🪞 <strong>Miroirs et vitres</strong> → reflets urbains</p>
+<p>🌿 <strong>Nature</strong> → feuilles, fleurs, papillons. La nature est la reine de la symétrie</p>
+<p>⚠️ Attention : la symétrie doit être <strong>quasi parfaite</strong> pour fonctionner. Un tout petit décalage, et ça fait "raté" plutôt qu'"artistique".</p></div>
+
+<div class="glass"><h3>🔁 Les motifs — la répétition hypnotique</h3>
+<p>Un <strong>motif</strong> (pattern en anglais), c'est un élément qui se <strong>répète</strong> dans l'image. C'est hypnotique et visuellement satisfaisant !</p>
+<p>🪟 <strong>Fenêtres d'un immeuble</strong> → rangées régulières</p>
+<p>🧱 <strong>Carrelage, briques, pavés</strong> → motifs géométriques</p>
+<p>🌻 <strong>Champ de fleurs</strong> → répétition naturelle</p>
+<p>☂️ <strong>Parapluies, chaises de plage</strong> → rangées colorées</p></div>
+
+<div class="glass"><h3>💥 Le coup de maître : CASSER le motif</h3>
+<p>Tu sais ce qui est encore PLUS puissant qu'un motif ? Un motif avec <strong>un élément qui le brise</strong> !</p>
+<p>Imagine une rangée de parapluies rouges… avec UN parapluie jaune au milieu. 🟡 L'œil va directement dessus !</p>
+<p>C'est le principe de la <strong>rupture de motif</strong> : la répétition attire l'attention, et l'exception la <strong>capture</strong>. C'est une technique de composition ultra-puissante. 💪</p></div>
+
+<div class="glass" style="background:rgba(255,215,0,0.1);border:1px solid var(--gold)"><h3>💡 Mnémotechnique</h3>
+<p><strong>"Miroir, miroir = centre, centre"</strong> 🪞 — Pour la symétrie, c'est la seule fois où tu centres exprès !</p>
+<p><strong>"Répète, répète, CASSE !"</strong> 🔁💥 — Un motif + une rupture = photo mémorable</p></div>
+
+<div class="glass" style="background:rgba(100,100,255,0.1);border:1px solid #88f"><h3>🎮 Mini-défi pratique</h3>
+<p>Prends ton téléphone et essaie ça :</p>
+<p>1. Trouve une <strong>flaque d'eau</strong> ou un miroir</p>
+<p>2. Photographie un bâtiment ou un objet avec son <strong>reflet parfait</strong></p>
+<p>3. Ensuite, cherche un <strong>motif répétitif</strong> (carrelage, fenêtres, livres sur une étagère…)</p>
+<p>4. Prends une photo du motif, puis <strong>ajoute un élément différent</strong> (ta main, un objet coloré) pour casser le motif</p>
+<p>Compare : motif seul vs motif cassé. Lequel est le plus marquant ? 🤔</p></div>
+
+<div class="glass" style="background:rgba(0,255,150,0.1);border:1px solid #0f6"><h3>✅ Ce que tu maîtrises maintenant !</h3>
+<p>🎉 Tu sais utiliser la symétrie et les motifs !</p>
+<p>✔️ Symétrie = effet miroir, centrer le sujet</p>
+<p>✔️ Reflets dans l'eau = symétrie naturelle parfaite</p>
+<p>✔️ Motifs = répétition d'éléments = effet hypnotique</p>
+<p>✔️ Casser un motif = technique ultra-puissante</p>
+<p><strong>🔜 Prochaine étape :</strong> l'œil du photographe — l'espace négatif, le minimalisme et quand CASSER les règles ! 👁</p></div>`,
+
+'2.5': `<h2>👁 L'Œil du Photographe — Vois Autrement !</h2>
+<div class="glass"><h3>🔄 Tu te souviens ?</h3>
+<p>Tu as appris la <strong>règle des tiers</strong> 📐, les <strong>lignes directrices</strong> ↗️, le <strong>cadrage et les plans</strong> 🖼, et la <strong>symétrie avec les motifs</strong> 🔄. Tu as maintenant une sacrée boîte à outils ! Mais la dernière leçon est peut-être la plus importante : apprendre à <strong>voir</strong> comme un photographe. 👁✨</p></div>
+
+<div class="glass"><h3>🫧 L'espace négatif — le pouvoir du vide</h3>
+<p>L'<strong>espace négatif</strong>, c'est tout ce qui entoure ton sujet : le ciel, un mur vide, de l'eau calme… Bref, le "rien" de ta photo.</p>
+<p>Et ce "rien" est en fait super puissant ! Quand tu laisses beaucoup d'espace vide autour de ton sujet :</p>
+<p>👁 L'œil va <strong>directement</strong> sur le sujet — il n'y a rien d'autre à regarder</p>
+<p>😌 La photo dégage une sensation de <strong>calme et de respiration</strong></p>
+<p>💪 Le sujet paraît plus <strong>important et significatif</strong></p>
+<p>Pense à un oiseau seul dans un grand ciel bleu. Minimaliste, puissant, mémorable. 🐦</p></div>
+
+<div class="glass"><h3>✂️ Le minimalisme — moins = plus</h3>
+<p>En photo comme en décoration, le <strong>minimalisme</strong> c'est l'art de ne garder que l'essentiel. Avant de prendre ta photo, demande-toi :</p>
+<p>❓ "Est-ce que chaque élément dans mon cadre a une raison d'être là ?"</p>
+<p>❓ "Qu'est-ce que je peux <strong>enlever</strong> pour que le sujet ressorte mieux ?"</p>
+<p>Le débutant veut tout mettre dans la photo. Le photographe expérimenté sait quoi <strong>enlever</strong>. C'est la différence. 🎯</p></div>
+
+<div class="glass"><h3>🚫 Casser les règles — le niveau final</h3>
+<p>Tu te rappelles toutes les règles qu'on a apprises ? La règle des tiers, les lignes, les plans, la symétrie…</p>
+<p>Maintenant, voici le secret ultime : <strong>les meilleurs photographes cassent ces règles exprès</strong>. 😱</p>
+<p>Mais — et c'est important — ils les cassent <strong>en connaissance de cause</strong>. Ils savent POURQUOI ils désobéissent.</p>
+<p>🎯 <strong>Centrer un sujet</strong> → quand tu veux un effet de face-à-face direct, de confrontation</p>
+<p>⬇️ <strong>Mettre l'horizon tout en bas</strong> → pour mettre en valeur un ciel incroyable</p>
+<p>🔄 <strong>Pencher l'appareil</strong> → pour créer du dynamisme et de l'énergie</p>
+<p>La règle d'or : <strong>"Apprends les règles, puis brise-les avec intention."</strong></p></div>
+
+<div class="glass"><h3>👁 Entraîne ton regard</h3>
+<p>Le plus grand outil du photographe, ce n'est pas son appareil — c'est son <strong>œil</strong>. Voici comment l'entraîner :</p>
+<p>📱 <strong>Regarde beaucoup de photos</strong> → Instagram, Pinterest, National Geographic. Analyse : pourquoi cette photo fonctionne ?</p>
+<p>🚶 <strong>Observe en marchant</strong> → cherche les lignes, les cadres, les motifs. Même sans appareil !</p>
+<p>📸 <strong>Photographie tous les jours</strong> → même avec ton téléphone, même des choses banales. La pratique, c'est tout.</p></div>
+
+<div class="glass" style="background:rgba(255,215,0,0.1);border:1px solid var(--gold)"><h3>💡 Mnémotechnique</h3>
+<p><strong>"Vide ≠ Vide. Le vide EST la photo."</strong> 🫧 — L'espace négatif n'est pas du gaspillage, c'est de la composition !</p>
+<p><strong>"Connais les règles, puis brise-les."</strong> 🚫📏 — C'est la différence entre un débutant et un artiste.</p></div>
+
+<div class="glass" style="background:rgba(100,100,255,0.1);border:1px solid #88f"><h3>🎮 Mini-défi pratique</h3>
+<p>Prends ton téléphone et fais ces 3 photos :</p>
+<p>1. <strong>Minimaliste</strong> : un seul objet avec beaucoup de vide autour (tasse sur une grande table, oiseau dans le ciel…)</p>
+<p>2. <strong>Règle brisée</strong> : prends un portrait centré, de face, avec un regard intense. Assume le centrage !</p>
+<p>3. <strong>L'œil du photographe</strong> : marche 5 minutes et cherche un cadre naturel + une ligne directrice + un premier plan. Combine tout ce que tu as appris ! 🏆</p></div>
+
+<div class="glass" style="background:rgba(0,255,150,0.1);border:1px solid #0f6"><h3>✅ Ce que tu maîtrises maintenant !</h3>
+<p>🎉 <strong>FÉLICITATIONS !</strong> Tu as complété toutes les leçons de composition !</p>
+<p>✔️ L'espace négatif = le pouvoir du vide</p>
+<p>✔️ Minimalisme = enlever plutôt qu'ajouter</p>
+<p>✔️ Les règles sont faites pour être brisées (avec intention !)</p>
+<p>✔️ Ton œil est ton meilleur outil</p>
+<p>💪 Tu es prêt·e pour le <strong>Boss du Monde 2 — Le Maître Géomètre</strong> ! Il va tester TOUTES tes compétences en composition. Tu vas assurer ! 🔥</p></div>`
 };
 
 const QUIZZES = {
@@ -1428,6 +1929,41 @@ const QUIZZES = {
   {q:'Pourquoi l\\u0027ISO est le "dernier recours" ?', opts:['Parce qu\\u0027il est difficile à régler','Parce qu\\u0027il ajoute du grain','Parce qu\\u0027il change les couleurs','Parce qu\\u0027il zoome'], ans:1},
   {q:'Tu es en extérieur par beau temps. Quel ISO ?', opts:['ISO 100','ISO 1600','ISO 3200','ISO 6400'], ans:0},
   {q:'Mieux vaut une photo...', opts:['Floue mais sans grain','Un peu granuleuse mais nette','Sombre pour éviter le grain','Surexposée pour éviter le flou'], ans:1}
+],
+'2.1': [
+  {q:'La règle des tiers divise l\'image en combien de cases ?',opts:['4 cases','6 cases','9 cases','12 cases'],ans:2},
+  {q:'Pour un portrait intéressant, où places-tu les yeux du sujet ?',opts:['Au centre exact','En bas de l\'image','Sur un point d\'intersection du tiers','Dans un coin'],ans:2},
+  {q:'Pourquoi les photos systématiquement centrées sont-elles souvent ennuyeuses ?',opts:['Parce que le téléphone les rend floues','Parce qu\'elles manquent de dynamisme','Parce que la lumière est mauvaise','Parce qu\'elles sont trop sombres'],ans:1},
+  {q:'Comment activer la grille sur ton téléphone ?',opts:['C\'est impossible','Dans les réglages de l\'appli photo','En secouant le téléphone','En mode selfie uniquement'],ans:1},
+  {q:'Pour un paysage avec un beau ciel, tu places l\'horizon sur...',opts:['Le tiers inférieur (plus de ciel)','Le centre exact','Le tiers supérieur','Ça n\'a pas d\'importance'],ans:0}
+],
+'2.2': [
+  {q:'Tu photographies un paysage avec une route qui s\'éloigne. C\'est un exemple de...',opts:['Règle des tiers','Ligne directrice','Symétrie','Motif'],ans:1},
+  {q:'Quelle direction de ligne crée le plus de dynamisme ?',opts:['Horizontale','Verticale','Diagonale','Courbe'],ans:2},
+  {q:'Les lignes horizontales dans une photo donnent une impression de...',opts:['Énergie et mouvement','Calme et sérénité','Puissance et autorité','Mystère et danger'],ans:1},
+  {q:'Le point de fuite, c\'est quand...',opts:['La photo est floue','Des lignes convergent vers un même point','Le sujet disparaît','L\'horizon est centré'],ans:1},
+  {q:'Tu veux donner une impression de puissance. Tu utilises des lignes...',opts:['Horizontales','Diagonales','Verticales','Courbes'],ans:2}
+],
+'2.3': [
+  {q:'Le "cadre dans le cadre", c\'est...',opts:['Acheter un cadre photo','Utiliser une porte ou fenêtre pour encadrer ton sujet','Centrer le sujet','Prendre une photo carrée'],ans:1},
+  {q:'Les 3 plans d\'une photo sont...',opts:['Haut, milieu, bas','Gauche, centre, droite','Premier plan, plan moyen, arrière-plan','Flou, net, très net'],ans:2},
+  {q:'Pour un paysage impressionnant, le secret c\'est souvent...',opts:['Un zoom puissant','Un premier plan intéressant','Un filtre Instagram','Un trépied'],ans:1},
+  {q:'Tu vois une arche en pierre avec une vue derrière. Tu devrais...',opts:['Photographier juste l\'arche','Photographier la vue à travers l\'arche','Ignorer l\'arche','Faire un selfie devant'],ans:1},
+  {q:'Les plans donnent l\'illusion de...',opts:['Mouvement','Couleur','Profondeur (3D)','Lumière'],ans:2}
+],
+'2.4': [
+  {q:'Pour une photo symétrique, tu dois...',opts:['Décaler le sujet à droite','Centrer le sujet sur l\'axe de symétrie','Utiliser la règle des tiers','Photographier en diagonale'],ans:1},
+  {q:'Où trouver facilement de la symétrie ?',opts:['Dans les reflets d\'eau','Uniquement en studio','Dans les photos de nuit','En mode portrait'],ans:0},
+  {q:'Un motif en photo, c\'est...',opts:['Un filtre spécial','Un élément qui se répète','Un type de cadrage','Une technique d\'éclairage'],ans:1},
+  {q:'Que se passe-t-il si tu "casses" un motif avec un élément différent ?',opts:['La photo est ratée','L\'œil est attiré par l\'élément différent','Le motif disparaît','Rien de spécial'],ans:1},
+  {q:'La symétrie fonctionne mieux quand elle est...',opts:['Approximative','Quasi parfaite','Avec beaucoup de couleurs','En noir et blanc uniquement'],ans:1}
+],
+'2.5': [
+  {q:'L\'espace négatif, c\'est...',opts:['Une erreur de composition','Le vide autour du sujet','Une photo ratée','Un réglage de l\'appareil'],ans:1},
+  {q:'En composition minimaliste, le photographe cherche à...',opts:['Ajouter le plus d\'éléments possible','Enlever tout ce qui n\'est pas essentiel','Utiliser beaucoup de couleurs','Centrer absolument tout'],ans:1},
+  {q:'Quand peut-on "casser" les règles de composition ?',opts:['Jamais, les règles sont absolues','Quand on ne les connaît pas','Quand on le fait avec intention et en connaissance de cause','Seulement les professionnels'],ans:2},
+  {q:'Un oiseau seul dans un grand ciel bleu, c\'est un exemple de...',opts:['Règle des tiers','Ligne directrice','Espace négatif','Symétrie'],ans:2},
+  {q:'Le plus grand outil du photographe, c\'est...',opts:['Son appareil photo','Son objectif','Son œil et sa vision','Son trépied'],ans:2}
 ]
 };
 
@@ -1442,6 +1978,19 @@ const BOSS_QUESTIONS = [
   {q:'Ta photo est floue mais le sujet ne bougeait pas. C\\u0027est probablement...', opts:['Trop d\\u0027ISO','Le flou de bougé — c\\u0027est toi qui as bougé','Mauvaise ouverture','Problème de carte mémoire'], ans:1},
   {q:'Tu veux un paysage où tout est net du premier plan à l\\u0027infini. Tu choisis...', opts:['f/1.8','f/2.8','f/11','f/1.4'], ans:2},
   {q:'Il fait beau dehors. Quel ISO ?', opts:['ISO 3200','ISO 100','ISO 6400','ISO 1600'], ans:1}
+];
+
+const BOSS2_QUESTIONS = [
+  {q:'Tu fais un portrait. Où places-tu les yeux du sujet ?',opts:['Au centre exact','Sur un point d\'intersection du tiers','En bas de l\'image','Dans un coin'],ans:1},
+  {q:'Tu photographies une route qui s\'éloigne vers les montagnes. C\'est un exemple de...',opts:['Symétrie','Espace négatif','Ligne directrice','Motif'],ans:2},
+  {q:'Tu veux donner une impression de calme dans un paysage marin. Tu utilises...',opts:['Des diagonales fortes','Des lignes horizontales (l\'horizon)','Un cadrage penché','Beaucoup de sujets'],ans:1},
+  {q:'Tu vois une belle arche en pierre avec une vue derrière. Quelle technique utilises-tu ?',opts:['Le cadre dans le cadre','La symétrie','Le minimalisme','La rupture de motif'],ans:0},
+  {q:'Un reflet parfait dans un lac, c\'est un exemple de...',opts:['Règle des tiers','Ligne directrice','Symétrie','Espace négatif'],ans:2},
+  {q:'Tu photographies un champ de tulipes rouges avec UNE tulipe jaune. C\'est...',opts:['Un motif raté','Une rupture de motif','De la symétrie','De l\'espace négatif'],ans:1},
+  {q:'Pour un paysage avec un ciel spectaculaire, tu places l\'horizon...',opts:['Au centre','Sur le tiers supérieur (plus de ciel)','Tout en haut','Tu supprimes l\'horizon'],ans:1},
+  {q:'Un oiseau seul dans un grand ciel bleu. Quelle technique ?',opts:['Ligne directrice','Cadre dans le cadre','Espace négatif','Motif'],ans:2},
+  {q:'Quand est-il acceptable de centrer un sujet ?',opts:['Jamais, c\'est interdit','Quand on veut un effet de symétrie ou de confrontation','Seulement pour les selfies','Quand on ne connaît pas les règles'],ans:1},
+  {q:'Le secret des paysages impressionnants, c\'est souvent...',opts:['Un filtre Instagram','Un zoom puissant','Un premier plan intéressant','Beaucoup de saturation'],ans:2}
 ];
 
 // === GAME STATE ===
@@ -1552,6 +2101,8 @@ function updateUI() {
   document.getElementById('statChapters').textContent = state.completedChapters.length;
   let sc = document.getElementById('statCreatures');
   if(sc) sc.textContent = Object.keys(creatureCaptureData).length + '/' + CREATURES.length;
+  let bc = document.getElementById('bestiaryCounter');
+  if(bc) bc.textContent = Object.keys(creatureCaptureData).length + '/' + CREATURES.length + ' capturées';
 }
 
 // === SCREENS ===
@@ -1577,9 +2128,9 @@ function renderWorldMap() {
     let isCurrent = unlocked && (i===WORLDS.length-1 || info.level < WORLDS[i+1].unlockLevel);
     let cls = unlocked ? (isCurrent ? 'current' : '') : 'locked';
     let progress = '';
-    if(w.id===1){
-      let done = CHAPTERS[1].filter(c=>state.completedChapters.includes(c.id)||state.bossDefeated.includes(c.id)).length;
-      progress = `<div class="world-progress">${done}/${CHAPTERS[1].length} complété</div>`;
+    if(CHAPTERS[w.id]){
+      let done = CHAPTERS[w.id].filter(c=>state.completedChapters.includes(c.id)||state.bossDefeated.includes(c.id)).length;
+      progress = `<div class="world-progress">${done}/${CHAPTERS[w.id].length} complété</div>`;
     }
     let iconCanvas = PA.create(w.icon, 56, 56);
     html += `<div class="world-node ${cls}" onclick="${unlocked?`openWorld(${w.id})`:''}">
@@ -1593,7 +2144,7 @@ function renderWorldMap() {
 }
 
 function openWorld(id) {
-  if(id!==1){alert('Ce monde arrive bientôt !');return;}
+  if(id!==1 && id!==2){alert('Ce monde arrive bientôt !');return;}
   currentWorld = id;
   showScreen('chapters');
   renderChapters();
@@ -1602,7 +2153,11 @@ function openWorld(id) {
 function renderChapters() {
   let chapters = CHAPTERS[currentWorld];
   let world = WORLDS[currentWorld-1];
-  document.getElementById('chapterHeader').innerHTML = `<h2>${world.name}</h2><p style="color:var(--text2);font-size:13px;margin:8px 0 16px">Tu arrives dans un village plongé dans le brouillard. Les habitants ont perdu la capacité de voir les couleurs...</p>`;
+  const worldIntros = {
+    1:'Tu arrives dans un village plongé dans le brouillard. Les habitants ont perdu la capacité de voir les couleurs...',
+    2:'Un monde géométrique s\'ouvre devant toi. Ici, chaque pierre, chaque chemin, chaque reflet cache un secret de composition...'
+  };
+  document.getElementById('chapterHeader').innerHTML = `<h2>${world.name}</h2><p style="color:var(--text2);font-size:13px;margin:8px 0 16px">${worldIntros[currentWorld]||''}</p>`;
   let html = '';
   chapters.forEach(ch => {
     let completed = state.completedChapters.includes(ch.id) || state.bossDefeated.includes(ch.id);
@@ -1694,20 +2249,32 @@ function afterQuizContinue() {
 }
 
 // === BOSS ===
+let currentBossWorld = 1;
 function startBoss() {
+  currentBossWorld = currentWorld;
   bossIndex=0;bossLives=3;
   showScreen('boss');
   renderBossIntro();
 }
 
+function getBossConfig() {
+  if(currentBossWorld===2) return {sprite:'boss2',name:'Le Maître Géomètre',id:'boss2',questions:BOSS2_QUESTIONS,
+    intro:'"Tu crois maîtriser la composition, jeune artiste ? Les lignes, les cadres, les espaces… tout sera testé ! 10 questions, 20 secondes chacune. 3 erreurs et tu tombes..."',
+    victory:'"Remarquable ! Tu as l\'œil d\'un vrai compositeur. Les formes t\'obéissent désormais."',title:'Maître Compositeur'};
+  return {sprite:'boss',name:'Le Gardien de la Lumière',id:'boss1',questions:BOSS_QUESTIONS,
+    intro:'"Tu prétends comprendre la lumière, jeune photographe ? Prouve-le ! 10 questions, 20 secondes chacune. 3 erreurs et tu tombes..."',
+    victory:'"Impressionnant, jeune photographe. Tu maîtrises la lumière. Voici ton titre..."',title:'Initié de la Lumière'};
+}
+
 function renderBossIntro() {
-  let bossCanvas = PA.create('boss', 192, 192);
+  let cfg = getBossConfig();
+  let bossCanvas = PA.create(cfg.sprite, 192, 192);
   bossCanvas.style.cssText = 'image-rendering:pixelated;animation:pulse 2s infinite;filter:drop-shadow(0 0 20px rgba(245,158,11,0.4))';
   document.getElementById('bossArea').innerHTML = `
     <div style="text-align:center;padding:40px 0">
       <div style="margin-bottom:16px">${bossCanvas.outerHTML}</div>
-      <h2 style="font-size:22px">Le Gardien de la Lumière</h2>
-      <p style="color:var(--text2);margin:12px 0;font-size:14px;line-height:1.6">"Tu prétends comprendre la lumière, jeune photographe ? Prouve-le ! 10 questions, 20 secondes chacune. 3 erreurs et tu tombes..."</p>
+      <h2 style="font-size:22px">${cfg.name}</h2>
+      <p style="color:var(--text2);margin:12px 0;font-size:14px;line-height:1.6">${cfg.intro}</p>
       <div style="display:flex;gap:8px;justify-content:center;margin:16px 0">
         <span style="background:var(--glass);padding:6px 14px;border-radius:8px;font-size:12px;display:flex;align-items:center;gap:4px">${PA.create('heart_full',16,16).outerHTML} 3 vies</span>
         <span style="background:var(--glass);padding:6px 14px;border-radius:8px;font-size:12px">⏱ 20s/question</span>
@@ -1721,10 +2288,12 @@ function renderBossIntro() {
 function startBossFight() { bossIndex=0;bossLives=3;renderBossQuestion(); }
 
 function renderBossQuestion() {
-  if(bossIndex>=BOSS_QUESTIONS.length){bossVictory();return;}
+  let cfg = getBossConfig();
+  let qs = cfg.questions;
+  if(bossIndex>=qs.length){bossVictory();return;}
   if(bossLives<=0){bossDefeat();return;}
-  let q=BOSS_QUESTIONS[bossIndex];
-  let hp=((BOSS_QUESTIONS.length-bossIndex)/BOSS_QUESTIONS.length*100);
+  let q=qs[bossIndex];
+  let hp=((qs.length-bossIndex)/qs.length*100);
   let hearts = renderPixelHearts(bossLives, 3);
   bossTimeLeft=20;
 
@@ -1732,7 +2301,7 @@ function renderBossQuestion() {
   document.getElementById('bossArea').innerHTML = `
     <div class="glass">
       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
-        <span style="font-weight:700">Gardien de la Lumière</span>
+        <span style="font-weight:700">${cfg.name}</span>
         <span style="font-size:12px;color:var(--text2)">Q${bossIndex+1}/10</span>
       </div>
       <div class="boss-hp-bar"><div class="boss-hp-inner" style="width:${hp}%"></div></div>
@@ -1755,7 +2324,7 @@ function renderBossQuestion() {
 
 function answerBoss(idx) {
   clearInterval(bossTimer);
-  let q=BOSS_QUESTIONS[bossIndex];
+  let q=getBossConfig().questions[bossIndex];
   state.totalQuestions++;
   let correct=idx===q.ans;
   if(correct){state.correctAnswers++;}else{bossLives--;}
@@ -1768,18 +2337,19 @@ function answerBoss(idx) {
 }
 
 function bossVictory() {
-  if(!state.bossDefeated.includes('boss1')){state.bossDefeated.push('boss1');}
+  let cfg = getBossConfig();
+  if(!state.bossDefeated.includes(cfg.id)){state.bossDefeated.push(cfg.id);}
   saveState();
   addXP(100);
   showVictoryParticles();
-  let bossCanvas = PA.create('boss', 128, 128);
+  let bossCanvas = PA.create(cfg.sprite, 128, 128);
   bossCanvas.style.cssText = 'image-rendering:pixelated;filter:drop-shadow(0 0 15px rgba(245,158,11,0.5))';
   document.getElementById('bossArea').innerHTML = `
     <div style="text-align:center;padding:40px 0">
       <div style="margin-bottom:16px">${bossCanvas.outerHTML}</div>
       <h2 style="color:var(--gold);font-size:22px">Victoire !</h2>
-      <p style="color:var(--text2);margin:12px 0">"Impressionnant, jeune photographe. Tu maîtrises la lumière. Voici ton titre..."</p>
-      <div style="background:linear-gradient(135deg,var(--gold),#d97706);color:#000;padding:12px 24px;border-radius:12px;font-weight:700;display:inline-block;margin:16px 0">Initié de la Lumière</div>
+      <p style="color:var(--text2);margin:12px 0">${cfg.victory}</p>
+      <div style="background:linear-gradient(135deg,var(--gold),#d97706);color:#000;padding:12px 24px;border-radius:12px;font-weight:700;display:inline-block;margin:16px 0">${cfg.title}</div>
       <br><button class="btn btn-primary" onclick="showScreen('chapters');renderChapters()" style="margin-top:20px">Continuer l'aventure</button>
     </div>`;
 }
@@ -1893,6 +2463,36 @@ const CREATURES = [
    condition:'Très peu de lumière · Mouvement lent',sceneType:'spectre',
    idealAperture:0,idealShutter:6,idealISO:6,
    sceneColors:['#050510','#0a0a1a','#0a0a10','#050508'],
+   particles:'ghost'},
+  {id:'c6',afterChapter:'2.1',sprite:'tiers',name:'Gridelin',
+   scene:'Un Gridelin flotte dans un jardin géométrique, son corps pulsant avec la grille parfaite de l\'univers.',
+   condition:'Composition en tiers · Lumière douce · Sujet immobile',sceneType:'tiers',
+   idealAperture:3,idealShutter:8,idealISO:1,
+   sceneColors:['#1e3a5f','#3b82f6','#1a3a2a','#0d2010'],
+   particles:'sparkle'},
+  {id:'c7',afterChapter:'2.2',sprite:'lignes',name:'Serpentine',
+   scene:'Une Serpentine ondule le long d\'un chemin sinueux, son corps traçant des lignes directrices parfaites.',
+   condition:'Ligne diagonale · Mouvement fluide · Lumière moyenne',sceneType:'lignes',
+   idealAperture:4,idealShutter:9,idealISO:1,
+   sceneColors:['#1a3a2a','#4a8a5a','#2a5a1a','#0d3010'],
+   particles:'sparkle'},
+  {id:'c8',afterChapter:'2.3',sprite:'cadre',name:'Arcanadre',
+   scene:'Un Arcanadre se tient sous une arche antique, parfaitement encadré par la pierre millénaire.',
+   condition:'Cadre naturel · Profondeur · Lumière tamisée',sceneType:'cadre',
+   idealAperture:5,idealShutter:7,idealISO:2,
+   sceneColors:['#1a1520','#3a2a20','#2a3a1a','#1a2a0a'],
+   particles:'mist'},
+  {id:'c9',afterChapter:'2.4',sprite:'symetrie',name:'Miralis',
+   scene:'Un Miralis déploie ses ailes symétriques au-dessus d\'un lac miroir, créant un reflet parfait.',
+   condition:'Symétrie parfaite · Reflet · Lumière douce',sceneType:'symetrie',
+   idealAperture:5,idealShutter:8,idealISO:0,
+   sceneColors:['#2a1a4a','#4a3a6a','#1a2a4a','#0a1a3a'],
+   particles:'sparkle'},
+  {id:'c10',afterChapter:'2.5',sprite:'oeil',name:'Voidien',
+   scene:'Un Voidien flotte dans le vide absolu. Autour de lui, rien. Juste l\'espace négatif infini.',
+   condition:'Espace négatif · Minimalisme · Très peu de lumière',sceneType:'oeil',
+   idealAperture:2,idealShutter:7,idealISO:3,
+   sceneColors:['#0a0a1a','#1a1a2a','#0a0a10','#050508'],
    particles:'ghost'}
 ];
 
